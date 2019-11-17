@@ -153,16 +153,20 @@ public class MapCreator extends Application {
         scene.setOnKeyPressed(event ->{
             switch (event.getCode()){
                 case Z:
-                    player.setTranslateY(player.getTranslateY() - 1);
+                    player.setY(player.getY() - 1);
+                    if(player.getY() < 0) player.setY(0);
                     break;
                 case Q:
-                    player.setTranslateX(player.getTranslateX() - 1);
+                    player.setX(player.getX() - 1);
+                    if(player.getX() < 0) player.setX(0);
                     break;
                 case S:
-                    player.setTranslateY(player.getTranslateY() + 1);
+                    player.setY(player.getY() + 1);
+                    if(player.getY() > y-8) player.setY(y-8);
                     break;
                 case D:
-                    player.setTranslateX(player.getTranslateX() + 1);
+                    player.setX(player.getX() + 1);
+                    if(player.getX() > x-8) player.setX(x-8);
                     break;
             }
         });
