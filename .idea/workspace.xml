@@ -29,7 +29,7 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="pacman" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ascenseur" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -38,9 +38,12 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Desktop\Cours\GL\Pacman" />
-      <recent name="E:\Desktop\Cours\GL\Pacman\src2" />
       <recent name="E:\Desktop\Cours\GL\Pacman\src" />
+      <recent name="E:\Desktop\Cours\GL\Pacman\src2" />
       <recent name="E:\Desktop\Cours\GL\Pacman\Github Files" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Desktop\Cours\GL\Pacman" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -55,11 +58,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MapCreator">
+  <component name="RunManager" selected="Application.CoreKernel">
     <configuration name="A_StarAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="A_StarAlgorithm" />
       <module name="Pacman" />
       <option name="PROGRAM_PARAMETERS" value="E:\Pathfinding-master\Pathfinding-master\Java\input_files\large.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreKernel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CoreKernel" />
+      <module name="Pacman" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,6 +97,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CoreKernel" />
         <item itemvalue="Application.MapCreator" />
         <item itemvalue="Application.MapReader" />
         <item itemvalue="Application.Drawer" />
