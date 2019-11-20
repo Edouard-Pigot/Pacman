@@ -1,4 +1,6 @@
 package Engine;
 
-public class CoreKernel {
+public class CoreKernel extends Application{
+    public void start(){
+    }
 }

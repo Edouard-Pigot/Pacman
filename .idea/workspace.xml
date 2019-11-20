@@ -7,17 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/SoundEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Entity/GraphicalEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Entity/GraphicalEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Entity/MovingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Entity/MovingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Entity/PhysicalEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Entity/PhysicalEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Entity/StaticEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Entity/StaticEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Bonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PacGum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PacGum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Pacman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +125,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571819784892</updated>
-      <workItem from="1574263020111" duration="3025000" />
+      <workItem from="1574263020111" duration="3519000" />
     </task>
     <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
       <created>1574265990116</created>
@@ -155,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574266366808</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout des bons héritages et implémentations">
+      <created>1574266735267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266735267</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +175,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nouvelle structure de type magnifique" />
     <MESSAGE value="Suppression de fichiers inutiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suppression de fichiers inutiles" />
+    <MESSAGE value="Ajout des bons héritages et implémentations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des bons héritages et implémentations" />
   </component>
 </project>
