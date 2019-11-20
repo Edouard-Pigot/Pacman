@@ -1,4 +1,6 @@
 package Gameplay;
 
-public interface Ghost {
+import Entity.MovingEntity;
+
+public abstract class Ghost implements MovingEntity {
 }

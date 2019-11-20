@@ -1,4 +1,6 @@
 package Gameplay;
 
-public class PacGum {
+import Entity.StaticEntity;
+
+public class PacGum implements StaticEntity {
 }

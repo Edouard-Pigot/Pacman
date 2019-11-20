@@ -1,4 +1,6 @@
 package Gameplay;
 
-public class Wall {
+import Entity.StaticEntity;
+
+public class Wall implements StaticEntity {
 }

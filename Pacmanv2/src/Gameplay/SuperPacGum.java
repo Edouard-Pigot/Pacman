@@ -1,4 +1,6 @@
 package Gameplay;
 
-public class SuperPacGum {
+import Entity.StaticEntity;
+
+public class SuperPacGum implements StaticEntity {
 }

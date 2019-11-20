@@ -1,4 +1,6 @@
 package Gameplay;
 
-public class Bonus {
+import Entity.StaticEntity;
+
+public class Bonus implements StaticEntity {
 }

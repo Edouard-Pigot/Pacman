@@ -1,4 +1,6 @@
 package Gameplay;
 
-public class Pacman {
+import Entity.MovingEntity;
+
+public class Pacman implements MovingEntity {
 }

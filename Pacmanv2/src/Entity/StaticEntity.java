@@ -1,4 +1,4 @@
 package Entity;
 
-public interface StaticEntity {
+public interface StaticEntity extends PhysicalEntity,GraphicalEntity{
 }
