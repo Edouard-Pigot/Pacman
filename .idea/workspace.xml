@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/SoundEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +21,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1Sb67zSfjcJHW10QzLm0t3DNvuH" />
@@ -29,8 +36,11 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="pacman" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -115,7 +125,57 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571819784892</updated>
+      <workItem from="1574263020111" duration="3519000" />
     </task>
+    <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
+      <created>1574265990116</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574265990117</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Suppression de fichiers inutiles">
+      <created>1574266303635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266303635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Suppression de fichiers inutiles">
+      <created>1574266366808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266366808</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout des bons héritages et implémentations">
+      <created>1574266735267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266735267</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Nouvelle structure de type magnifique" />
+    <MESSAGE value="Suppression de fichiers inutiles" />
+    <MESSAGE value="Ajout des bons héritages et implémentations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des bons héritages et implémentations" />
   </component>
 </project>
