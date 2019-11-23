@@ -13,7 +13,11 @@ public class Gameplay extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         CoreKernel coreKernel = new CoreKernel();
-        stage.setScene(coreKernel.startEngines());
+        coreKernel.startEngines();
+
+        Scene scene = coreKernel.scene;
+        stage.setScene(scene);
+        scene.setOnKeyPressed(coreKernel.inputEngine);
         stage.show();
     }
 }

@@ -9,10 +9,4 @@ public class SuperPacGum extends Circle implements StaticEntity {
         super(centerX, centerY, radius);
         super.setFill(color);
     }
-
-    @Override
-    public String toString() {
-        Class c = getClass();
-        return "<" + c.getSimpleName() + ">";
-    }
 }

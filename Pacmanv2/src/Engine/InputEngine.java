@@ -11,19 +11,15 @@ public class InputEngine implements EventHandler<KeyEvent> {
     public void handle(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
             case Z:
-                //player.setTranslateY(player.getTranslateY() - 1);
                 System.out.println("Z");
                 break;
             case Q:
-                //player.setTranslateX(player.getTranslateX() - 1);
                 System.out.println("Q");
                 break;
             case S:
-                //player.setTranslateY(player.getTranslateY() + 1);
                 System.out.println("S");
                 break;
             case D:
-                //player.setTranslateX(player.getTranslateX() + 1);
                 System.out.println("D");
                 break;
         }

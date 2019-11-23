@@ -9,10 +9,4 @@ public class Path extends Rectangle implements StaticEntity {
         super(x, y, size, size);
         super.setFill(color);
     }
-
-    @Override
-    public String toString() {
-        Class c = getClass();
-        return "<" + c.getSimpleName() + ">";
-    }
 }
