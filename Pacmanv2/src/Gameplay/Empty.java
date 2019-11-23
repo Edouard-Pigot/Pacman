@@ -2,11 +2,11 @@ package Gameplay;
 
 import Entity.StaticEntity;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
-public class PacGum extends Circle implements StaticEntity {
-    public PacGum(double centerX, double centerY, double radius, Color color) {
-        super(centerX, centerY, radius);
+public class Empty extends Rectangle implements StaticEntity  {
+    public Empty(double x, double y, double size, Color color) {
+        super(x, y, size, size);
         super.setFill(color);
     }
 

@@ -1,4 +1,4 @@
 package Entity;
 
-public interface MovingEntity extends PhysicalEntity,GraphicalEntity{
+public interface MovingEntity extends Entity {
 }

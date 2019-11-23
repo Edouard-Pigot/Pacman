@@ -1,58 +1,35 @@
 package Engine;
 
-import javafx.application.Application;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.util.concurrent.CountDownLatch;
+import java.io.FileNotFoundException;
 
-public class GraphicsEngine extends Application{
-    public boolean isReady = false;
-    private static Scene scene;
-    public static final CountDownLatch latch = new CountDownLatch(1);
-    public static GraphicsEngine startUpTest = null;
-    public Stage stage;
+public class GraphicsEngine {
+    public Scene start() throws FileNotFoundException {
 
-    public static GraphicsEngine waitForStartUpTest() {
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return startUpTest;
-    }
+        Map map = new Map();
+        map.generate();
+//        map.debug();
 
-    public static void setStartUpTest(GraphicsEngine startUpTest0) {
-        startUpTest = startUpTest0;
-        latch.countDown();
-    }
-
-    public GraphicsEngine() {
-        setStartUpTest(this);
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        this.stage = stage;
         Group root = new Group();
-        scene = new Scene(root, 500, 500, Color.BLACK);
-        stage.setScene(scene);
+        Scene scene = new Scene(root, map.getEntitiesColumnCounter() * map.getStaticEntitySize(), map.getEntitiesRowCounter() * map.getStaticEntitySize(), Color.BLACK);
+
         AnchorPane window = new AnchorPane();
+
+        System.out.println(map.getEntitiesColumnCounter());
+        System.out.println(map.getEntitiesRowCounter());
+        for (int x = 0; x < map.getEntitiesColumnCounter(); x++){
+            for (int y = 0; y < map.getEntitiesRowCounter(); y++){
+//                System.out.println(map.getEntity(x,y));
+                window.getChildren().add(map.getEntity(x, y));
+            }
+        }
         root.getChildren().add(window);
-        isReady = true;
-        stage.show();
+        return scene;
     }
-
-    public void setEventHandler(InputEngine inputEngine){
-        scene.setOnKeyPressed(inputEngine);
-    }
-
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
-
-
 }

@@ -1,4 +1,4 @@
 package Entity;
 
-public interface Entity {
+public interface Entity{
 }
