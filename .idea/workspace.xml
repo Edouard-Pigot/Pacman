@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/SoundEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
-    </list>
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,15 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CoreKernel">
-    <configuration name="A_StarAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="A_StarAlgorithm" />
-      <module name="Pacman" />
-      <option name="PROGRAM_PARAMETERS" value="E:\Pathfinding-master\Pathfinding-master\Java\input_files\large.txt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Gameplay">
     <configuration name="CoreKernel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoreKernel" />
       <module name="Pacman" />
@@ -87,6 +74,19 @@
     <configuration name="Drawer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Drawer" />
       <module name="Pacman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Gameplay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Gameplay.Gameplay" />
+      <module name="Pacmanv2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Gameplay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Gameplay" />
         <item itemvalue="Application.CoreKernel" />
         <item itemvalue="Application.MapCreator" />
         <item itemvalue="Application.MapReader" />
         <item itemvalue="Application.Drawer" />
-        <item itemvalue="Application.A_StarAlgorithm" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +166,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
