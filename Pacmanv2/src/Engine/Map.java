@@ -19,7 +19,7 @@ public class Map {
     private int staticEntitySize = 16;
 
     public void generate() throws FileNotFoundException {
-        Scanner fileScanner = new Scanner(new File("E:\\Desktop\\Cours\\GL\\Pacman\\Pacmanv2\\src\\Map"));
+        Scanner fileScanner = new Scanner(new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\Map"));
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
             Scanner lineScanner = new Scanner(line);
@@ -51,7 +51,12 @@ public class Map {
                             }
                         } else if (elements.length >= 2 && elements[1].equals("G")) {
                             entities.add(new SuperPacGum(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2, staticEntitySize/2, Color.YELLOW));
-                        } else {
+                        }else if (elements.length >= 2 && elements[1].equals("1")) {
+                            entities.add(new Power1(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2, staticEntitySize/2, Color.PURPLE));
+                        } else if (elements.length >= 2 && elements[1].equals("2")) {
+                            entities.add(new Power2(entitiesColumnCounter * staticEntitySize + staticEntitySize / 2, entitiesRowCounter * staticEntitySize + staticEntitySize / 2, staticEntitySize / 2, Color.PINK));
+
+                        }else {
                             entities.add(new Path(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.BLACK));
                         }
                         break;
