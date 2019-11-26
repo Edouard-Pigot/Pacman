@@ -41,4 +41,6 @@ public class PhysicsEngine {
         return newDirection;
     }
 
+    public void powerPassThrough() {
+    }
 }

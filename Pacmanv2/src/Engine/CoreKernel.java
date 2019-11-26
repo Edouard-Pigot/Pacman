@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import Gameplay.*;
 
 import java.io.FileNotFoundException;
 
@@ -39,4 +40,29 @@ public class CoreKernel{
     public void spawnEntity(Node entity){
         graphicsEngine.spawnEntity(entity);
     }
+
+    public void updateScoreText(int score) {
+        graphicsEngine.updateScoreText(score);
+    }
+
+    public void updateTimeText(int time) {
+        graphicsEngine.updateTimeText(time);
+    }
+
+    public void updateLivesText(int score) {
+        graphicsEngine.updateLivesText(score);
+    }
+
+    public void powerPassThrough(){
+        physicsEngine.powerPassThrough();
+    }
+
+    public void biggerPacman(){
+        graphicsEngine.biggerPacman();
+    }
+
+    public void smallerPacman(){
+        graphicsEngine.smallerPacman();
+    }
+
 }

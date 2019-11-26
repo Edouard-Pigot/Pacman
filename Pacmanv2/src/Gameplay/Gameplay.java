@@ -36,6 +36,9 @@ public class Gameplay extends Application {
         debug();
         createGameLoop();
         stage.show();
+        coreKernel.updateScoreText(score);
+        coreKernel.updateLivesText(nbOfLives);
+        coreKernel.updateTimeText(time);
         Thread timeHandlerThread = new Thread(new TimeHandler());
         timeHandlerThread.start();
     }
@@ -48,7 +51,7 @@ public class Gameplay extends Application {
                 try {
                     sleep(1000);
                     ++time;
-                    coreKernel.updateTimeText(nbOfLives, score, time);
+                    coreKernel.updateTimeText(time);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
