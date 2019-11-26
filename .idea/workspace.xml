@@ -6,7 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Power1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Power2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Map" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Map" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Map.class" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
