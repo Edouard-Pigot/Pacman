@@ -9,6 +9,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import static java.lang.Thread.sleep;
+
 public class Gameplay extends Application {
 
     private Point2D newDirection = new Point2D(0,0);
@@ -17,6 +19,10 @@ public class Gameplay extends Application {
     CoreKernel coreKernel;
     Pacman pacman;
     Circle circle = new Circle();
+
+    public int nbOfLives = 3;
+    public int score = 0;
+    public int time = 0;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,6 +36,24 @@ public class Gameplay extends Application {
         debug();
         createGameLoop();
         stage.show();
+        Thread timeHandlerThread = new Thread(new TimeHandler());
+        timeHandlerThread.start();
+    }
+
+    public class TimeHandler implements Runnable{
+
+        @Override
+        public void run() {
+            while(true){
+                try {
+                    sleep(1000);
+                    ++time;
+                    coreKernel.updateTimeText(nbOfLives, score, time);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void setDirection(Point2D direction){
