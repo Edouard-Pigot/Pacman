@@ -6,40 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Power1.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Power2.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine$1.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/SoundEngine.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/SoundEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/Entity.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/Entity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/GraphicalEntity.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/GraphicalEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/MovingEntity.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/MovingEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/PhysicalEntity.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/PhysicalEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/StaticEntity.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/StaticEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Bonus.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Bonus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Empty.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Empty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PacGum.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PacGum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Path.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Path.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/SuperPacGum.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/SuperPacGum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Wall.class" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Wall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="Correction de l'affichage de l'interface">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Bonus.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Bonus.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,16 +22,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Gameplay.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Gameplay.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-              <folding>
-                <element signature="e#2254#2441#0" expanded="true" />
-                <element signature="e#2440#2441#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="725">
+              <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,18 +36,8 @@
       <file leaf-file-name="PowerSize.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuperPower.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="136">
+              <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -87,8 +46,8 @@
       <file leaf-file-name="PowerPassThrough.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="68">
+              <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -97,8 +56,8 @@
       <file leaf-file-name="SuperPacGum.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="68">
+              <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -117,7 +76,7 @@
       <file leaf-file-name="CoreKernel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
+            <state relative-caret-position="578">
               <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -144,25 +103,18 @@
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+              <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphicsEngine.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphicsEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-              <folding>
-                <element signature="e#2981#2982#0" expanded="true" />
-                <element signature="e#3036#3037#0" expanded="true" />
-                <element signature="e#3082#3083#0" expanded="true" />
-                <element signature="e#3140#3141#0" expanded="true" />
-                <element signature="e#3186#3187#0" expanded="true" />
-                <element signature="e#3244#3245#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="691">
+              <caret line="103" column="32" lean-forward="true" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,17 +133,22 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" />
-        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" />
         <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java" />
-        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" />
-        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java" />
         <option value="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" />
-        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" />
         <option value="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" />
       </list>
     </option>
   </component>
@@ -200,6 +157,11 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectId" id="1Sb67zSfjcJHW10QzLm0t3DNvuH" />
   <component name="ProjectView">
@@ -217,8 +179,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,7 +225,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -407,6 +369,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571819784892</updated>
       <workItem from="1574263020111" duration="3519000" />
+      <workItem from="1574788267138" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
       <created>1574265990116</created>
@@ -436,29 +399,35 @@
       <option name="project" value="LOCAL" />
       <updated>1574266735267</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Correction de l'affichage de l'interface">
+      <created>1574785214151</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574785214151</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3115000" />
+    <option name="totallyTimeSpent" value="4914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -467,11 +436,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,13 +474,102 @@
     <MESSAGE value="Suppression de fichiers inutiles" />
     <MESSAGE value="Ajout des bons héritages et implémentations" />
     <MESSAGE value="Ajout du nombre de vie, de la valeur score, et du temps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du nombre de vie, de la valeur score, et du temps" />
+    <MESSAGE value="Correction de l'affichage de l'interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de l'affichage de l'interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Bonus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+            <element signature="e#1461#1462#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1711#1712#0" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -563,45 +622,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
+        <state relative-caret-position="578">
           <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -623,37 +657,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java">
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="103" column="32" lean-forward="true" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/SuperPacGum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="e#2254#2441#0" expanded="true" />
-            <element signature="e#2440#2441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#2981#2982#0" expanded="true" />
-            <element signature="e#3036#3037#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3140#3141#0" expanded="true" />
-            <element signature="e#3186#3187#0" expanded="true" />
-            <element signature="e#3244#3245#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="725">
+          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

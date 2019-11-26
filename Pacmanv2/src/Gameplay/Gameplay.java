@@ -97,4 +97,13 @@ public class Gameplay extends Application {
     private void movePacman(){
         coreKernel.movePacman(newDirection, pacman);
     }
+
+    private void enablePowerPassThrough(Pacman pacman){
+        //Modifier la condition de vérification de collision
+    }
+
+    private void enablePowerResize(Pacman pacman){
+        coreKernel.smallerPacman();
+
+    }
 }

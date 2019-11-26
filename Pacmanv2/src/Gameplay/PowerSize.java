@@ -7,20 +7,9 @@ import javafx.scene.shape.Circle;
 
 import static java.lang.Thread.sleep;
 
-public class PowerSize extends Circle implements StaticEntity, SuperPower {
+public class PowerSize extends Circle implements StaticEntity {
     public PowerSize(double centerX, double centerY, double radius, Color color) {
         super(centerX, centerY, radius);
         super.setFill(color);
-    }
-
-    @Override
-    public void useSuperPower(CoreKernel ck) {
-        ck.smallerPacman();
-        try {
-            sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        ck.biggerPacman();
     }
 }
