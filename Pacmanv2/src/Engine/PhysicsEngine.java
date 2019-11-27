@@ -41,10 +41,8 @@ public class PhysicsEngine {
         return collidingEntities;
     }
 
-    public void moveEntity(Point2D direction, MovingEntity entity){
+    public void moveEntity(Point2D direction, MovingEntity entity){}
 
-    public void powerPassThrough() {
-    }
 }
 
 

@@ -126,15 +126,18 @@ public class GraphicsEngine {
     }
 
     public void updateTimeText(int time) {
-        this.timeText.setText("Time : " + time);
+        timeText.setText("Time : " + time);
+        timeText.setFill(Color.WHITE);
     }
 
     public void updateScoreText(int score) {
-        this.scoreText.setText("Score : " + score);
+        scoreText.setText("Score : " + score);
+        scoreText.setFill(Color.WHITE);
     }
 
     public void updateLivesText(int lives) {
-        this.livesText.setText("Lives : " + lives);
+        livesText.setText("Lives : " + lives);
+        livesText.setFill(Color.WHITE);
     }
 
     public void biggerPacman(Pacman pacman) {

@@ -6,10 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="Correction de l'affichage de l'interface">
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="Modification fonction pour les pouvoirs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574785214151</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modification fonction pour les pouvoirs">
+      <created>1574860349444</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574860349444</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -205,6 +217,7 @@
     <MESSAGE value="Ajout des bons héritages et implémentations" />
     <MESSAGE value="Ajout du nombre de vie, de la valeur score, et du temps" />
     <MESSAGE value="Correction de l'affichage de l'interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de l'affichage de l'interface" />
+    <MESSAGE value="Modification fonction pour les pouvoirs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification fonction pour les pouvoirs" />
   </component>
 </project>

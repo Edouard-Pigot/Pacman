@@ -27,10 +27,6 @@ public class Gameplay extends Application {
     public int score = 0;
     public int time = 0;
 
-    public int nbOfLives = 3;
-    public int score = 0;
-    public int time = 0;
-
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
