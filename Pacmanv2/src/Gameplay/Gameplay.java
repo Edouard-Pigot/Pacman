@@ -1,6 +1,8 @@
 package Gameplay;
 
 import Engine.CoreKernel;
+import Entity.Entity;
+import Entity.MovingEntity;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
@@ -9,6 +11,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
+import static java.lang.Thread.sleep;
+
 public class Gameplay extends Application {
 
     private Point2D newDirection = new Point2D(0,0);
@@ -16,7 +22,10 @@ public class Gameplay extends Application {
     AnimationTimer gameTimer;
     CoreKernel coreKernel;
     Pacman pacman;
-    Circle circle = new Circle();
+
+    public int nbOfLives = 3;
+    public int score = 0;
+    public int time = 0;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -27,9 +36,29 @@ public class Gameplay extends Application {
         stage.setScene(scene);
         scene.setOnKeyPressed(coreKernel.inputEngine);
         spawnPacman();
-        debug();
         createGameLoop();
         stage.show();
+        coreKernel.updateScoreText(score);
+        coreKernel.updateLivesText(nbOfLives);
+        coreKernel.updateTimeText(time);
+        Thread timeHandlerThread = new Thread(new TimeHandler());
+        timeHandlerThread.start();
+    }
+
+    public class TimeHandler implements Runnable{
+
+        @Override
+        public void run() {
+            while(true){
+                try {
+                    sleep(1000);
+                    ++time;
+                    coreKernel.updateTimeText(time);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void setDirection(Point2D direction){
@@ -38,36 +67,56 @@ public class Gameplay extends Application {
     }
 
     public void spawnPacman(){
-        pacman = new Pacman(new Point2D(200,200));
+        pacman = new Pacman(new Point2D(200,200), 8, Color.RED);
         coreKernel.spawnEntity(pacman);
-    }
-
-    public void debug(){
-        coreKernel.spawnEntity(circle);
-        circle.setFill(Color.CYAN);
-        circle.setRadius(6);
-        circle.setCenterX(0);
-        circle.setLayoutX(200);
-        circle.setCenterY(0);
-        circle.setLayoutY(200);
     }
 
     private void createGameLoop(){
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-                setDirection(checkCollision());
-                movePacman();
+                moveEntity(pacman);
+                changeNextFrameDirection();
             }
         };
         gameTimer.start();
     }
 
-    private Point2D checkCollision(){
-        return coreKernel.checkCollision(pacman, newDirection, oldDirection, circle);
+    private void moveEntity(MovingEntity entity){
+        checkCollision(entity);
+        checkPrediction(entity);
+        System.out.println(newDirection + "/" + oldDirection);
+        coreKernel.moveEntity(newDirection, entity);
+        System.out.println(newDirection + "/" + oldDirection);
     }
 
-    private void movePacman(){
-        coreKernel.movePacman(newDirection, pacman);
+    private void checkCollision(MovingEntity entity){
+        ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
+        for (Entity collidingEntity : collidingEntities) {
+            //QUOI FAIRE POUR QUEL TYPE D'ENTITE
+        }
+    }
+
+    private void checkPrediction(MovingEntity entity){
+        System.out.println("G = " + pacman.graphicalPosition);
+        ArrayList<Entity> collidingEntities = coreKernel.checkPrediction(entity, newDirection);
+        for (Entity collidingEntity : collidingEntities) {
+            if(collidingEntity instanceof Wall){
+                ((Wall) collidingEntity).setFill(Color.GREEN);
+                ArrayList<Entity> collidingEntitiesOld = coreKernel.checkPrediction(entity, oldDirection);
+                for (Entity collidingEntityOld : collidingEntitiesOld) {
+                    if(collidingEntityOld instanceof Wall) {
+                        setDirection(new Point2D(0, 0));
+                        return;
+                    }
+                }
+                setDirection(oldDirection);
+                return;
+            }
+        }
+    }
+
+    private void changeNextFrameDirection(){
+        oldDirection = newDirection;
     }
 }

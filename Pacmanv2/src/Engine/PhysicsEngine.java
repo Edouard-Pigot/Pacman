@@ -1,11 +1,15 @@
 package Engine;
 
 import Entity.Entity;
+import Entity.MovingEntity;
+import Entity.StaticEntity;
 import Gameplay.Wall;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+
+import java.util.ArrayList;
 
 
 public class PhysicsEngine {
@@ -15,30 +19,35 @@ public class PhysicsEngine {
         this.map = map;
     }
 
-    public static Point2D checkCollision(Entity entity, Point2D newDirection, Point2D oldDirection, Circle futurPosition){
-        futurPosition.setLayoutX(futurPosition.getLayoutX() + newDirection.getX());
-        futurPosition.setLayoutY(futurPosition.getLayoutY() + newDirection.getY());
+    public ArrayList<Entity> checkCollision(MovingEntity entity){
+        ArrayList<Entity> collidingEntities = new ArrayList<Entity>();
         for(int i = 0; i < map.getEntitiesNumber(); i++){
-            if(futurPosition.getBoundsInParent().intersects(((Node) map.getEntity(i)).getBoundsInParent()) && map.getEntity(i) instanceof Wall){
-                System.out.println("FUTUR HIT");
-                System.out.println(map.getEntity(i).getClass());
-                futurPosition.setLayoutX(futurPosition.getLayoutX() - newDirection.getX());
-                futurPosition.setLayoutY(futurPosition.getLayoutY() - newDirection.getY());
-                futurPosition.setLayoutX(futurPosition.getLayoutX() + oldDirection.getX());
-                futurPosition.setLayoutY(futurPosition.getLayoutY() + oldDirection.getY());
-                for(int j = 0; j < map.getEntitiesNumber(); j++){
-                    if(futurPosition.getBoundsInParent().intersects(((Node) map.getEntity(j)).getBoundsInParent()) && map.getEntity(j) instanceof Wall){
-                        System.out.println("ACTUAL HIT");
-                        System.out.println(map.getEntity(j).getClass());
-                        futurPosition.setLayoutX(futurPosition.getLayoutX() - newDirection.getX());
-                        futurPosition.setLayoutY(futurPosition.getLayoutY() - newDirection.getY());
-                        return new Point2D(0,0);
-                    }
-                }
-                return oldDirection;
+            if(map.getEntity(i).getPhysicalPosition() == entity.getPhysicalPosition()){
+                collidingEntities.add(map.getEntity(i));
             }
         }
-        return newDirection;
+        return collidingEntities;
     }
 
+    public ArrayList<Entity> checkPrediction(MovingEntity entity, Point2D direction){
+        ArrayList<Entity> collidingEntities = new ArrayList<Entity>();
+        int[] bounds = entity.boxCollider().getColliderBounds();
+        BoxCollider predictedBoxCollider = new BoxCollider(bounds[0] + (int) direction.getX(), bounds[1]  + (int) direction.getX(), bounds[2] + (int) direction.getY(), bounds[3] + (int) direction.getY());
+        for(int i = 0; i < map.getEntitiesNumber(); i++){
+            if(map.getEntity(i).boxCollider().isColliding(predictedBoxCollider)){
+                collidingEntities.add(map.getEntity(i));
+            }
+        }
+        return collidingEntities;
+    }
+
+    public void moveEntity(Point2D direction, MovingEntity entity){
+
+    }
 }
+
+
+
+
+
+

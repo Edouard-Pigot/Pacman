@@ -2,6 +2,7 @@ package Engine;
 
 import Entity.Entity;
 import Gameplay.*;
+import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class Map {
                 String[] elements = lineScanner.next().split("(?!^)");
                 switch (elements[0]){
                     case "E":
-                        entities.add(new Empty(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.BLACK));
+                        entities.add(new Empty(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         if (elements.length >= 2 && elements[1].equals("1")) {
 
                         } else if (elements.length >= 2 && elements[1].equals("2")) {
@@ -41,28 +42,28 @@ public class Map {
                         }
                         break;
                     case "W":
-                        entities.add(new Wall(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.BLUE));
+                        entities.add(new Wall(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLUE));
                         break;
                     case "P":
                         if (elements.length >= 2 && elements[1].equals("P")) {
-                            entities.add(new PacGum(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2, staticEntitySize/3, Color.YELLOW));
+                            entities.add(new PacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/3, Color.YELLOW));
                             if (elements.length >= 3 && elements[2].equals("N")) {
 
                             }
                         } else if (elements.length >= 2 && elements[1].equals("G")) {
-                            entities.add(new SuperPacGum(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2, staticEntitySize/2, Color.YELLOW));
+                            entities.add(new SuperPacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.YELLOW));
                         } else {
-                            entities.add(new Path(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.BLACK));
+                            entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         }
                         break;
                     case "T":
-                        entities.add(new Path(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.BLACK));
+                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         break;
                     case "G":
-                        entities.add(new Path(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.PINK));
+                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.PINK));
                         break;
                     case "H":
-                        entities.add(new Path(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize, staticEntitySize, Color.BLACK));
+                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         if (elements.length >= 2 && elements[1].equals("1")) {
 
                         } else if (elements.length >= 2 && elements[1].equals("2")) {
