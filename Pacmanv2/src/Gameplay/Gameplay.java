@@ -85,6 +85,7 @@ public class Gameplay extends Application {
             public void handle(long l) {
                 setDirection(checkCollision());
                 movePacman();
+
             }
         };
         gameTimer.start();
@@ -96,14 +97,5 @@ public class Gameplay extends Application {
 
     private void movePacman(){
         coreKernel.movePacman(newDirection, pacman);
-    }
-
-    private void enablePowerPassThrough(Pacman pacman){
-        //Modifier la condition de vérification de collision
-    }
-
-    private void enablePowerResize(Pacman pacman){
-        coreKernel.smallerPacman();
-
     }
 }

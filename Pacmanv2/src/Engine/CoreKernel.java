@@ -53,16 +53,12 @@ public class CoreKernel{
         graphicsEngine.updateLivesText(score);
     }
 
-    public void powerPassThrough(){
-        physicsEngine.powerPassThrough();
+    public void biggerPacman(Pacman pacman){
+        graphicsEngine.biggerPacman(pacman);
     }
 
-    public void biggerPacman(){
-        graphicsEngine.biggerPacman();
-    }
-
-    public void smallerPacman(){
-        graphicsEngine.smallerPacman();
+    public void smallerPacman(Pacman pacman){
+        graphicsEngine.smallerPacman(pacman);
     }
 
 }

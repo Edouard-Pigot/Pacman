@@ -1,6 +1,7 @@
 package Engine;
 
 import Entity.Entity;
+import Gameplay.Pacman;
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -101,10 +102,11 @@ public class GraphicsEngine {
         this.livesText.setText("Lives : " + lives);
     }
 
-    public void biggerPacman() {
+    public void biggerPacman(Pacman pacman) {
+        pacman.setRadius(8);
     }
 
-    public void smallerPacman(){
-
+    public void smallerPacman(Pacman pacman){
+        pacman.setRadius(4);
     }
 }
