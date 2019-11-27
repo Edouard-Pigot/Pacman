@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="Correction de l'affichage de l'interface">
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,14 +20,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectId" id="1Sb67zSfjcJHW10QzLm0t3DNvuH" />
   <component name="PropertiesComponent">
@@ -106,13 +116,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.CoreKernel" />
+      <item itemvalue="Application.Drawer" />
+      <item itemvalue="Application.Gameplay" />
+      <item itemvalue="Application.MapCreator" />
+      <item itemvalue="Application.MapReader" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Gameplay" />
-        <item itemvalue="Application.CoreKernel" />
-        <item itemvalue="Application.MapCreator" />
-        <item itemvalue="Application.MapReader" />
-        <item itemvalue="Application.Drawer" />
       </list>
     </recent_temporary>
   </component>
@@ -127,6 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571819784892</updated>
       <workItem from="1574263020111" duration="3519000" />
+      <workItem from="1574788267138" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
       <created>1574265990116</created>
@@ -156,8 +170,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574266735267</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Correction de l'affichage de l'interface">
+      <created>1574785214151</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574785214151</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4914000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -179,6 +203,8 @@
     <MESSAGE value="Nouvelle structure de type magnifique" />
     <MESSAGE value="Suppression de fichiers inutiles" />
     <MESSAGE value="Ajout des bons héritages et implémentations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des bons héritages et implémentations" />
+    <MESSAGE value="Ajout du nombre de vie, de la valeur score, et du temps" />
+    <MESSAGE value="Correction de l'affichage de l'interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de l'affichage de l'interface" />
   </component>
 </project>

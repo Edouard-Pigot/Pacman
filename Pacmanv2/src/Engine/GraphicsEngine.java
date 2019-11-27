@@ -31,6 +31,25 @@ public class GraphicsEngine {
     public Scene start(Map map) throws FileNotFoundException {
         Group root = new Group();
         Scene scene = new Scene(root, map.getEntitiesColumnCounter() * map.getStaticEntitySize(), map.getEntitiesRowCounter() * map.getStaticEntitySize(), Color.BLACK);
+        livesText = new Text();
+        scoreText = new Text();
+        timeText = new Text();
+
+        livesText.setFill(Color.WHITE);
+        scoreText.setFill(Color.WHITE);
+        timeText.setFill(Color.WHITE);
+
+        livesText.setX(15);
+        scoreText.setX(100);
+        timeText.setX(180);
+
+        livesText.setY(30);
+        scoreText.setY(30);
+        timeText.setY(30);
+
+        livesText.setFont(Font.font ("Verdana", 15));
+        scoreText.setFont(Font.font ("Verdana", 15));
+        timeText.setFont(Font.font ("Verdana", 15));
 
         livesText = new Text();
         scoreText = new Text();
@@ -57,6 +76,7 @@ public class GraphicsEngine {
         for (int x = 0; x < map.getEntitiesNumber(); x++){
             window.getChildren().add((Node) map.getEntity(x));
         }
+
         root.getChildren().add(window);
         root.getChildren().add(livesText);
         root.getChildren().add(scoreText);

@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import Gameplay.*;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -67,4 +68,25 @@ public class CoreKernel{
     public void smallerPacman(Pacman pacman){
         graphicsEngine.smallerPacman(pacman);
     }
+
+    public void updateScoreText(int score) {
+        graphicsEngine.updateScoreText(score);
+    }
+
+    public void updateTimeText(int time) {
+        graphicsEngine.updateTimeText(time);
+    }
+
+    public void updateLivesText(int score) {
+        graphicsEngine.updateLivesText(score);
+    }
+
+    public void biggerPacman(Pacman pacman){
+        graphicsEngine.biggerPacman(pacman);
+    }
+
+    public void smallerPacman(Pacman pacman){
+        graphicsEngine.smallerPacman(pacman);
+    }
+
 }

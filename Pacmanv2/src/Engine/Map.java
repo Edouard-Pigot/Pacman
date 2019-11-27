@@ -20,7 +20,7 @@ public class Map {
     private int staticEntitySize = 16;
 
     public void generate() throws FileNotFoundException {
-        Scanner fileScanner = new Scanner(new File("E:\\Desktop\\Cours\\GL\\Pacman\\Pacmanv2\\src\\Map"));
+        Scanner fileScanner = new Scanner(new File("Map"));
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
             Scanner lineScanner = new Scanner(line);

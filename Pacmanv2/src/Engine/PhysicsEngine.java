@@ -43,6 +43,7 @@ public class PhysicsEngine {
 
     public void moveEntity(Point2D direction, MovingEntity entity){
 
+    public void powerPassThrough() {
     }
 }
 
