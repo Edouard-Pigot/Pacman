@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import Entity.*;
 
 import java.util.ArrayList;
 
@@ -85,20 +86,19 @@ public class Gameplay extends Application {
     private void moveEntity(MovingEntity entity){
         checkCollision(entity);
         checkPrediction(entity);
-        System.out.println(newDirection + "/" + oldDirection);
         coreKernel.moveEntity(newDirection, entity);
-        System.out.println(newDirection + "/" + oldDirection);
     }
 
     private void checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
         for (Entity collidingEntity : collidingEntities) {
-            //QUOI FAIRE POUR QUEL TYPE D'ENTITE
+            if(collidingEntity instanceof PacGum){
+                coreKernel.removeStaticEntity((StaticEntity)collidingEntity);
+            }
         }
     }
 
     private void checkPrediction(MovingEntity entity){
-        System.out.println("G = " + pacman.graphicalPosition);
         ArrayList<Entity> collidingEntities = coreKernel.checkPrediction(entity, newDirection);
         for (Entity collidingEntity : collidingEntities) {
             if(collidingEntity instanceof Wall){

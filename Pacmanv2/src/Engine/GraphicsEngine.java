@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import Entity.StaticEntity;
 
 import java.io.FileNotFoundException;
 
@@ -103,19 +104,19 @@ public class GraphicsEngine {
         if(direction.getX() == 1){
             entity.setGraphicalPosition(new Point2D(entity.getGraphicalPosition().getX() +1, entity.getGraphicalPosition().getY()));
             //entity.setLayoutX(entity.getGraphicalPosition().getX() +1);
-            System.out.println("X+1");
+            //System.out.println("X+1");
         } else if(direction.getX() == -1){
             entity.setGraphicalPosition(new Point2D(entity.getGraphicalPosition().getX() -1, entity.getGraphicalPosition().getY()));
             //entity.setLayoutX(entity.getGraphicalPosition().getX() -1);
-            System.out.println("X-1");
+            //System.out.println("X-1");
         } else if(direction.getY() == 1){
             entity.setGraphicalPosition(new Point2D(entity.getGraphicalPosition().getX(), entity.getGraphicalPosition().getY() +1));
             //entity.setLayoutY(entity.getGraphicalPosition().getY() +1);
-            System.out.println("Y+1");
+            //System.out.println("Y+1");
         } else if(direction.getY() == -1){
             entity.setGraphicalPosition(new Point2D(entity.getGraphicalPosition().getX(), entity.getGraphicalPosition().getY() -1));
             //entity.setLayoutY(entity.getGraphicalPosition().getY() -1);
-            System.out.println("Y-1");
+            //System.out.println("Y-1");
         } else{
             return;
         }
@@ -146,5 +147,9 @@ public class GraphicsEngine {
 
     public void smallerPacman(Pacman pacman){
         pacman.setRadius(4);
+    }
+
+    public void removeStaticEntity(StaticEntity entity){
+        window.getChildren().remove(entity);
     }
 }
