@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import Entity.*;
 
 import java.util.ArrayList;
 

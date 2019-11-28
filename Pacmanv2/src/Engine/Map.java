@@ -48,10 +48,13 @@ public class Map {
                         if (elements.length >= 2 && elements[1].equals("P")) {
                             entities.add(new PacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/3, Color.YELLOW));
                             if (elements.length >= 3 && elements[2].equals("N")) {
-
                             }
                         } else if (elements.length >= 2 && elements[1].equals("G")) {
                             entities.add(new SuperPacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.YELLOW));
+                        } else if (elements.length >= 2 && elements[1].equals("1")) {
+                            entities.add(new PowerPassThrough(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.PURPLE));
+                        } else if (elements.length >= 2 && elements[1].equals("2")) {
+                            entities.add(new PowerSize(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.PINK));
                         } else {
                             entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         }

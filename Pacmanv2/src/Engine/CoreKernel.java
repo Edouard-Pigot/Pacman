@@ -1,7 +1,7 @@
 package Engine;
 
-import Entity.Entity;
-import Gameplay.Pacman;
+import Entity.*;
+import Gameplay.*;
 import Entity.MovingEntity;
 import Gameplay.Gameplay;
 import javafx.geometry.Point2D;
@@ -54,23 +54,7 @@ public class CoreKernel{
         map.removeEntity(entity);
     }
 
-    public void updateScoreText(int score) {
-        graphicsEngine.updateScoreText(score);
-    }
-
-    public void updateTimeText(int time) {
-        graphicsEngine.updateTimeText(time);
-    }
-
-    public void updateLivesText(int score) {
-        graphicsEngine.updateLivesText(score);
-    }
-
-    public void biggerPacman(Pacman pacman){
-        graphicsEngine.biggerPacman(pacman);
-    }
-
-    public void smallerPacman(Pacman pacman){
-        graphicsEngine.smallerPacman(pacman);
+    public void removeStaticEntity(StaticEntity entity){
+        graphicsEngine.removeStaticEntity(entity);
     }
 }

@@ -8,6 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Bonus extends Rectangle implements StaticEntity {
+    //Test
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
 
