@@ -7,7 +7,7 @@ public interface MovingEntity extends Entity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
 
-    public void setPhysicalPosition(Point2D position);
+    public void setPhysicalPosition(double size);
 
     public void setGraphicalPosition(Point2D position);
 

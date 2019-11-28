@@ -2,7 +2,6 @@ package Gameplay;
 
 import Engine.BoxCollider;
 import Entity.Entity;
-import Engine.CoreKernel;
 import Entity.StaticEntity;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
@@ -52,5 +51,4 @@ public class SuperPacGum extends Circle implements StaticEntity {
     public boolean isColliding(Entity other) {
         return boxCollider().isColliding(other.boxCollider());
     }
-
 }

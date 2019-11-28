@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import Gameplay.*;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -25,8 +24,8 @@ public class CoreKernel{
         map = new Map();
         map.generate();
 
-        physicsEngine = new PhysicsEngine(map);
-        graphicsEngine = new GraphicsEngine(stage, map);
+        physicsEngine = new PhysicsEngine(map, this);
+        graphicsEngine = new GraphicsEngine(stage, map, this);
         inputEngine = new InputEngine(gameplay);
 
         scene = graphicsEngine.start(map);
@@ -34,7 +33,7 @@ public class CoreKernel{
 
     public void moveEntity(Point2D direction, MovingEntity entity){
         graphicsEngine.moveEntity(direction, entity);
-        physicsEngine.moveEntity(direction, entity);
+        physicsEngine.moveEntity(entity);
     }
 
     public ArrayList<Entity> checkCollision(MovingEntity entity){
@@ -47,6 +46,12 @@ public class CoreKernel{
 
     public void spawnEntity(Entity entity){
         graphicsEngine.spawnEntity((Node) entity);
+        map.spawnEntity(entity);
+    }
+
+    public void removeEntity(Entity entity){
+        graphicsEngine.removeEntity((Node) entity);
+        map.removeEntity(entity);
     }
 
     public void updateScoreText(int score) {
@@ -68,25 +73,4 @@ public class CoreKernel{
     public void smallerPacman(Pacman pacman){
         graphicsEngine.smallerPacman(pacman);
     }
-
-    public void updateScoreText(int score) {
-        graphicsEngine.updateScoreText(score);
-    }
-
-    public void updateTimeText(int time) {
-        graphicsEngine.updateTimeText(time);
-    }
-
-    public void updateLivesText(int score) {
-        graphicsEngine.updateLivesText(score);
-    }
-
-    public void biggerPacman(Pacman pacman){
-        graphicsEngine.biggerPacman(pacman);
-    }
-
-    public void smallerPacman(Pacman pacman){
-        graphicsEngine.smallerPacman(pacman);
-    }
-
 }

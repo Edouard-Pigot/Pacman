@@ -13,8 +13,7 @@ public class Pacman extends Circle implements MovingEntity {
     Point2D graphicalPosition = new Point2D(0,0);
 
     public Pacman(Point2D graphicalPosition, double size, Color color) {
-        Point2D physicalPosition = convertGraphicalPositionToPhysicalPosition(graphicalPosition, size);
-        setPhysicalPosition(physicalPosition);
+        setPhysicalPosition(size);
         setGraphicalPosition(graphicalPosition);
         setCenterX(0);
         setLayoutX(graphicalPosition.getX());
@@ -25,8 +24,8 @@ public class Pacman extends Circle implements MovingEntity {
     }
 
     @Override
-    public void setPhysicalPosition(Point2D position) {
-        this.physicalPosition = position;
+    public void setPhysicalPosition(double size) {
+        this.physicalPosition = convertGraphicalPositionToPhysicalPosition(graphicalPosition, size);
     }
 
     @Override
@@ -56,7 +55,8 @@ public class Pacman extends Circle implements MovingEntity {
         return boxCollider().isColliding(other.boxCollider());
     }
 
+    @Override
     public Point2D convertGraphicalPositionToPhysicalPosition(Point2D position, double size){
-        return new Point2D(Math.floor(position.getX()/(size*2)), Math.floor(position.getY()/(size*2)));
+        return new Point2D(Math.floor(position.getX()/size), Math.floor(position.getY()/size));
     }
 }

@@ -20,7 +20,7 @@ public class Map {
     private int staticEntitySize = 16;
 
     public void generate() throws FileNotFoundException {
-        Scanner fileScanner = new Scanner(new File("Map"));
+        Scanner fileScanner = new Scanner(new File("E:\\Desktop\\Cours\\GL\\Pacman\\Pacmanv2\\src\\Map"));
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
             Scanner lineScanner = new Scanner(line);
@@ -87,6 +87,16 @@ public class Map {
             for (Entity entity : entities) {
                 System.out.print(entity);
             }
+    }
+
+    public void removeEntity(Entity entity){
+        entities.remove(entity);
+        entitiesNumber--;
+    }
+
+    public void spawnEntity(Entity entity){
+        entities.add(entity);
+        entitiesNumber++;
     }
 
     public Entity getEntity(int nb){

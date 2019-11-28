@@ -27,10 +27,6 @@ public class Gameplay extends Application {
     public int score = 0;
     public int time = 0;
 
-    public int nbOfLives = 3;
-    public int score = 0;
-    public int time = 0;
-
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
@@ -75,6 +71,10 @@ public class Gameplay extends Application {
         coreKernel.spawnEntity(pacman);
     }
 
+    public void removeEntity(Entity entity){
+        coreKernel.removeEntity(entity);
+    }
+
     private void createGameLoop(){
         gameTimer = new AnimationTimer() {
             @Override
@@ -89,22 +89,22 @@ public class Gameplay extends Application {
     private void moveEntity(MovingEntity entity){
         checkCollision(entity);
         checkPrediction(entity);
-        System.out.println(newDirection + "/" + oldDirection);
         coreKernel.moveEntity(newDirection, entity);
-        System.out.println(newDirection + "/" + oldDirection);
     }
 
     private void checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
         for (Entity collidingEntity : collidingEntities) {
-            //QUOI FAIRE POUR QUEL TYPE D'ENTITE
+            if(collidingEntity instanceof PacGum){
+                removeEntity(collidingEntity);
+            }
         }
     }
 
     private void checkPrediction(MovingEntity entity){
-        System.out.println("G = " + pacman.graphicalPosition);
         ArrayList<Entity> collidingEntities = coreKernel.checkPrediction(entity, newDirection);
         for (Entity collidingEntity : collidingEntities) {
+            System.out.println("COLLIDING " + collidingEntity);
             if(collidingEntity instanceof Wall){
                 ((Wall) collidingEntity).setFill(Color.GREEN);
                 ArrayList<Entity> collidingEntitiesOld = coreKernel.checkPrediction(entity, oldDirection);
