@@ -4,7 +4,6 @@ import Engine.BoxCollider;
 import Entity.Entity;
 import Entity.MovingEntity;
 import javafx.geometry.Point2D;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 

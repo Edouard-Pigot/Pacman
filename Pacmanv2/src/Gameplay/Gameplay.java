@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import Entity.*;
 
 import java.util.ArrayList;
 
@@ -20,6 +19,7 @@ public class Gameplay extends Application {
 
     private Point2D newDirection = new Point2D(0,0);
     private Point2D oldDirection = new Point2D(0,0);
+    private Point2D wantedDirection = new Point2D(0,0);
     AnimationTimer gameTimer;
     CoreKernel coreKernel;
     Pacman pacman;
@@ -63,8 +63,12 @@ public class Gameplay extends Application {
     }
 
     public void setDirection(Point2D direction){
-        this.oldDirection = this.newDirection;
-        this.newDirection = direction;
+        wantedDirection = direction;
+    }
+
+    public void changeDirection(Point2D direction){
+        oldDirection = newDirection;
+        newDirection = direction;
     }
 
     public void spawnPacman(){
@@ -81,7 +85,6 @@ public class Gameplay extends Application {
             @Override
             public void handle(long l) {
                 moveEntity(pacman);
-                changeNextFrameDirection();
             }
         };
         gameTimer.start();
@@ -103,25 +106,153 @@ public class Gameplay extends Application {
     }
 
     private void checkPrediction(MovingEntity entity){
-        ArrayList<Entity> collidingEntities = coreKernel.checkPrediction(entity, newDirection);
+        ArrayList<Entity> collidingEntities = coreKernel.checkGraphicalPrediction(entity, wantedDirection);
         for (Entity collidingEntity : collidingEntities) {
-            System.out.println("COLLIDING " + collidingEntity);
             if(collidingEntity instanceof Wall){
-                ((Wall) collidingEntity).setFill(Color.GREEN);
-                ArrayList<Entity> collidingEntitiesOld = coreKernel.checkPrediction(entity, oldDirection);
+                Entity tile = coreKernel.checkPhysicalPrediction(entity, wantedDirection);
+                if(!(tile instanceof Wall)){
+                    checkPixelOffset(entity, wantedDirection);
+                    changeDirection(oldDirection);
+                    return;
+                }
+                ArrayList<Entity> collidingEntitiesOld = coreKernel.checkGraphicalPrediction(entity, oldDirection);
                 for (Entity collidingEntityOld : collidingEntitiesOld) {
                     if(collidingEntityOld instanceof Wall) {
-                        setDirection(new Point2D(0, 0));
+                        changeDirection(new Point2D(0, 0));
                         return;
                     }
                 }
-                setDirection(oldDirection);
+                changeDirection(oldDirection);
                 return;
             }
         }
+        changeDirection(wantedDirection);
     }
 
-    private void changeNextFrameDirection(){
-        oldDirection = newDirection;
+    private void checkPixelOffset(MovingEntity entity, Point2D direction){
+        int activationAreaFactor = 3;
+        if(newDirection.getX() == 1){           //RIGHT
+            System.out.println("RIGHT");
+            if(direction.getX() == 1){              //RIGHT
+                System.out.println("RIGHT");
+                changeDirection(new Point2D(1, 0));   //RIGHT
+                return;
+            } else if(direction.getX() == -1){      //LEFT
+                System.out.println("LEFT");
+                changeDirection(new Point2D(-1, 0));   //LEFT
+                return;
+            } else if(direction.getY() == 1){       //DOWN
+                if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("RIGHT");
+                    changeDirection(new Point2D(1, 0));   //RIGHT
+                    return;
+                } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("LEFT");
+                    changeDirection(new Point2D(-1, 0));   //LEFT
+                    return;
+                }
+            } else if(direction.getY() == -1){      //UP
+                if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("RIGHT");
+                    changeDirection(new Point2D(1, 0));   //RIGHT
+                    return;
+                } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("LEFT");
+                    changeDirection(new Point2D(-1, 0));   //LEFT
+                    return;
+                }
+            }
+        } else if(newDirection.getX() == -1){   //LEFT
+            if(direction.getX() == 1){              //RIGHT
+                System.out.println("RIGHT");
+                changeDirection(new Point2D(1, 0));   //RIGHT
+                return;
+            } else if(direction.getX() == -1){      //LEFT
+                System.out.println("LEFT");
+                changeDirection(new Point2D(-1, 0));   //LEFT
+                return;
+            } else if(direction.getY() == 1){       //DOWN
+                if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("LEFT");
+                    changeDirection(new Point2D(-1, 0));   //LEFT
+                    return;
+                } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("RIGHT");
+                    changeDirection(new Point2D(1, 0));   //RIGHT
+                    return;
+                }
+            } else if(direction.getY() == -1){      //UP
+                if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("LEFT");
+                    changeDirection(new Point2D(-1, 0));   //LEFT
+                    return;
+                } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("RIGHT");
+                    changeDirection(new Point2D(1, 0));   //RIGHT
+                    return;
+                }
+            }
+        } else if(newDirection.getY() == 1){    //DOWN
+            if(direction.getX() == 1){              //RIGHT
+                System.out.println("RIGHT");
+                if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("UP");
+                    changeDirection(new Point2D(0, -1));   //UP
+                    return;
+                } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("DOWN");
+                    changeDirection(new Point2D(0, 1));   //DOWN
+                    return;
+                }
+            } else if(direction.getX() == -1){      //LEFT
+                if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("UP");
+                    changeDirection(new Point2D(0, -1));   //UP
+                    return;
+                } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("DOWN");
+                    changeDirection(new Point2D(0, 1));   //DOWN
+                    return;
+                }
+            } else if(direction.getY() == 1){       //DOWN
+                System.out.println("DOWN");
+                changeDirection(new Point2D(0, 1));   //DOWN
+                return;
+            } else if(direction.getY() == -1){      //UP
+                System.out.println("UP");
+                changeDirection(new Point2D(0, -1));   //UP
+                return;
+            }
+        } else if(newDirection.getY() == -1){   //UP
+            if(direction.getX() == 1){              //RIGHT
+                if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("DOWN");
+                    changeDirection(new Point2D(0, 1));   //DOWN
+                    return;
+                } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("UP");
+                    changeDirection(new Point2D(0, -1));   //UP
+                    return;
+                }
+            } else if(direction.getX() == -1){      //LEFT
+                if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("DOWN");
+                    changeDirection(new Point2D(0, 1));   //DOWN
+                    return;
+                } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
+                    System.out.println("UP");
+                    changeDirection(new Point2D(0, -1));   //UP
+                    return;
+                }
+            } else if(direction.getY() == 1){       //DOWN
+                System.out.println("DOWN");
+                changeDirection(new Point2D(0, 1));   //DOWN
+                return;
+            } else if(direction.getY() == -1){      //UP
+                System.out.println("UP");
+                changeDirection(new Point2D(0, -1));   //UP
+                return;
+            }
+        }
     }
 }

@@ -12,7 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import Entity.StaticEntity;
 
 import java.io.FileNotFoundException;
 
@@ -100,18 +99,16 @@ public class GraphicsEngine {
     }
 
     public void updateTimeText(int time) {
-        timeText.setText("Time : " + time);
+        this.timeText.setText("Time : " + time);
         timeText.setFill(Color.WHITE);
     }
 
     public void updateScoreText(int score) {
-        scoreText.setText("Score : " + score);
-        scoreText.setFill(Color.WHITE);
+        this.scoreText.setText("Score : " + score);
     }
 
     public void updateLivesText(int lives) {
-        livesText.setText("Lives : " + lives);
-        livesText.setFill(Color.WHITE);
+        this.livesText.setText("Lives : " + lives);
     }
 
     public void biggerPacman(Pacman pacman) {
@@ -120,9 +117,5 @@ public class GraphicsEngine {
 
     public void smallerPacman(Pacman pacman){
         pacman.setRadius(4);
-    }
-
-    public void removeStaticEntity(StaticEntity entity){
-        window.getChildren().remove(entity);
     }
 }

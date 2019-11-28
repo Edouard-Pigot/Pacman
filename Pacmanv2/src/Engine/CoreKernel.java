@@ -1,7 +1,7 @@
 package Engine;
 
-import Entity.*;
-import Gameplay.*;
+import Entity.Entity;
+import Gameplay.Pacman;
 import Entity.MovingEntity;
 import Gameplay.Gameplay;
 import javafx.geometry.Point2D;
@@ -19,8 +19,10 @@ public class CoreKernel{
     public PhysicsEngine physicsEngine;
     public GraphicsEngine graphicsEngine;
     public Map map;
+    public Gameplay gameplay;
 
     public void startEngines(Gameplay gameplay, Stage stage) throws FileNotFoundException {
+        this.gameplay = gameplay;
         map = new Map();
         map.generate();
 
@@ -40,8 +42,12 @@ public class CoreKernel{
         return physicsEngine.checkCollision(entity);
     }
 
-    public ArrayList<Entity> checkPrediction(MovingEntity entity, Point2D direction){
-        return physicsEngine.checkPrediction(entity, direction);
+    public ArrayList<Entity> checkGraphicalPrediction(MovingEntity entity, Point2D direction){
+        return physicsEngine.checkGraphicalPrediction(entity, direction);
+    }
+
+    public Entity checkPhysicalPrediction(MovingEntity entity, Point2D direction){
+        return physicsEngine.checkPhysicalPrediction(entity, direction);
     }
 
     public void spawnEntity(Entity entity){
@@ -54,7 +60,24 @@ public class CoreKernel{
         map.removeEntity(entity);
     }
 
-    public void removeStaticEntity(StaticEntity entity){
-        graphicsEngine.removeStaticEntity(entity);
+    public void updateScoreText(int score) {
+        graphicsEngine.updateScoreText(score);
     }
+
+    public void updateTimeText(int time) {
+        graphicsEngine.updateTimeText(time);
+    }
+
+    public void updateLivesText(int score) {
+        graphicsEngine.updateLivesText(score);
+    }
+
+    public void biggerPacman(Pacman pacman){
+        graphicsEngine.biggerPacman(pacman);
+    }
+
+    public void smallerPacman(Pacman pacman){
+        graphicsEngine.smallerPacman(pacman);
+    }
+
 }

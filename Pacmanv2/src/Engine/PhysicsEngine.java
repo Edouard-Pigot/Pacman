@@ -31,7 +31,7 @@ public class PhysicsEngine {
         return collidingEntities;
     }
 
-    public ArrayList<Entity> checkPrediction(MovingEntity entity, Point2D direction){
+    public ArrayList<Entity> checkGraphicalPrediction(MovingEntity entity, Point2D direction){
         ArrayList<Entity> collidingEntities = new ArrayList<>();
         int[] bounds = entity.boxCollider().getColliderBounds();
         BoxCollider predictedBoxCollider = new BoxCollider(bounds[0] + (int) direction.getX(), bounds[1]  + (int) direction.getX(), bounds[2] + (int) direction.getY(), bounds[3] + (int) direction.getY());
@@ -41,6 +41,15 @@ public class PhysicsEngine {
             }
         }
         return collidingEntities;
+    }
+
+    public Entity checkPhysicalPrediction(MovingEntity entity, Point2D direction){
+        for(int i = 0; i < map.getEntitiesNumber(); i++){
+            if(map.getEntity(i).getPhysicalPosition().getY() == entity.getPhysicalPosition().getX()+direction.getX() && map.getEntity(i).getPhysicalPosition().getX() == entity.getPhysicalPosition().getY() + direction.getY()){
+                return map.getEntity(i);
+            }
+        }
+        return null;
     }
 
     public void moveEntity(MovingEntity entity){
