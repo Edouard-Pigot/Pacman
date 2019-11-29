@@ -43,8 +43,8 @@ public class GraphicsEngine {
         timeText.setFill(Color.WHITE);
 
         livesText.setX(15);
-        scoreText.setX(100);
-        timeText.setX(180);
+        scoreText.setX(150);
+        timeText.setX(300);
 
         livesText.setY(30);
         scoreText.setY(30);

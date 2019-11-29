@@ -3,15 +3,16 @@ package Gameplay;
 
 import Engine.BoxCollider;
 import Engine.CoreKernel;
-import Entity.Entity;
-import Entity.StaticEntity;
+import Entity.*;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import static java.lang.Thread.sleep;
 
-public class PowerSize extends Circle implements StaticEntity {
+public class PowerSize extends Circle implements StaticEntity, ScoreEntity {
+    static final int value = 100;
+
     public PowerSize(double centerX, double centerY, double radius, Color color) {
         super(centerX, centerY, radius);
         super.setFill(color);
@@ -45,5 +46,10 @@ public class PowerSize extends Circle implements StaticEntity {
     @Override
     public boolean isColliding(Entity other) {
         return false;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }

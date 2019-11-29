@@ -1,15 +1,15 @@
 package Gameplay;
 
 import Engine.BoxCollider;
-import Entity.Entity;
-import Entity.StaticEntity;
+import Entity.*;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class SuperPacGum extends Circle implements StaticEntity {
+public class SuperPacGum extends Circle implements StaticEntity, ScoreEntity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
+    private final int value = 50;
 
     public SuperPacGum(Point2D graphicalPosition, Point2D physicalPosition, double size, Color color) {
         setPhysicalPosition(physicalPosition);
@@ -50,5 +50,10 @@ public class SuperPacGum extends Circle implements StaticEntity {
     @Override
     public boolean isColliding(Entity other) {
         return boxCollider().isColliding(other.boxCollider());
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }

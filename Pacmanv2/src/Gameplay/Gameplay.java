@@ -1,8 +1,7 @@
 package Gameplay;
 
 import Engine.CoreKernel;
-import Entity.Entity;
-import Entity.MovingEntity;
+import Entity.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
@@ -99,8 +98,10 @@ public class Gameplay extends Application {
     private void checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
         for (Entity collidingEntity : collidingEntities) {
-            if(collidingEntity instanceof PacGum){
+            if(collidingEntity instanceof ScoreEntity){
                 removeEntity(collidingEntity);
+                score += ((ScoreEntity) collidingEntity).getValue();
+                coreKernel.updateScoreText(score);
             }
         }
     }

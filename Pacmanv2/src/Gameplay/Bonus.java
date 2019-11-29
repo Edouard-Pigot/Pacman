@@ -1,15 +1,18 @@
 package Gameplay;
 
 import Engine.BoxCollider;
-import Entity.Entity;
+import Entity.*;
 import Entity.StaticEntity;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Bonus extends Rectangle implements StaticEntity {
+public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
+
+    private final int value = 100;
+    //A modifier en fonction du niveau...
 
     public Bonus(Point2D graphicalPosition, Point2D physicalPosition, double size, Color color) {
         super.setFill(color);
@@ -52,5 +55,10 @@ public class Bonus extends Rectangle implements StaticEntity {
     @Override
     public boolean isColliding(Entity other) {
         return boxCollider().isColliding(other.boxCollider());
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }

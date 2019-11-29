@@ -3,13 +3,13 @@ package Gameplay;
 
 import Engine.BoxCollider;
 import Engine.CoreKernel;
-import Entity.Entity;
-import Entity.StaticEntity;
+import Entity.*;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class PowerPassThrough extends Circle implements StaticEntity {
+public class PowerPassThrough extends Circle implements StaticEntity, ScoreEntity {
+    private final int value = 100;
     public PowerPassThrough(double centerX, double centerY, double radius, Color color) {
         super(centerX, centerY, radius);
         super.setFill(color);
@@ -43,5 +43,10 @@ public class PowerPassThrough extends Circle implements StaticEntity {
     @Override
     public boolean isColliding(Entity other) {
         return false;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }
