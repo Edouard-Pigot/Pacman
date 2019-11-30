@@ -21,6 +21,7 @@ public class CoreKernel{
     public GraphicsEngine graphicsEngine;
     public Map map;
     public Gameplay gameplay;
+    public SoundEngine soundEngine;
 
     public void startEngines(Gameplay gameplay,Stage stage) throws FileNotFoundException {
         this.gameplay = gameplay;
@@ -30,6 +31,9 @@ public class CoreKernel{
         physicsEngine = new PhysicsEngine(map, this);
         graphicsEngine = new GraphicsEngine(stage,map,this);
         inputEngine = new InputEngine(gameplay);
+
+        soundEngine = new SoundEngine();
+        soundEngine.start();
 
         scene = graphicsEngine.start(map);
     }
@@ -92,4 +96,26 @@ public class CoreKernel{
     public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
         return physicsEngine.convertPhysicalPositionToGraphicalPosition(pacman);
     }
+
+    public void playBeginningSound(){
+        soundEngine.playBeginningSound();
+    }
+
+    public void playChompSound(){
+        soundEngine.playChompSound();
+    }
+
+    public void playDeathSound(){
+        soundEngine.playDeathSound();
+    }
+
+    public void playEatFruitSound(){
+        soundEngine.playEatFruitSound();
+    }
+
+    public void playEatGhostSound(){
+        soundEngine.playEatGhostSound();
+    }
+
+
 }
