@@ -12,11 +12,11 @@ public class SoundEngine {
 
     public void start() {
 
-        beginningSound = new MediaPlayer(new Media(new File("Pacmanv2/src/PacmanSound/pacman_beginning.wav").toURI().toString()));
-        chompSound = new MediaPlayer(new Media(new File("Pacmanv2/src/PacmanSound/pacman_chomp.wav").toURI().toString()));
-        deathSound = new MediaPlayer(new Media(new File("Pacmanv2/src/PacmanSound/pacman_death.wav").toURI().toString()));
-        eatFruitSound = new MediaPlayer(new Media(new File("Pacmanv2/src/PacmanSound/pacman_eatfruit.wav").toURI().toString()));
-        eatGhostSound = new MediaPlayer(new Media(new File("Pacmanv2/src/PacmanSound/pacman_eatghost.wav").toURI().toString()));
+        beginningSound = new MediaPlayer(new Media(new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\PacmanSound\\pacman_beginning.wav").toURI().toString()));
+        chompSound = new MediaPlayer(new Media(new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\PacmanSound\\pacman_chomp.wav").toURI().toString()));
+        deathSound = new MediaPlayer(new Media(new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\PacmanSound\\pacman_death.wav").toURI().toString()));
+        eatFruitSound = new MediaPlayer(new Media(new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\PacmanSound\\pacman_eatfruit.wav").toURI().toString()));
+        eatGhostSound = new MediaPlayer(new Media(new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\PacmanSound\\pacman_eatghost.wav").toURI().toString()));
 
     }
 

@@ -52,7 +52,6 @@ public class GraphicsEngine {
             @Override
             public void handle(ActionEvent actionEvent) {
                 try {
-                    System.out.println(stage);
                     coreKernel.play(stage);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -90,10 +89,52 @@ public class GraphicsEngine {
         return home;
     }
 
+    public AnchorPane gameOver() throws MalformedURLException {
+        AnchorPane gameOver = new AnchorPane ();
+        gameOver.setPrefSize(448,576);
+        gameOver.setStyle("-fx-background-color: BLack; -fx-border-color: Orange;");
+
+        Button replay = new Button("Rejouer");
+        Button leave = new Button("Quitter");
+
+        replay.setLayoutX(130.0);
+        replay.setLayoutY(356.0);
+        replay.setPrefHeight(50);
+        replay.setPrefWidth(197);
+        replay.setStyle("-fx-background-color: Orange;");
+
+        replay.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    coreKernel.play(stage);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        leave.setLayoutX(130.0);
+        leave.setLayoutY(417.0);
+        leave.setPrefHeight(50);
+        leave.setPrefWidth(197);
+        leave.setStyle("-fx-background-color: Orange;");
+
+        File gameOverFile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\GO.png");
+        String gameOverlocalUrl = gameOverFile.toURI().toURL().toString();
+        ImageView gameOverImage = new ImageView(gameOverlocalUrl);
+
+        gameOverImage.setFitHeight(324.0);
+        gameOverImage.setFitWidth(324.0);
+        gameOverImage.setLayoutX(62.0);
+        gameOverImage.setLayoutY(32.0);
+
+        gameOver.getChildren().addAll(replay,leave,gameOverImage);
+        return gameOver;
+    }
+
     public Scene start(Map map) throws FileNotFoundException {
         Group root = new Group();
-        System.out.println(map.getEntitiesColumnCounter() * map.getStaticEntitySize());
-        System.out.println(map.getEntitiesRowCounter() * map.getStaticEntitySize());
         Scene scene = new Scene(root, map.getEntitiesColumnCounter() * map.getStaticEntitySize(), map.getEntitiesRowCounter() * map.getStaticEntitySize(), Color.BLACK);
 
         livesText = new Text();

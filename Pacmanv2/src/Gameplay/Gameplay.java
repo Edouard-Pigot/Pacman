@@ -38,7 +38,6 @@ public class Gameplay extends Application {
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
         coreKernel.startEngines(this,stage);
-        System.out.println(stage);
         stage.setTitle("Pacman 10.0");
         AnchorPane home = coreKernel.home();
         Scene scene = new Scene(home,448,576);
@@ -62,7 +61,9 @@ public class Gameplay extends Application {
         stage.show();
     }
 
+
     public class TimeHandler implements Runnable{
+
         @Override
         public void run() {
             while(true){

@@ -93,6 +93,10 @@ public class CoreKernel{
         return graphicsEngine.home();
     };
 
+    public AnchorPane gameOver() throws MalformedURLException {
+        return graphicsEngine.gameOver();
+    }
+
     public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
         return physicsEngine.convertPhysicalPositionToGraphicalPosition(pacman);
     }
