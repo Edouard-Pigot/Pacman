@@ -63,7 +63,6 @@ public class Gameplay extends Application {
     }
 
     public class TimeHandler implements Runnable{
-
         @Override
         public void run() {
             while(true){
