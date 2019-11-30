@@ -120,6 +120,13 @@ public class GraphicsEngine {
         leave.setPrefWidth(197);
         leave.setStyle("-fx-background-color: Orange;");
 
+        leave.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                stage.close();
+            }
+        });
+
         File gameOverFile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\GO.png");
         String gameOverlocalUrl = gameOverFile.toURI().toURL().toString();
         ImageView gameOverImage = new ImageView(gameOverlocalUrl);
