@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575147264904</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ajout de la fonction quitter dans le menu game over">
+      <created>1575149075769</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575149075769</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -258,6 +269,7 @@
     <MESSAGE value="Ajout de fonctions son dans CoreKernel" />
     <MESSAGE value="ajout des images" />
     <MESSAGE value="Ajout affichage de fin qu'il fauut gérer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout affichage de fin qu'il fauut gérer" />
+    <MESSAGE value="Ajout de la fonction quitter dans le menu game over" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction quitter dans le menu game over" />
   </component>
 </project>

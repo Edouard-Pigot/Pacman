@@ -39,7 +39,7 @@ public class Gameplay extends Application {
         coreKernel = new CoreKernel();
         coreKernel.startEngines(this,stage);
         stage.setTitle("Pacman 10.0");
-        AnchorPane home = coreKernel.gameOver();
+        AnchorPane home = coreKernel.home();
         Scene scene = new Scene(home,448,576);
         stage.setScene(scene);
         stage.show();
