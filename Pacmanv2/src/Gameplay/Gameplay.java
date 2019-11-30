@@ -116,6 +116,7 @@ public class Gameplay extends Application {
     }
 
     private void createGameLoop(){
+        coreKernel.playBeginningSound();
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
