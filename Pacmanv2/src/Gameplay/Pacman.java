@@ -10,8 +10,8 @@ import javafx.scene.shape.Circle;
 public class Pacman extends Circle implements MovingEntity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
-
     public Pacman(Point2D graphicalPosition, double size, Color color) {
+
         setPhysicalPosition(size);
         setGraphicalPosition(graphicalPosition);
         setCenterX(0);
@@ -59,7 +59,7 @@ public class Pacman extends Circle implements MovingEntity {
         return new Point2D(Math.floor(position.getX()/size), Math.floor(position.getY()/size));
     }
 
-    public Point2D convertPhysicalPositionToGraphicalPosition(Point2D position, double size){
-        return new Point2D(Math.floor(position.getX()*size), Math.floor(position.getY()*size));
+    public Point2D convertPhysicalPositionToGraphicalPosition(){
+        return new Point2D(Math.floor(physicalPosition.getX()*16), Math.floor(physicalPosition.getY()*16));
     }
 }

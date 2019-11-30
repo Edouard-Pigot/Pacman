@@ -3,6 +3,8 @@ package Engine;
 import Entity.Entity;
 import Entity.MovingEntity;
 import Entity.StaticEntity;
+import Gameplay.PacGum;
+import Gameplay.Pacman;
 import Gameplay.Wall;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
@@ -54,6 +56,10 @@ public class PhysicsEngine {
 
     public void moveEntity(MovingEntity entity){
         entity.setPhysicalPosition(map.getStaticEntitySize());
+    }
+
+    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
+        return pacman.convertPhysicalPositionToGraphicalPosition();
     }
 }
 

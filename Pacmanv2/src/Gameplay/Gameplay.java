@@ -6,10 +6,12 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import static java.lang.Thread.sleep;
@@ -35,8 +37,16 @@ public class Gameplay extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
-        coreKernel.startEngines(this, stage);
+        coreKernel.startEngines(this,stage);
+        System.out.println(stage);
+        stage.setTitle("Pacman 10.0");
+        AnchorPane home = coreKernel.home();
+        Scene scene = new Scene(home,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    public void play(Stage stage) throws FileNotFoundException {
         Scene scene = coreKernel.scene;
         stage.setScene(scene);
         scene.setOnKeyPressed(coreKernel.inputEngine);
@@ -48,6 +58,8 @@ public class Gameplay extends Application {
         coreKernel.updateTimeText(time);
         Thread timeHandlerThread = new Thread(new TimeHandler());
         timeHandlerThread.start();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public class TimeHandler implements Runnable{
