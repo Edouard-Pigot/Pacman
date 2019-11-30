@@ -112,6 +112,8 @@ public class GraphicsEngine {
     }
 
     public void biggerPacman(Pacman pacman) {
+        pacman.getGraphicalPosition();
+
         pacman.setRadius(8);
     }
 

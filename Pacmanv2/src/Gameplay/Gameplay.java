@@ -1,6 +1,6 @@
 package Gameplay;
 
-import Engine.CoreKernel;
+import Engine.*;
 import Entity.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -26,6 +26,11 @@ public class Gameplay extends Application {
     public int nbOfLives = 3;
     public int score = 0;
     public int time = 0;
+
+    public boolean powerSize = false;
+    public boolean powerPassThrough = false;
+
+    public int cpt;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -79,11 +84,23 @@ public class Gameplay extends Application {
         coreKernel.removeEntity(entity);
     }
 
+    public void power(){
+        if(powerSize == true && cpt >= 300){
+            coreKernel.biggerPacman(pacman);
+            powerSize=false;
+        }
+        if(powerPassThrough== true && cpt >= 300){
+            powerPassThrough=false;
+        }
+    }
+
     private void createGameLoop(){
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
+                cpt++;
                 moveEntity(pacman);
+                power();
             }
         };
         gameTimer.start();
@@ -102,6 +119,15 @@ public class Gameplay extends Application {
                 removeEntity(collidingEntity);
                 score += ((ScoreEntity) collidingEntity).getValue();
                 coreKernel.updateScoreText(score);
+                if(collidingEntity instanceof PowerSize){
+                    powerSize=true;
+                    coreKernel.smallerPacman(pacman);
+                    cpt=0;
+                }else if (collidingEntity instanceof PowerPassThrough){
+                    powerPassThrough = true;
+                    cpt=0;
+                }
+
             }
         }
     }
@@ -109,7 +135,7 @@ public class Gameplay extends Application {
     private void checkPrediction(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkGraphicalPrediction(entity, wantedDirection);
         for (Entity collidingEntity : collidingEntities) {
-            if(collidingEntity instanceof Wall){
+            if(collidingEntity instanceof Wall && powerPassThrough == false){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity, wantedDirection);
                 if(!(tile instanceof Wall)){
                     checkPixelOffset(entity, wantedDirection);
@@ -133,124 +159,124 @@ public class Gameplay extends Application {
     private void checkPixelOffset(MovingEntity entity, Point2D direction){
         int activationAreaFactor = 3;
         if(newDirection.getX() == 1){           //RIGHT
-            System.out.println("RIGHT");
+            //System.out.println("RIGHT");
             if(direction.getX() == 1){              //RIGHT
-                System.out.println("RIGHT");
+                //System.out.println("RIGHT");
                 changeDirection(new Point2D(1, 0));   //RIGHT
                 return;
             } else if(direction.getX() == -1){      //LEFT
-                System.out.println("LEFT");
+                //System.out.println("LEFT");
                 changeDirection(new Point2D(-1, 0));   //LEFT
                 return;
             } else if(direction.getY() == 1){       //DOWN
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("RIGHT");
+                    //System.out.println("RIGHT");
                     changeDirection(new Point2D(1, 0));   //RIGHT
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("LEFT");
+                    //System.out.println("LEFT");
                     changeDirection(new Point2D(-1, 0));   //LEFT
                     return;
                 }
             } else if(direction.getY() == -1){      //UP
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("RIGHT");
+                    //System.out.println("RIGHT");
                     changeDirection(new Point2D(1, 0));   //RIGHT
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("LEFT");
+                    //System.out.println("LEFT");
                     changeDirection(new Point2D(-1, 0));   //LEFT
                     return;
                 }
             }
         } else if(newDirection.getX() == -1){   //LEFT
             if(direction.getX() == 1){              //RIGHT
-                System.out.println("RIGHT");
+                //System.out.println("RIGHT");
                 changeDirection(new Point2D(1, 0));   //RIGHT
                 return;
             } else if(direction.getX() == -1){      //LEFT
-                System.out.println("LEFT");
+                //System.out.println("LEFT");
                 changeDirection(new Point2D(-1, 0));   //LEFT
                 return;
             } else if(direction.getY() == 1){       //DOWN
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("LEFT");
+                    //System.out.println("LEFT");
                     changeDirection(new Point2D(-1, 0));   //LEFT
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("RIGHT");
+                    //System.out.println("RIGHT");
                     changeDirection(new Point2D(1, 0));   //RIGHT
                     return;
                 }
             } else if(direction.getY() == -1){      //UP
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("LEFT");
+                    //System.out.println("LEFT");
                     changeDirection(new Point2D(-1, 0));   //LEFT
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("RIGHT");
+                    //System.out.println("RIGHT");
                     changeDirection(new Point2D(1, 0));   //RIGHT
                     return;
                 }
             }
         } else if(newDirection.getY() == 1){    //DOWN
             if(direction.getX() == 1){              //RIGHT
-                System.out.println("RIGHT");
+                //System.out.println("RIGHT");
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("UP");
+                    //System.out.println("UP");
                     changeDirection(new Point2D(0, -1));   //UP
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("DOWN");
+                    //System.out.println("DOWN");
                     changeDirection(new Point2D(0, 1));   //DOWN
                     return;
                 }
             } else if(direction.getX() == -1){      //LEFT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("UP");
+                    //System.out.println("UP");
                     changeDirection(new Point2D(0, -1));   //UP
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("DOWN");
+                    //System.out.println("DOWN");
                     changeDirection(new Point2D(0, 1));   //DOWN
                     return;
                 }
             } else if(direction.getY() == 1){       //DOWN
-                System.out.println("DOWN");
+                //System.out.println("DOWN");
                 changeDirection(new Point2D(0, 1));   //DOWN
                 return;
             } else if(direction.getY() == -1){      //UP
-                System.out.println("UP");
+                //System.out.println("UP");
                 changeDirection(new Point2D(0, -1));   //UP
                 return;
             }
         } else if(newDirection.getY() == -1){   //UP
             if(direction.getX() == 1){              //RIGHT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("DOWN");
+                    //System.out.println("DOWN");
                     changeDirection(new Point2D(0, 1));   //DOWN
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("UP");
+                    //System.out.println("UP");
                     changeDirection(new Point2D(0, -1));   //UP
                     return;
                 }
             } else if(direction.getX() == -1){      //LEFT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("DOWN");
+                    //System.out.println("DOWN");
                     changeDirection(new Point2D(0, 1));   //DOWN
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
-                    System.out.println("UP");
+                    //System.out.println("UP");
                     changeDirection(new Point2D(0, -1));   //UP
                     return;
                 }
             } else if(direction.getY() == 1){       //DOWN
-                System.out.println("DOWN");
+                //System.out.println("DOWN");
                 changeDirection(new Point2D(0, 1));   //DOWN
                 return;
             } else if(direction.getY() == -1){      //UP
-                System.out.println("UP");
+                //System.out.println("UP");
                 changeDirection(new Point2D(0, -1));   //UP
                 return;
             }

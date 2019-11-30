@@ -19,19 +19,19 @@ public class InputEngine implements EventHandler<KeyEvent> {
     public void handle(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
             case Z:
-                System.out.println("Z");
+                //System.out.println("Z");
                 gameplay.setDirection(new Point2D(0,-1));
                 break;
             case Q:
-                System.out.println("Q");
+                //System.out.println("Q");
                 gameplay.setDirection(new Point2D(-1,0));
                 break;
             case S:
-                System.out.println("S");
+                //System.out.println("S");
                 gameplay.setDirection(new Point2D(0,1));
                 break;
             case D:
-                System.out.println("D");
+                //System.out.println("D");
                 gameplay.setDirection(new Point2D(1,0));
                 break;
         }
