@@ -58,4 +58,8 @@ public class Pacman extends Circle implements MovingEntity {
     public Point2D convertGraphicalPositionToPhysicalPosition(Point2D position, double size){
         return new Point2D(Math.floor(position.getX()/size), Math.floor(position.getY()/size));
     }
+
+    public Point2D convertPhysicalPositionToGraphicalPosition(Point2D position, double size){
+        return new Point2D(Math.floor(position.getX()*size), Math.floor(position.getY()*size));
+    }
 }

@@ -7,38 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerPassThrough.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/PowerSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/BoxCollider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/BoxCollider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Pacman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/SoundEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/SoundEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/MovingEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/MovingEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/StaticEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/StaticEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Bonus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Bonus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Empty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$TimeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$TimeHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PacGum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PacGum.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Path.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerPassThrough.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerPassThrough.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerSize.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerSize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/SuperPacGum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/SuperPacGum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/META-INF/Pacmanv2.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574266735267</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs">
+      <created>1575107970721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575107970721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -225,6 +209,7 @@
     <MESSAGE value="Nouvelle structure de type magnifique" />
     <MESSAGE value="Suppression de fichiers inutiles" />
     <MESSAGE value="Ajout des bons héritages et implémentations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des bons héritages et implémentations" />
+    <MESSAGE value="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs" />
   </component>
 </project>

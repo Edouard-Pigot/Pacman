@@ -91,7 +91,16 @@ public class Gameplay extends Application {
         }
         if(powerPassThrough== true && cpt >= 300){
             powerPassThrough=false;
+            checkCollision(pacman);
         }
+    }
+
+    public void reSpanwPacman(){
+        removeEntity(pacman);
+        wantedDirection = new Point2D(0,0);
+        nbOfLives -= 1;
+        coreKernel.updateLivesText(nbOfLives);
+        spawnPacman();
     }
 
     private void createGameLoop(){
@@ -127,7 +136,8 @@ public class Gameplay extends Application {
                     powerPassThrough = true;
                     cpt=0;
                 }
-
+            } else if(collidingEntity instanceof Wall && powerPassThrough == false){
+                reSpanwPacman();
             }
         }
     }
@@ -135,6 +145,10 @@ public class Gameplay extends Application {
     private void checkPrediction(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkGraphicalPrediction(entity, wantedDirection);
         for (Entity collidingEntity : collidingEntities) {
+            if(collidingEntity instanceof Empty){
+                changeDirection(new Point2D(0, 0));
+                return;
+            }
             if(collidingEntity instanceof Wall && powerPassThrough == false){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity, wantedDirection);
                 if(!(tile instanceof Wall)){

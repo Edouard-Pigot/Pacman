@@ -112,8 +112,8 @@ public class GraphicsEngine {
     }
 
     public void biggerPacman(Pacman pacman) {
-        pacman.getGraphicalPosition();
-
+        Point2D graphic = pacman.convertPhysicalPositionToGraphicalPosition(pacman.getPhysicalPosition(),16);
+        pacman.setGraphicalPosition(new Point2D(graphic.getX()+8,graphic.getY()+8));
         pacman.setRadius(8);
     }
 
