@@ -97,11 +97,11 @@ public class Gameplay extends Application {
     }
 
     public void power(){
-        if(powerSize == true && cpt >= 300){
+        if(powerSize && cpt >= 300){
             coreKernel.biggerPacman(pacman);
             powerSize=false;
         }
-        if(powerPassThrough== true && cpt >= 300){
+        if(powerPassThrough && cpt >= 300){
             powerPassThrough=false;
             checkCollision(pacman);
         }
@@ -149,9 +149,22 @@ public class Gameplay extends Application {
                     powerPassThrough = true;
                     cpt=0;
                 }
-            } else if(collidingEntity instanceof Wall && powerPassThrough == false){
+            } else if(collidingEntity instanceof Wall && !powerPassThrough){
                 reSpanwPacman();
             }
+
+            if(collidingEntity instanceof PacGum)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof SuperPacGum)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof PowerSize)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof PowerPassThrough)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof Bonus)
+                coreKernel.playChompSound();
+            //Ajouter les sons des fantômes en conséquence
+
         }
     }
 
