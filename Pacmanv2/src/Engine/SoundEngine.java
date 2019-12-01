@@ -1,22 +1,21 @@
 package Engine;
 import javafx.scene.media.*;
 
-import java.io.File;
 
 public class SoundEngine {
-    MediaPlayer beginningSound;
-    MediaPlayer chompSound;
-    MediaPlayer deathSound;
-    MediaPlayer eatFruitSound;
-    MediaPlayer eatGhostSound;
+    AudioClip beginningSound;
+    AudioClip chompSound;
+    AudioClip deathSound;
+    AudioClip eatFruitSound;
+    AudioClip eatGhostSound;
 
     public void start() {
 
-        beginningSound = new MediaPlayer(new Media(new File("Pacmanv2/PacmanSound/pacman_beginning.wav").toURI().toString()));
-        chompSound = new MediaPlayer(new Media(new File("Pacmanv2/PacmanSound/pacman_chomp.wav").toURI().toString()));
-        deathSound = new MediaPlayer(new Media(new File("Pacmanv2/PacmanSound/pacman_death.wav").toURI().toString()));
-        eatFruitSound = new MediaPlayer(new Media(new File("Pacmanv2/PacmanSound/pacman_eatfruit.wav").toURI().toString()));
-        eatGhostSound = new MediaPlayer(new Media(new File("Pacmanv2/PacmanSound/pacman_eatghost.wav").toURI().toString()));
+        beginningSound = new AudioClip("file:Pacmanv2/PacmanSound/pacman_beginning.wav");
+        chompSound = new AudioClip("file:Pacmanv2/PacmanSound/pacman_chomp.wav");
+        deathSound = new AudioClip("file:Pacmanv2/PacmanSound/pacman_death.wav");
+        eatFruitSound = new AudioClip("file:Pacmanv2/PacmanSound/pacman_eatfruit.wav");
+        eatGhostSound = new AudioClip("file:Pacmanv2/PacmanSound/pacman_eatghost.wav");
 
     }
 
