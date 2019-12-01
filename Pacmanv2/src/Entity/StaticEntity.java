@@ -2,6 +2,7 @@ package Entity;
 
 import Engine.BoxCollider;
 import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
 
 public interface StaticEntity extends Entity {
     Point2D physicalPosition = new Point2D(0,0);
@@ -18,4 +19,6 @@ public interface StaticEntity extends Entity {
     public BoxCollider boxCollider();
 
     public boolean isColliding(Entity other);
+
+    public void setColor(Color color);
 }

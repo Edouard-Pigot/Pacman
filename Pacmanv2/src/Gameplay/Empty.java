@@ -53,4 +53,9 @@ public class Empty extends Rectangle implements StaticEntity  {
     public boolean isColliding(Entity other) {
         return boxCollider().isColliding(other.boxCollider());
     }
+
+    @Override
+    public void setColor(Color color){
+        setFill(color);
+    }
 }

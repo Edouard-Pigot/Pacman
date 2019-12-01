@@ -1,8 +1,8 @@
 package Engine;
 
-import Entity.Entity;
 import Gameplay.Pacman;
-import Entity.MovingEntity;
+import Entity.*;
+import Gameplay.Ghost;
 import Gameplay.Gameplay;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
@@ -78,6 +78,10 @@ public class CoreKernel{
 
     public void smallerPacman(Pacman pacman){
         graphicsEngine.smallerPacman(pacman);
+    }
+
+    public Point2D calculateMove(Point2D targetCoordinate, Ghost ghost){
+        return physicsEngine.calculateMove(targetCoordinate, ghost);
     }
 
 }

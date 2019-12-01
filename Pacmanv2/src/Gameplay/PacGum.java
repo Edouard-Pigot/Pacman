@@ -51,4 +51,8 @@ public class PacGum extends Circle implements StaticEntity {
     public boolean isColliding(Entity other) {
         return boxCollider().isColliding(other.boxCollider());
     }
+
+    public void setColor(Color color){
+        setFill(color);
+    }
 }

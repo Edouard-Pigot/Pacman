@@ -46,4 +46,8 @@ public class PowerSize extends Circle implements StaticEntity {
     public boolean isColliding(Entity other) {
         return false;
     }
+
+    public void setColor(Color color){
+        setFill(color);
+    }
 }
