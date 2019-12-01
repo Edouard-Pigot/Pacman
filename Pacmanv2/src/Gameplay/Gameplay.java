@@ -1,7 +1,8 @@
 package Gameplay;
 
-import Engine.*;
+import Engine.CoreKernel;
 import Entity.*;
+import Entity.MovingEntity;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
@@ -73,7 +74,6 @@ public class Gameplay extends Application {
         stage.show();
     }
 
-
     public class TimeHandler implements Runnable{
 
         @Override
@@ -113,6 +113,14 @@ public class Gameplay extends Application {
         coreKernel.removeEntity(entity);
     }
 
+    public void reSpanwPacman(){
+        removeEntity(pacman);
+        pacman.setWantedDirection( new Point2D(0,0));
+        nbOfLives -= 1;
+        coreKernel.updateLivesText(nbOfLives);
+        spawnPacman();
+    }
+
     public void power(){
         if(powerSize && cpt >= 300){
             coreKernel.biggerPacman(pacman);
@@ -124,23 +132,15 @@ public class Gameplay extends Application {
         }
     }
 
-    public void reSpanwPacman(){
-        removeEntity(pacman);
-        wantedDirection = new Point2D(0,0);
-        nbOfLives -= 1;
-        coreKernel.updateLivesText(nbOfLives);
-        spawnPacman();
-    }
-
     private void createGameLoop(){
         coreKernel.playBeginningSound();
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-                cpt++;
                 moveEntity(pacman);
                 moveGhosts();
                 power();
+                cpt++;
             }
         };
         gameTimer.start();
@@ -166,49 +166,48 @@ public class Gameplay extends Application {
 
     private void checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
-        for (Entity collidingEntity : collidingEntities) {
-            if(collidingEntity instanceof ScoreEntity){
-                removeEntity(collidingEntity);
-                score += ((ScoreEntity) collidingEntity).getValue();
-                coreKernel.updateScoreText(score);
-                if(collidingEntity instanceof PowerSize){
-                    powerSize=true;
-                    coreKernel.smallerPacman(pacman);
-                    cpt=0;
-                }else if (collidingEntity instanceof PowerPassThrough){
-                    powerPassThrough = true;
-                    cpt=0;
+        if(entity instanceof Pacman) {
+            for (Entity collidingEntity : collidingEntities) {
+                if (collidingEntity instanceof ScoreEntity) {
+                    removeEntity(collidingEntity);
+                    score += ((ScoreEntity) collidingEntity).getValue();
+                    coreKernel.updateScoreText(score);
+                    if (collidingEntity instanceof PowerSize) {
+                        powerSize = true;
+                        coreKernel.smallerPacman(pacman);
+                        cpt = 0;
+                    } else if (collidingEntity instanceof PowerPassThrough) {
+                        powerPassThrough = true;
+                        cpt = 0;
+                    }
+                } else if (collidingEntity instanceof Wall && !powerPassThrough) {
+                    reSpanwPacman();
                 }
-            } else if(collidingEntity instanceof Wall && !powerPassThrough){
-                reSpanwPacman();
+
+                if (collidingEntity instanceof PacGum)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof SuperPacGum)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof PowerSize)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof PowerPassThrough)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof Bonus)
+                    coreKernel.playChompSound();
+                //Ajouter les sons des fantômes en conséquence
             }
-
-            if(collidingEntity instanceof PacGum)
-                coreKernel.playChompSound();
-            else if(collidingEntity instanceof SuperPacGum)
-                coreKernel.playChompSound();
-            else if(collidingEntity instanceof PowerSize)
-                coreKernel.playChompSound();
-            else if(collidingEntity instanceof PowerPassThrough)
-                coreKernel.playChompSound();
-            else if(collidingEntity instanceof Bonus)
-                coreKernel.playChompSound();
-            //Ajouter les sons des fantômes en conséquence
-
         }
     }
 
     private void checkPrediction(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkGraphicalPrediction(entity, entity.getWantedDirection());
         for (Entity collidingEntity : collidingEntities) {
-            if(collidingEntity instanceof Wall){
-                Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
             if(collidingEntity instanceof Empty){
-                changeDirection(new Point2D(0, 0));
+                entity.changeDirection(new Point2D(0, 0));
                 return;
             }
             if(collidingEntity instanceof Wall && powerPassThrough == false){
-                Entity tile = coreKernel.checkPhysicalPrediction(entity, wantedDirection);
+                Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
                 if(!(tile instanceof Wall)){
                     checkPixelOffset(entity,  entity.getWantedDirection());
                     entity.changeDirection( entity.getOldDirection());
