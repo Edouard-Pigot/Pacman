@@ -21,13 +21,14 @@ import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 
 public class GraphicsEngine {
-    private Map map;
+    private static Map map;
     private CoreKernel coreKernel;
     private Stage stage;
     private AnchorPane window;
     private Text livesText;
     private Text scoreText;
     private Text timeText;
+    private Group root;
 
     public GraphicsEngine(Stage stage,Map map,CoreKernel coreKernel) {
         this.map = map;
@@ -35,8 +36,14 @@ public class GraphicsEngine {
         this.stage = stage;
     }
 
-    public void setMap(Map map) {
+    public void setMap(Map map){
         this.map = map;
+        window = new AnchorPane();
+
+        for (int x = 0; x < map.getEntitiesNumber(); x++){
+            window.getChildren().add((Node) map.getEntity(x));
+        }
+        root.getChildren().add(window);
     }
 
     public AnchorPane home() throws MalformedURLException {
@@ -250,7 +257,7 @@ public class GraphicsEngine {
     }
 
     public Scene start(Map map) throws FileNotFoundException {
-        Group root = new Group();
+        root = new Group();
         Scene scene = new Scene(root, map.getEntitiesColumnCounter() * map.getStaticEntitySize(), map.getEntitiesRowCounter() * map.getStaticEntitySize(), Color.BLACK);
 
         livesText = new Text();

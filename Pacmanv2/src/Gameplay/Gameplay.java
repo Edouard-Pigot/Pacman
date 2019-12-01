@@ -95,6 +95,7 @@ public class Gameplay extends Application {
     public void resetPacman(){
         coreKernel.removeEntity(pacman);
         spawnPacman();
+        moveEntity(pacman);
     }
 
     public void resetGhosts(){
@@ -102,6 +103,11 @@ public class Gameplay extends Application {
             coreKernel.removeEntity(ghost);
         ghosts = new ArrayList<>();
         spawnGhosts();
+        moveGhosts();
+    }
+
+    public void resetMap() throws FileNotFoundException {
+        coreKernel.graphicsEngine.setMap(coreKernel.generateMap());
     }
 
     public void spawnEntity(Entity entity){
@@ -148,8 +154,13 @@ public class Gameplay extends Application {
 
                 if(!coreKernel.map.containsScoreEntity()){
                     System.out.println("GOING TO NEXT LEVEL");
-                    resetPacman();
-                    resetGhosts();
+                    try {
+                        resetMap();
+                        resetPacman();
+                        resetGhosts();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };

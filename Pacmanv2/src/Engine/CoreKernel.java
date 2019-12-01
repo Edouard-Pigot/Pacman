@@ -23,10 +23,15 @@ public class CoreKernel{
     public Gameplay gameplay;
     public SoundEngine soundEngine;
 
-    public void startEngines(Gameplay gameplay,Stage stage) throws FileNotFoundException {
-        this.gameplay = gameplay;
+    public Map generateMap() throws FileNotFoundException{
         map = new Map();
         map.generate();
+        return map;
+    }
+
+    public void startEngines(Gameplay gameplay,Stage stage) throws FileNotFoundException {
+        this.gameplay = gameplay;
+        generateMap();
 
         physicsEngine = new PhysicsEngine(map, this);
         graphicsEngine = new GraphicsEngine(stage,map,this);
