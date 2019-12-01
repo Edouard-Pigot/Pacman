@@ -38,7 +38,6 @@ public class GraphicsEngine {
 
     public void setMap(Map map){
         this.map = map;
-        window = new AnchorPane();
 
         for (int x = 0; x < map.getEntitiesNumber(); x++){
             window.getChildren().add((Node) map.getEntity(x));
