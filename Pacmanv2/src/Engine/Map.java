@@ -1,6 +1,6 @@
 package Engine;
 
-import Entity.Entity;
+import Entity.*;
 import Gameplay.*;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
@@ -121,5 +121,12 @@ public class Map {
 
     public int getEntitiesNumber(){
         return  entitiesNumber;
+    }
+
+    public boolean containsScoreEntity(){
+        for(Entity tmpEntity : entities)
+            if(tmpEntity instanceof ScoreEntity)
+                return true;
+        return false;
     }
 }

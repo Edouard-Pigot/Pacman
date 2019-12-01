@@ -21,7 +21,7 @@ import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 
 public class GraphicsEngine {
-    private static Map map;
+    private Map map;
     private CoreKernel coreKernel;
     private Stage stage;
     private AnchorPane window;
@@ -33,6 +33,10 @@ public class GraphicsEngine {
         this.map = map;
         this.coreKernel = coreKernel;
         this.stage = stage;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     public AnchorPane home() throws MalformedURLException {
@@ -79,12 +83,12 @@ public class GraphicsEngine {
             }
         });
 
-        File titlefile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\Titre.png");
+        File titlefile = new File("Pacmanv2/src/Titre.png");
         String titlelocalUrl = titlefile.toURI().toURL().toString();
 
         ImageView title = new ImageView(titlelocalUrl);
 
-        File giffile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\Pacman.gif");
+        File giffile = new File("Pacmanv2/src/Pacman.gif");
         String giflocalUrl = giffile.toURI().toURL().toString();
         ImageView gif = new ImageView(giflocalUrl);
 
@@ -141,7 +145,7 @@ public class GraphicsEngine {
             }
         });
 
-        File gameOverFile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\gameover.png");
+        File gameOverFile = new File("Pacmanv2/src/gameover.png");
         String gameOverlocalUrl = gameOverFile.toURI().toURL().toString();
         ImageView gameOverImage = new ImageView(gameOverlocalUrl);
 
@@ -180,7 +184,7 @@ public class GraphicsEngine {
             }
         });
 
-        File commandsFile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\zqsd.png");
+        File commandsFile = new File("Pacmanv2/src/zqsd.png");
         String commandsOverlocalUrl = commandsFile.toURI().toURL().toString();
         ImageView commands = new ImageView(commandsOverlocalUrl);
 
@@ -189,7 +193,7 @@ public class GraphicsEngine {
         commands.setLayoutX(60);
         commands.setLayoutY(147);
 
-        File giffile = new File("C:\\Users\\Roger\\IdeaProjects\\Pacman\\Pacmanv2\\src\\pacmanGif.gif");
+        File giffile = new File("Pacmanv2/src/pacmanGif.gif");
         String giflocalUrl = giffile.toURI().toURL().toString();
         ImageView gif = new ImageView(giflocalUrl);
 

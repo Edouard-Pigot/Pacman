@@ -1,6 +1,7 @@
 package Gameplay;
 
 import Engine.CoreKernel;
+import Engine.Map;
 import Entity.*;
 import Entity.MovingEntity;
 import javafx.animation.AnimationTimer;
@@ -35,6 +36,8 @@ public class Gameplay extends Application {
 
     public int cpt;
 
+    private int frameCount;
+
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
@@ -68,27 +71,11 @@ public class Gameplay extends Application {
         coreKernel.updateScoreText(score);
         coreKernel.updateLivesText(nbOfLives);
         coreKernel.updateTimeText(time);
-        Thread timeHandlerThread = new Thread(new TimeHandler());
-        timeHandlerThread.start();
         stage.setScene(scene);
         stage.show();
     }
 
-    public class TimeHandler implements Runnable{
 
-        @Override
-        public void run() {
-            while(true){
-                try {
-                    sleep(1000);
-                    ++time;
-                    coreKernel.updateTimeText(time);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
     public void setPacmanDirection(Point2D direction){
         pacman.setWantedDirection(direction);
@@ -103,6 +90,18 @@ public class Gameplay extends Application {
     public void spawnPacman(){
         pacman = new Pacman(new Point2D(14.5*16,26.5*16), 8, Color.RED);
         spawnEntity(pacman);
+    }
+
+    public void resetPacman(){
+        coreKernel.removeEntity(pacman);
+        spawnPacman();
+    }
+
+    public void resetGhosts(){
+        for(Ghost ghost : ghosts)
+            coreKernel.removeEntity(ghost);
+        ghosts = new ArrayList<>();
+        spawnGhosts();
     }
 
     public void spawnEntity(Entity entity){
@@ -134,6 +133,7 @@ public class Gameplay extends Application {
 
     private void createGameLoop(){
         coreKernel.playBeginningSound();
+        frameCount = 0;
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
@@ -141,6 +141,16 @@ public class Gameplay extends Application {
                 moveGhosts();
                 power();
                 cpt++;
+                ++frameCount;
+
+                if(frameCount%60==0)
+                    coreKernel.updateTimeText(frameCount/60);
+
+                if(!coreKernel.map.containsScoreEntity()){
+                    System.out.println("GOING TO NEXT LEVEL");
+                    resetPacman();
+                    resetGhosts();
+                }
             }
         };
         gameTimer.start();
