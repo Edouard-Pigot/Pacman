@@ -206,16 +206,16 @@ public class Gameplay extends Application {
                 entity.changeDirection(new Point2D(0, 0));
                 return;
             }
-            if(collidingEntity instanceof Wall && powerPassThrough == false){
+            if((collidingEntity instanceof Wall  || collidingEntity instanceof Door) && powerPassThrough == false){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
-                if(!(tile instanceof Wall)){
+                if(!(tile instanceof Wall || tile instanceof Door)){
                     checkPixelOffset(entity,  entity.getWantedDirection());
                     entity.changeDirection( entity.getOldDirection());
                     return;
                 }
                 ArrayList<Entity> collidingEntitiesOld = coreKernel.checkGraphicalPrediction(entity,  entity.getOldDirection());
                 for (Entity collidingEntityOld : collidingEntitiesOld) {
-                    if(collidingEntityOld instanceof Wall) {
+                    if(collidingEntityOld instanceof Wall|| collidingEntityOld instanceof Door) {
                         entity.changeDirection(new Point2D(0, 0));
                         return;
                     }

@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -240,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575149075769</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Correction du merge d'edouard">
+      <created>1575220497110</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575220497110</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -273,6 +279,7 @@
     <MESSAGE value="ajout des images" />
     <MESSAGE value="Ajout affichage de fin qu'il fauut gérer" />
     <MESSAGE value="Ajout de la fonction quitter dans le menu game over" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction quitter dans le menu game over" />
+    <MESSAGE value="Correction du merge d'edouard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction du merge d'edouard" />
   </component>
 </project>
