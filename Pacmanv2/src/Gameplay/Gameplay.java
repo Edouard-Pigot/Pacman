@@ -1,15 +1,17 @@
 package Gameplay;
 
-import Engine.CoreKernel;
-import Entity.Entity;
-import Entity.MovingEntity;
+import Engine.*;
+import Entity.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 import static java.lang.Thread.sleep;
@@ -27,11 +29,34 @@ public class Gameplay extends Application {
     public int score = 0;
     public int time = 0;
 
+    public boolean powerSize = false;
+    public boolean powerPassThrough = false;
+
+    public int cpt;
+
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
-        coreKernel.startEngines(this, stage);
+        coreKernel.startEngines(this,stage);
+        stage.setTitle("Pacman 10.0");
+        home(stage);
+    }
 
+    public void home(Stage stage) throws MalformedURLException {
+        AnchorPane home = coreKernel.home();
+        Scene scene = new Scene(home,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void rules(Stage stage) throws MalformedURLException {
+        AnchorPane rules = coreKernel.rules();
+        Scene scene = new Scene(rules,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void play(Stage stage) throws FileNotFoundException {
         Scene scene = coreKernel.scene;
         stage.setScene(scene);
         scene.setOnKeyPressed(coreKernel.inputEngine);
@@ -44,7 +69,10 @@ public class Gameplay extends Application {
         coreKernel.updateTimeText(time);
         Thread timeHandlerThread = new Thread(new TimeHandler());
         timeHandlerThread.start();
+        stage.setScene(scene);
+        stage.show();
     }
+
 
     public class TimeHandler implements Runnable{
 
@@ -85,12 +113,34 @@ public class Gameplay extends Application {
         coreKernel.removeEntity(entity);
     }
 
-    private void createGameLoop(){//////////////////////////////////////////////////////////////////////////////////////
+    public void power(){
+        if(powerSize && cpt >= 300){
+            coreKernel.biggerPacman(pacman);
+            powerSize=false;
+        }
+        if(powerPassThrough && cpt >= 300){
+            powerPassThrough=false;
+            checkCollision(pacman);
+        }
+    }
+
+    public void reSpanwPacman(){
+        removeEntity(pacman);
+        wantedDirection = new Point2D(0,0);
+        nbOfLives -= 1;
+        coreKernel.updateLivesText(nbOfLives);
+        spawnPacman();
+    }
+
+    private void createGameLoop(){
+        coreKernel.playBeginningSound();
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
+                cpt++;
                 moveEntity(pacman);
                 moveGhosts();
+                power();
             }
         };
         gameTimer.start();
@@ -117,9 +167,34 @@ public class Gameplay extends Application {
     private void checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
         for (Entity collidingEntity : collidingEntities) {
-            if(collidingEntity instanceof PacGum){
+            if(collidingEntity instanceof ScoreEntity){
                 removeEntity(collidingEntity);
+                score += ((ScoreEntity) collidingEntity).getValue();
+                coreKernel.updateScoreText(score);
+                if(collidingEntity instanceof PowerSize){
+                    powerSize=true;
+                    coreKernel.smallerPacman(pacman);
+                    cpt=0;
+                }else if (collidingEntity instanceof PowerPassThrough){
+                    powerPassThrough = true;
+                    cpt=0;
+                }
+            } else if(collidingEntity instanceof Wall && !powerPassThrough){
+                reSpanwPacman();
             }
+
+            if(collidingEntity instanceof PacGum)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof SuperPacGum)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof PowerSize)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof PowerPassThrough)
+                coreKernel.playChompSound();
+            else if(collidingEntity instanceof Bonus)
+                coreKernel.playChompSound();
+            //Ajouter les sons des fantômes en conséquence
+
         }
     }
 
@@ -128,6 +203,12 @@ public class Gameplay extends Application {
         for (Entity collidingEntity : collidingEntities) {
             if(collidingEntity instanceof Wall){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
+            if(collidingEntity instanceof Empty){
+                changeDirection(new Point2D(0, 0));
+                return;
+            }
+            if(collidingEntity instanceof Wall && powerPassThrough == false){
+                Entity tile = coreKernel.checkPhysicalPrediction(entity, wantedDirection);
                 if(!(tile instanceof Wall)){
                     checkPixelOffset(entity,  entity.getWantedDirection());
                     entity.changeDirection( entity.getOldDirection());

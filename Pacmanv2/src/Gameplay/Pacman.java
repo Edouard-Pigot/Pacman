@@ -16,6 +16,7 @@ public class Pacman extends Circle implements MovingEntity {
     private Point2D wantedDirection = new Point2D(0,0);
 
     public Pacman(Point2D graphicalPosition, double size, Color color) {
+
         setPhysicalPosition(size);
         setGraphicalPosition(graphicalPosition);
         setCenterX(0);
@@ -102,5 +103,9 @@ public class Pacman extends Circle implements MovingEntity {
     @Override
     public void setWantedDirection(Point2D wantedDirection) {
         this.wantedDirection = wantedDirection;
+    }
+
+    public Point2D convertPhysicalPositionToGraphicalPosition(){
+        return new Point2D(Math.floor(physicalPosition.getX()*16), Math.floor(physicalPosition.getY()*16));
     }
 }

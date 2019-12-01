@@ -7,10 +7,11 @@ import Gameplay.Gameplay;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 public class CoreKernel{
@@ -20,17 +21,34 @@ public class CoreKernel{
     public GraphicsEngine graphicsEngine;
     public Map map;
     public Gameplay gameplay;
+    public SoundEngine soundEngine;
 
-    public void startEngines(Gameplay gameplay, Stage stage) throws FileNotFoundException {
+    public void startEngines(Gameplay gameplay,Stage stage) throws FileNotFoundException {
         this.gameplay = gameplay;
         map = new Map();
         map.generate();
 
         physicsEngine = new PhysicsEngine(map, this);
-        graphicsEngine = new GraphicsEngine(stage, map, this);
+        graphicsEngine = new GraphicsEngine(stage,map,this);
         inputEngine = new InputEngine(gameplay);
 
+        soundEngine = new SoundEngine();
+        soundEngine.start();
+
         scene = graphicsEngine.start(map);
+    }
+
+    public void play(Stage stage) throws FileNotFoundException {
+        gameplay.play(stage);
+    }
+
+
+    public void home (Stage stage) throws Exception {
+        gameplay.home(stage);
+    }
+
+    public void rules (Stage stage) throws Exception {
+        gameplay.rules(stage);
     }
 
     public void moveEntity(Point2D direction, MovingEntity entity){
@@ -84,4 +102,39 @@ public class CoreKernel{
         return physicsEngine.calculateMove(targetCoordinate, ghost);
     }
 
+    public AnchorPane home() throws MalformedURLException {
+        return graphicsEngine.home();
+    };
+
+    public AnchorPane gameOver() throws MalformedURLException {
+        return graphicsEngine.gameOver();
+    }
+
+    public AnchorPane rules() throws MalformedURLException {
+        return graphicsEngine.rules();
+    }
+
+    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
+        return physicsEngine.convertPhysicalPositionToGraphicalPosition(pacman);
+    }
+
+    public void playBeginningSound(){
+        soundEngine.playBeginningSound();
+    }
+
+    public void playChompSound(){
+        soundEngine.playChompSound();
+    }
+
+    public void playDeathSound(){
+        soundEngine.playDeathSound();
+    }
+
+    public void playEatFruitSound(){
+        soundEngine.playEatFruitSound();
+    }
+
+    public void playEatGhostSound(){
+        soundEngine.playEatGhostSound();
+    }
 }

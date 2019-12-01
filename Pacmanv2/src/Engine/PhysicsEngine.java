@@ -57,34 +57,39 @@ public class PhysicsEngine {
         entity.setPhysicalPosition(map.getStaticEntitySize());
     }
 
-    public Point2D calculateMove(Point2D target, Ghost ghost){
+    public Point2D calculateMove(Point2D target, Ghost ghost) {
         double bestDistance = 10000;
-        Point2D bestTile = new Point2D(0,0);
-        for(int y = -1; y < 2; y++){
-            for(int x = -1; x < 2; x++){
-                if((x == -1 && y == -1) || (x == -1 && y == 1) || (x == 1 && y == -1) || (x == 1 && y == 1) || (x == 0 && y == 0)) continue;
-                Entity tile = checkPhysicalPrediction(ghost, new Point2D(x,y));
-                if(!(tile instanceof Wall || tile instanceof Empty)){
-                    if(tile instanceof Path){
+        Point2D bestTile = new Point2D(0, 0);
+        for (int y = -1; y < 2; y++) {
+            for (int x = -1; x < 2; x++) {
+                if ((x == -1 && y == -1) || (x == -1 && y == 1) || (x == 1 && y == -1) || (x == 1 && y == 1) || (x == 0 && y == 0))
+                    continue;
+                Entity tile = checkPhysicalPrediction(ghost, new Point2D(x, y));
+                if (!(tile instanceof Wall || tile instanceof Empty)) {
+                    if (tile instanceof Path) {
                         ((Path) tile).setFill(Color.GREEN);
                     }
                     int xB = (int) target.getX();
                     int yB = (int) target.getY();
                     int xA = (int) (ghost.getPhysicalPosition().getX() + x);
                     int yA = (int) (ghost.getPhysicalPosition().getY() + y);
-                    double distance = Math.sqrt(Math.pow(xB - xA, 2) + Math.pow(yB - yA,2));
-                    if(distance < bestDistance){
+                    double distance = Math.sqrt(Math.pow(xB - xA, 2) + Math.pow(yB - yA, 2));
+                    if (distance < bestDistance) {
                         bestDistance = distance;
-                        bestTile = new Point2D(x,y);
+                        bestTile = new Point2D(x, y);
                     }
                 }
-                if(tile instanceof Wall){
+                if (tile instanceof Wall) {
                     ((Wall) tile).setFill(Color.RED);
                 }
             }
         }
         System.out.println("BEST TILE " + bestTile);
         return bestTile;
+    }
+
+    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
+        return pacman.convertPhysicalPositionToGraphicalPosition();
     }
 }
 

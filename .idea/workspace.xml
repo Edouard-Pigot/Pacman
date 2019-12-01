@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/gameover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/pacmanGif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacmanv2/src/zqsd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,14 +25,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectId" id="1Sb67zSfjcJHW10QzLm0t3DNvuH" />
   <component name="PropertiesComponent">
@@ -34,22 +50,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pacmanv2/src" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Billy\IdeaProjects\Pacman\Pacmanv2\src" />
+      <recent name="C:\Users\Roger\IdeaProjects\Pacman\Pacmanv2\src" />
       <recent name="E:\Desktop\Cours\GL\Pacman" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roger\IdeaProjects\Pacman\Pacmanv2\src" />
       <recent name="E:\Desktop\Cours\GL\Pacman\Pacmanv2\src" />
       <recent name="E:\Desktop\Cours\GL\Pacman" />
       <recent name="E:\Desktop\Cours\GL\Pacman\src" />
       <recent name="E:\Desktop\Cours\GL\Pacman\src2" />
-      <recent name="E:\Desktop\Cours\GL\Pacman\Github Files" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,15 +124,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MapReader" />
+      <item itemvalue="Application.CoreKernel" />
+      <item itemvalue="Application.Drawer" />
+      <item itemvalue="Application.Gameplay" />
+      <item itemvalue="Application.MapCreator" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Gameplay" />
-        <item itemvalue="Application.CoreKernel" />
         <item itemvalue="Application.MapCreator" />
-        <item itemvalue="Application.MapReader" />
         <item itemvalue="Application.Drawer" />
+        <item itemvalue="Application.CoreKernel" />
+        <item itemvalue="Application.MapReader" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -127,6 +162,9 @@
       <option name="presentableId" value="Default" />
       <updated>1571819784892</updated>
       <workItem from="1574263020111" duration="3519000" />
+      <workItem from="1575055170492" duration="1477000" />
+      <workItem from="1575140866823" duration="450000" />
+      <workItem from="1575150671495" duration="1778000" />
     </task>
     <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
       <created>1574265990116</created>
@@ -156,8 +194,60 @@
       <option name="project" value="LOCAL" />
       <updated>1574266735267</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs">
+      <created>1575107970721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575107970721</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fin des pouvoirs et ajout dess collision avec des objets vide">
+      <created>1575129423208</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575129423209</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ajout de fonctions dans SoundEngine">
+      <created>1575141086285</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575141086285</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout de fonctions son dans CoreKernel">
+      <created>1575141214722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575141214722</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ajout des images">
+      <created>1575141505951</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575141505951</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ajout affichage de fin qu'il fauut gérer">
+      <created>1575147264904</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575147264904</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ajout de la fonction quitter dans le menu game over">
+      <created>1575149075769</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575149075769</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3705000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -179,6 +269,13 @@
     <MESSAGE value="Nouvelle structure de type magnifique" />
     <MESSAGE value="Suppression de fichiers inutiles" />
     <MESSAGE value="Ajout des bons héritages et implémentations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des bons héritages et implémentations" />
+    <MESSAGE value="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs" />
+    <MESSAGE value="Fin des pouvoirs et ajout dess collision avec des objets vide" />
+    <MESSAGE value="Ajout de fonctions dans SoundEngine" />
+    <MESSAGE value="Ajout de fonctions son dans CoreKernel" />
+    <MESSAGE value="ajout des images" />
+    <MESSAGE value="Ajout affichage de fin qu'il fauut gérer" />
+    <MESSAGE value="Ajout de la fonction quitter dans le menu game over" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction quitter dans le menu game over" />
   </component>
 </project>
