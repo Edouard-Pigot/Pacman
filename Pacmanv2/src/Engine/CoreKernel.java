@@ -42,6 +42,15 @@ public class CoreKernel{
         gameplay.play(stage);
     }
 
+
+    public void home (Stage stage) throws Exception {
+        gameplay.home(stage);
+    }
+
+    public void rules (Stage stage) throws Exception {
+        gameplay.rules(stage);
+    }
+
     public void moveEntity(Point2D direction, MovingEntity entity){
         graphicsEngine.moveEntity(direction, entity);
         physicsEngine.moveEntity(entity);
@@ -95,6 +104,10 @@ public class CoreKernel{
 
     public AnchorPane gameOver() throws MalformedURLException {
         return graphicsEngine.gameOver();
+    }
+
+    public AnchorPane rules() throws MalformedURLException {
+        return graphicsEngine.rules();
     }
 
     public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){

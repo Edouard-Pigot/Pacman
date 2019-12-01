@@ -12,6 +12,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 import static java.lang.Thread.sleep;
@@ -39,8 +40,19 @@ public class Gameplay extends Application {
         coreKernel = new CoreKernel();
         coreKernel.startEngines(this,stage);
         stage.setTitle("Pacman 10.0");
+        home(stage);
+    }
+
+    public void home(Stage stage) throws MalformedURLException {
         AnchorPane home = coreKernel.home();
         Scene scene = new Scene(home,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void rules(Stage stage) throws MalformedURLException {
+        AnchorPane rules = coreKernel.rules();
+        Scene scene = new Scene(rules,448,576);
         stage.setScene(scene);
         stage.show();
     }
