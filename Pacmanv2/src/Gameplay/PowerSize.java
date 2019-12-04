@@ -13,6 +13,25 @@ public class PowerSize extends Circle implements StaticEntity,ScoreEntity {
     Point2D graphicalPosition = new Point2D(0,0);
     private final int value = 100;
 
+    int id = 0;
+    String use = "";
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setUse(String use){
+        this.use = use;
+    }
+
+    public int get_Id() {
+        return id;
+    }
+
+    public String get_Use() {
+        return use;
+    }
+
     public PowerSize(Point2D graphicalPosition, Point2D physicalPosition, double size, Color color) {
         setPhysicalPosition(physicalPosition);
         setGraphicalPosition(graphicalPosition);

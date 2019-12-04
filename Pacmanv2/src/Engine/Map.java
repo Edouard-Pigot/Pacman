@@ -31,14 +31,10 @@ public class Map {
                 switch (elements[0]){
                     case "E":
                         entities.add(new Empty(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
-                        if (elements.length >= 2 && elements[1].equals("1")) {
-
-                        } else if (elements.length >= 2 && elements[1].equals("2")) {
-
-                        } else if (elements.length >= 2 && elements[1].equals("3")) {
-
-                        } else if (elements.length >= 2 && elements[1].equals("4")) {
-
+                        if (elements.length >= 2) {
+                            Empty e = new Empty(new Point2D(entitiesColumnCounter * staticEntitySize, entitiesRowCounter * staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
+                            e.setId(elements[1]);
+                            e.setUse("C");
                         }
                         break;
                     case "W":
@@ -55,7 +51,11 @@ public class Map {
                         }  else if (elements.length >= 2 && elements[1].equals("1")) {
                             entities.add(new PowerPassThrough(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.PURPLE));
                         } else if (elements.length >= 2 && elements[1].equals("2")) {
-                            entities.add(new PowerSize(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.PINK));
+                            entities.add(new PowerSize(new Point2D(entitiesColumnCounter * staticEntitySize + staticEntitySize / 2, entitiesRowCounter * staticEntitySize + staticEntitySize / 2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize / 2, Color.PINK));
+                        } else if (elements.length >= 2 && elements[1].equals("E")) {
+                            Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
+                            p.setUse("E");
+                            entities.add(p);
                         } else {
                             entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         }
@@ -68,14 +68,10 @@ public class Map {
                         break;
                     case "H":
                         entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
-                        if (elements.length >= 2 && elements[1].equals("1")) {
-
-                        } else if (elements.length >= 2 && elements[1].equals("2")) {
-
-                        } else if (elements.length >= 2 && elements[1].equals("3")) {
-
-                        } else if (elements.length >= 2 && elements[1].equals("4")) {
-
+                        if (elements.length >= 2) {
+                            Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
+                            p.setId(elements[1]);
+                            p.setUse("H");
                         }
                         break;
                 }
@@ -102,7 +98,6 @@ public class Map {
         entities.add(entity);
         entitiesNumber++;
     }
-
     public Entity getEntity(int nb){
         return entities.get(nb);
     }
@@ -128,5 +123,42 @@ public class Map {
             if(tmpEntity instanceof ScoreEntity)
                 return true;
         return false;
+    }
+
+    public Point2D getGhostHomePosition(int id) {
+        for(Entity entity : entities){
+            if(entity instanceof Path){
+                if(((StaticEntity) entity).get_Id() == id){
+                    if(((StaticEntity) entity).get_Use().equals("H")) {
+                        return entity.getPhysicalPosition();
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public Point2D getGhostCornerPosition(int id){
+        for(Entity entity : entities){
+            if(entity instanceof Path){
+                if(((StaticEntity) entity).get_Id() == id){
+                    if(((StaticEntity) entity).get_Use().equals("C")) {
+                        return entity.getPhysicalPosition();
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public Point2D getGhostGateExitPosition(){
+        for(Entity entity : entities){
+            if(entity instanceof Path){
+                if(((StaticEntity) entity).get_Use().equals("E")) {
+                    return entity.getPhysicalPosition();
+                }
+            }
+        }
+        return null;
     }
 }

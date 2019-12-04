@@ -11,6 +11,25 @@ public class Empty extends Rectangle implements StaticEntity  {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
 
+    int id = 0;
+    String use = "";
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setUse(String use){
+        this.use = use;
+    }
+
+    public int get_Id() {
+        return id;
+    }
+
+    public String get_Use() {
+        return use;
+    }
+
     public Empty(Point2D graphicalPosition, Point2D physicalPosition, double size, Color color) {
         super.setFill(color);
         setPhysicalPosition(physicalPosition);

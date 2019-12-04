@@ -8,6 +8,17 @@ public interface StaticEntity extends Entity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
 
+    int id = 0;
+    String use = "";
+
+    public void setId(int id);
+
+    public void setUse(String use);
+
+    public int get_Id();
+
+    public String get_Use();
+
     public void setPhysicalPosition(Point2D position);
 
     public void setGraphicalPosition(Point2D position);

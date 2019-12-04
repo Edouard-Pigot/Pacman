@@ -25,6 +25,9 @@ public class Gameplay extends Application {
 
     Pacman pacman;
     Ghost blinky;
+    Ghost inky;
+    Ghost clyde;
+    Ghost pinky;
     ArrayList<Ghost> ghosts = new ArrayList<Ghost>();
 
     public int nbOfLives = 3;
@@ -75,16 +78,29 @@ public class Gameplay extends Application {
         stage.show();
     }
 
-
-
     public void setPacmanDirection(Point2D direction){
         pacman.setWantedDirection(direction);
     }
 
     public void spawnGhosts(){
-        blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.CYAN,1);
+        blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1,0);
+        inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2,0);
+        clyde = new Ghost(new Point2D(15.5*16,17.5*16),8, Color.ORANGE,3,0);
+        pinky = new Ghost(new Point2D(16.5*16,17.5*16),8, Color.PINK,4,0);
         ghosts.add(blinky);
+        ghosts.add(inky);
+        ghosts.add(clyde);
+        ghosts.add(pinky);
         spawnEntity(blinky);
+        spawnEntity(inky);
+        spawnEntity(clyde);
+        spawnEntity(pinky);
+        for(Ghost ghost : ghosts){
+            ghost.setHomePosition(coreKernel.getGhostHomePosition(ghost));
+            ghost.setCornerPosition(coreKernel.getGhostCornerPosition(ghost));
+            ghost.setGateExitPosition(coreKernel.getGhostGateExitPosition(ghost));
+            ghost.setStatus(1);
+        }
     }
 
     public void spawnPacman(){
@@ -253,60 +269,60 @@ public class Gameplay extends Application {
         if(entity.getNewDirection().getX() == 1){           //RIGHT
             if(direction.getX() == 1){              //RIGHT
                 entity.changeDirection(new Point2D(1, 0));   //RIGHT
-                System.out.println("NEW RIGHT WANTED RIGHT CHANGE RIGHT");
+//                System.out.println("NEW RIGHT WANTED RIGHT CHANGE RIGHT");
                 return;
             } else if(direction.getX() == -1){      //LEFT
                 entity.changeDirection(new Point2D(-1, 0));   //LEFT
-                System.out.println("NEW RIGHT WANTED LEFT CHANGE LEFT");
+//                System.out.println("NEW RIGHT WANTED LEFT CHANGE LEFT");
                 return;
             } else if(direction.getY() == 1){       //DOWN
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(1, 0));   //RIGHT
-                    System.out.println("NEW RIGHT WANTED DOWN CHANGE RIGHT");
+//                    System.out.println("NEW RIGHT WANTED DOWN CHANGE RIGHT");
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(-1, 0));   //LEFT
-                    System.out.println("NEW RIGHT WANTED DOWN CHANGE LEFT");
+//                    System.out.println("NEW RIGHT WANTED DOWN CHANGE LEFT");
                     return;
                 }
             } else if(direction.getY() == -1){      //UP
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(1, 0));   //RIGHT
-                    System.out.println("NEW RIGHT WANTED UP CHANGE RIGHT");
+//                    System.out.println("NEW RIGHT WANTED UP CHANGE RIGHT");
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(-1, 0));   //LEFT
-                    System.out.println("NEW RIGHT WANTED UP CHANGE LEFT");
+//                    System.out.println("NEW RIGHT WANTED UP CHANGE LEFT");
                     return;
                 }
             }
         } else if(entity.getNewDirection().getX() == -1){   //LEFT
             if(direction.getX() == 1){              //RIGHT
                 entity.changeDirection(new Point2D(1, 0));   //RIGHT
-                System.out.println("NEW LEFT WANTED RIGHT CHANGE RIGHT");
+//                System.out.println("NEW LEFT WANTED RIGHT CHANGE RIGHT");
                 return;
             } else if(direction.getX() == -1){      //LEFT
                 entity.changeDirection(new Point2D(-1, 0));   //LEFT
-                System.out.println("NEW LEFT WANTED LEFT CHANGE LEFT");
+//                System.out.println("NEW LEFT WANTED LEFT CHANGE LEFT");
                 return;
             } else if(direction.getY() == 1){       //DOWN
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(-1, 0));   //LEFT
-                    System.out.println("NEW LEFT WANTED DOWN CHANGE LEFT");
+//                    System.out.println("NEW LEFT WANTED DOWN CHANGE LEFT");
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(1, 0));   //RIGHT
-                    System.out.println("NEW LEFT WANTED DOWN CHANGE RIGHT");
+//                    System.out.println("NEW LEFT WANTED DOWN CHANGE RIGHT");
                     return;
                 }
             } else if(direction.getY() == -1){      //UP
                 if(entity.getGraphicalPosition().getX() < entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(-1, 0));   //LEFT
-                    System.out.println("NEW LEFT WANTED UP CHANGE LEFT");
+//                    System.out.println("NEW LEFT WANTED UP CHANGE LEFT");
                     return;
                 } else if(entity.getGraphicalPosition().getX() > entity.getPhysicalPosition().getX() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(1, 0));   //RIGHT
-                    System.out.println("NEW LEFT WANTED UP CHANGE RIGHT");
+//                    System.out.println("NEW LEFT WANTED UP CHANGE RIGHT");
                     return;
                 }
             }
@@ -314,60 +330,60 @@ public class Gameplay extends Application {
             if(direction.getX() == 1){              //RIGHT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, -1));   //UP
-                    System.out.println("NEW DOWN WANTED RIGHT CHANGE UP");
+//                    System.out.println("NEW DOWN WANTED RIGHT CHANGE UP");
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, 1));   //DOWN
-                    System.out.println("NEW DOWN WANTED RIGHT CHANGE DOWN");
+//                    System.out.println("NEW DOWN WANTED RIGHT CHANGE DOWN");
                     return;
                 }
             } else if(direction.getX() == -1){      //LEFT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, -1));   //UP
-                    System.out.println("NEW DOWN WANTED LEFT CHANGE UP");
+//                    System.out.println("NEW DOWN WANTED LEFT CHANGE UP");
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, 1));   //DOWN
-                    System.out.println("NEW DOWN WANTED LEFT CHANGE DOWN");
+//                    System.out.println("NEW DOWN WANTED LEFT CHANGE DOWN");
                     return;
                 }
             } else if(direction.getY() == 1){       //DOWN
                 entity.changeDirection(new Point2D(0, 1));   //DOWN
-                System.out.println("NEW DOWN WANTED DOWN CHANGE DOWN");
+//                System.out.println("NEW DOWN WANTED DOWN CHANGE DOWN");
                 return;
             } else if(direction.getY() == -1){      //UP
                 entity.changeDirection(new Point2D(0, -1));   //UP
-                System.out.println("NEW DOWN WANTED UP CHANGE UP");
+//                System.out.println("NEW DOWN WANTED UP CHANGE UP");
                 return;
             }
         } else if(entity.getNewDirection().getY() == -1){   //UP
             if(direction.getX() == 1){              //RIGHT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, 1));   //DOWN
-                    System.out.println("NEW UP WANTED RIGHT CHANGE DOWN");
+//                    System.out.println("NEW UP WANTED RIGHT CHANGE DOWN");
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, -1));   //UP
-                    System.out.println("NEW UP WANTED RIGHT CHANGE UP");
+//                    System.out.println("NEW UP WANTED RIGHT CHANGE UP");
                     return;
                 }
             } else if(direction.getX() == -1){      //LEFT
                 if(entity.getGraphicalPosition().getY() > entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, 1));   //DOWN
-                    System.out.println("NEW UP WANTED LEFT CHANGE DOWN");
+//                    System.out.println("NEW UP WANTED LEFT CHANGE DOWN");
                     return;
                 } else if(entity.getGraphicalPosition().getY() < entity.getPhysicalPosition().getY() * (coreKernel.map.getStaticEntitySize()/activationAreaFactor)){
                     entity.changeDirection(new Point2D(0, -1));   //UP
-                    System.out.println("NEW UP WANTED LEFT CHANGE UP");
+//                    System.out.println("NEW UP WANTED LEFT CHANGE UP");
                     return;
                 }
             } else if(direction.getY() == 1){       //DOWN
                 entity.changeDirection(new Point2D(0, 1));   //DOWN
-                System.out.println("NEW UP WANTED DOWN CHANGE DOWN");
+//                System.out.println("NEW UP WANTED DOWN CHANGE DOWN");
                 return;
             } else if(direction.getY() == -1){      //UP
                 entity.changeDirection(new Point2D(0, -1));   //UP
-                System.out.println("NEW UP WANTED UP CHANGE UP");
+//                System.out.println("NEW UP WANTED UP CHANGE UP");
                 return;
             }
         }

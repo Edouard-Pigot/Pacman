@@ -142,4 +142,16 @@ public class CoreKernel{
     public void playEatGhostSound(){
         soundEngine.playEatGhostSound();
     }
+
+    public Point2D getGhostHomePosition(Ghost ghost){
+        return map.getGhostHomePosition(ghost.getGhostId());
+    }
+
+    public Point2D getGhostCornerPosition(Ghost ghost){
+        return map.getGhostCornerPosition(ghost.getGhostId());
+    }
+
+    public Point2D getGhostGateExitPosition(Ghost ghost){
+        return map.getGhostGateExitPosition();
+    }
 }
