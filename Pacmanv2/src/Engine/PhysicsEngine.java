@@ -66,11 +66,6 @@ public class PhysicsEngine {
                 if((x == -1 && y == -1) || (x == -1 && y == 1) || (x == 1 && y == -1) || (x == 1 && y == 1) || (x == 0 && y == 0)) continue;
                 Entity tile = checkPhysicalPrediction(ghost, new Point2D(x,y));
                 if(!(tile instanceof Wall || tile instanceof Empty)){
-                    if(tile instanceof Path){
-                        ((Path) tile).setFill(Color.GREEN);
-                    } else if (tile instanceof PacGum) {
-                        ((PacGum) tile).setFill(Color.GREEN);
-                    }
                     int xB = (int) target.getX();
                     int yB = (int) target.getY();
                     int xA = (int) (ghost.getPhysicalPosition().getX() + x);
@@ -88,9 +83,6 @@ public class PhysicsEngine {
                         bestTile = potentialDirection;
                         bestTileEntity = tile;
                     }
-                }
-                if(tile instanceof Wall){
-                    ((Wall) tile).setFill(Color.RED);
                 }
             }
         }

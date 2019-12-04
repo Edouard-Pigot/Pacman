@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Pacman" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectId" id="1Sb67zSfjcJHW10QzLm0t3DNvuH" />
+  <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="pacman" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575234906517" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pacmanv2/src" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Billy\IdeaProjects\Pacman\Pacmanv2\src" />
+      <recent name="C:\Users\Roger\IdeaProjects\Pacman\Pacmanv2\src" />
+      <recent name="E:\Desktop\Cours\GL\Pacman" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roger\IdeaProjects\Pacman\Pacmanv2\src" />
+      <recent name="E:\Desktop\Cours\GL\Pacman\Pacmanv2\src" />
+      <recent name="E:\Desktop\Cours\GL\Pacman" />
+      <recent name="E:\Desktop\Cours\GL\Pacman\src" />
+      <recent name="E:\Desktop\Cours\GL\Pacman\src2" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Gameplay">
+    <configuration name="CoreKernel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CoreKernel" />
+      <module name="Pacman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Drawer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Drawer" />
+      <module name="Pacman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Gameplay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Gameplay.Gameplay" />
+      <module name="Pacmanv2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Gameplay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MapCreator" />
+      <module name="Pacman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MapReader" />
+      <module name="Pacman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MapReader" />
+      <item itemvalue="Application.CoreKernel" />
+      <item itemvalue="Application.Drawer" />
+      <item itemvalue="Application.Gameplay" />
+      <item itemvalue="Application.MapCreator" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Gameplay" />
+        <item itemvalue="Application.MapCreator" />
+        <item itemvalue="Application.Drawer" />
+        <item itemvalue="Application.CoreKernel" />
+        <item itemvalue="Application.MapReader" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="" />
+      <created>1571819784892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571819784892</updated>
+      <workItem from="1574263020111" duration="3519000" />
+      <workItem from="1575055170492" duration="1477000" />
+      <workItem from="1575140866823" duration="450000" />
+      <workItem from="1575150671495" duration="1778000" />
+      <workItem from="1575212853553" duration="69000" />
+      <workItem from="1575230386560" duration="4516000" />
+    </task>
+    <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
+      <created>1574265990116</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574265990117</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Suppression de fichiers inutiles">
+      <created>1574266303635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266303635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Suppression de fichiers inutiles">
+      <created>1574266366808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266366808</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout des bons héritages et implémentations">
+      <created>1574266735267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574266735267</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs">
+      <created>1575107970721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575107970721</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fin des pouvoirs et ajout dess collision avec des objets vide">
+      <created>1575129423208</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575129423209</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ajout de fonctions dans SoundEngine">
+      <created>1575141086285</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575141086285</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout de fonctions son dans CoreKernel">
+      <created>1575141214722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575141214722</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ajout des images">
+      <created>1575141505951</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575141505951</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ajout affichage de fin qu'il fauut gérer">
+      <created>1575147264904</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575147264904</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ajout de la fonction quitter dans le menu game over">
+      <created>1575149075769</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575149075769</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Correction du merge d'edouard">
+      <created>1575220497110</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575220497110</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Gestion de fin de niveau =&gt; Reste à faire : re-générer la carte">
+      <created>1575233275699</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1575233275699</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Début de re génération de la map">
+      <created>1575234686394</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575234686394</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8290000" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Nouvelle structure de type magnifique" />
+    <MESSAGE value="Suppression de fichiers inutiles" />
+    <MESSAGE value="Ajout des bons héritages et implémentations" />
+    <MESSAGE value="Ajout des pouvoirs , mais il faut gerer la fin des pouvoirs" />
+    <MESSAGE value="Fin des pouvoirs et ajout dess collision avec des objets vide" />
+    <MESSAGE value="Ajout de fonctions dans SoundEngine" />
+    <MESSAGE value="Ajout de fonctions son dans CoreKernel" />
+    <MESSAGE value="ajout des images" />
+    <MESSAGE value="Ajout affichage de fin qu'il fauut gérer" />
+    <MESSAGE value="Ajout de la fonction quitter dans le menu game over" />
+    <MESSAGE value="Correction du merge d'edouard" />
+    <MESSAGE value="Gestion de fin de niveau =&gt; Reste à faire : re-générer la carte" />
+    <MESSAGE value="Début de re génération de la map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Début de re génération de la map" />
+  </component>
+</project>

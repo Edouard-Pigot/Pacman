@@ -14,19 +14,19 @@ public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
     private final int value = 100;
     //A modifier en fonction du niveau...
 
-    int id = 0;
+    int identifiant = 0;
     String use = "";
 
-    public void setId(int id){
-        this.id = id;
+    public void set_Id(int id){
+        this.identifiant = id;
     }
 
-    public void setUse(String use){
+    public void set_Use(String use){
         this.use = use;
     }
 
     public int get_Id() {
-        return id;
+        return identifiant;
     }
 
     public String get_Use() {

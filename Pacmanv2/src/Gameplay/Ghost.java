@@ -71,7 +71,7 @@ public class Ghost extends Circle implements MovingEntity {
         setLayoutY(graphicalPosition.getY());
         setRadius(size);
         setFill(color);
-        setPhysicalPosition(size);
+        setPhysicalPosition(size/2);
         System.out.println(physicalPosition);
         this.id = id;
     }

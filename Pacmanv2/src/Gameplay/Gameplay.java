@@ -1,7 +1,6 @@
 package Gameplay;
 
 import Engine.CoreKernel;
-import Engine.Map;
 import Entity.*;
 import Entity.MovingEntity;
 import javafx.animation.AnimationTimer;
@@ -39,7 +38,7 @@ public class Gameplay extends Application {
 
     public int cpt;
 
-    private int frameCount;
+    private int tick;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -104,7 +103,7 @@ public class Gameplay extends Application {
     }
 
     public void spawnPacman(){
-        pacman = new Pacman(new Point2D(14.5*16,26.5*16), 8, Color.RED);
+        pacman = new Pacman(new Point2D(14.5*16,26.5*16), 8, Color.YELLOW);
         spawnEntity(pacman);
     }
 
@@ -134,7 +133,7 @@ public class Gameplay extends Application {
         coreKernel.removeEntity(entity);
     }
 
-    public void reSpanwPacman(){
+    public void respawnPacman(){
         removeEntity(pacman);
         pacman.setWantedDirection( new Point2D(0,0));
         nbOfLives -= 1;
@@ -144,20 +143,18 @@ public class Gameplay extends Application {
 
     public void power(){
         if(powerSize && cpt >= 300){
-            coreKernel.centerPacman(pacman);
             coreKernel.biggerPacman(pacman);
             powerSize=false;
         }
         if(powerPassThrough && cpt >= 300){
-            coreKernel.centerPacman(pacman);
             powerPassThrough=false;
             checkCollision(pacman);
         }
     }
 
     private void createGameLoop(){
-        //coreKernel.playBeginningSound();
-        frameCount = 0;
+        coreKernel.playBeginningSound();
+        tick = 0;
         gameTimer = new AnimationTimer() {
             @Override
             public void handle(long l) {
@@ -165,10 +162,10 @@ public class Gameplay extends Application {
                 moveGhosts();
                 power();
                 cpt++;
-                ++frameCount;
+                ++tick;
 
-                if(frameCount%60==0)
-                    coreKernel.updateTimeText(frameCount/60);
+                if(tick %60==0)
+                    coreKernel.updateTimeText(tick /60);
 
                 if(!coreKernel.map.containsScoreEntity()){
                     System.out.println("GOING TO NEXT LEVEL");
@@ -220,19 +217,19 @@ public class Gameplay extends Application {
                         cpt = 0;
                     }
                 } else if (collidingEntity instanceof Wall && !powerPassThrough) {
-                    reSpanwPacman();
+                    respawnPacman();
                 }
 
-//                if (collidingEntity instanceof PacGum)
-//                    coreKernel.playChompSound();
-//                else if (collidingEntity instanceof SuperPacGum)
-//                    coreKernel.playChompSound();
-//                else if (collidingEntity instanceof PowerSize)
-//                    coreKernel.playChompSound();
-//                else if (collidingEntity instanceof PowerPassThrough)
-//                    coreKernel.playChompSound();
-//                else if (collidingEntity instanceof Bonus)
-//                    coreKernel.playChompSound();
+                if (collidingEntity instanceof PacGum)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof SuperPacGum)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof PowerSize)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof PowerPassThrough)
+                    coreKernel.playChompSound();
+                else if (collidingEntity instanceof Bonus)
+                    coreKernel.playChompSound();
                 //Ajouter les sons des fantômes en conséquence
             }
         }

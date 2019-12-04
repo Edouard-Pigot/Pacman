@@ -99,10 +99,6 @@ public class CoreKernel{
         graphicsEngine.biggerPacman(pacman);
     }
 
-    public void centerPacman(Pacman pacman){
-        graphicsEngine.centerPacman(pacman);
-    }
-
     public void smallerPacman(Pacman pacman){
         graphicsEngine.smallerPacman(pacman);
     }
@@ -152,6 +148,7 @@ public class CoreKernel{
     }
 
     public Point2D getGhostCornerPosition(Ghost ghost){
+        System.out.println("getGhostCornerPosition " + map.getGhostCornerPosition(ghost.getGhostId()));
         return map.getGhostCornerPosition(ghost.getGhostId());
     }
 

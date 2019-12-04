@@ -337,12 +337,9 @@ public class GraphicsEngine {
     }
 
     public void biggerPacman(Pacman pacman) {
-        pacman.setRadius(8);
-    }
-
-    public void centerPacman(Pacman pacman) {
         Point2D graphic = coreKernel.convertPhysicalPositionToGraphicalPosition(pacman);
         pacman.setGraphicalPosition(new Point2D(graphic.getX()+8,graphic.getY()+8));
+        pacman.setRadius(8);
     }
 
     public void smallerPacman(Pacman pacman){

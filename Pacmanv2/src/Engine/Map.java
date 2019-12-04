@@ -30,11 +30,13 @@ public class Map {
                 String[] elements = lineScanner.next().split("(?!^)");
                 switch (elements[0]){
                     case "E":
-                        entities.add(new Empty(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         if (elements.length >= 2) {
                             Empty e = new Empty(new Point2D(entitiesColumnCounter * staticEntitySize, entitiesRowCounter * staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
-                            e.setId(elements[1]);
-                            e.setUse("C");
+                            e.set_Id(Integer.parseInt(elements[1]));
+                            e.set_Use("C");
+                            entities.add(e);
+                        } else {
+                            entities.add(new Empty(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         }
                         break;
                     case "W":
@@ -54,7 +56,7 @@ public class Map {
                             entities.add(new PowerSize(new Point2D(entitiesColumnCounter * staticEntitySize + staticEntitySize / 2, entitiesRowCounter * staticEntitySize + staticEntitySize / 2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize / 2, Color.PINK));
                         } else if (elements.length >= 2 && elements[1].equals("E")) {
                             Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
-                            p.setUse("E");
+                            p.set_Use("E");
                             entities.add(p);
                         } else {
                             entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
@@ -67,11 +69,13 @@ public class Map {
                         entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.PINK));
                         break;
                     case "H":
-                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         if (elements.length >= 2) {
                             Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
-                            p.setId(elements[1]);
-                            p.setUse("H");
+                            p.set_Id(Integer.parseInt(elements[1]));
+                            p.set_Use("H");
+                            entities.add(p);
+                        } else {
+                            entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         }
                         break;
                 }
@@ -140,7 +144,7 @@ public class Map {
 
     public Point2D getGhostCornerPosition(int id){
         for(Entity entity : entities){
-            if(entity instanceof Path){
+            if(entity instanceof Empty){
                 if(((StaticEntity) entity).get_Id() == id){
                     if(((StaticEntity) entity).get_Use().equals("C")) {
                         return entity.getPhysicalPosition();
