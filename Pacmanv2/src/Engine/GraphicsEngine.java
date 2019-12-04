@@ -337,8 +337,6 @@ public class GraphicsEngine {
     }
 
     public void biggerPacman(Pacman pacman) {
-        Point2D graphic = coreKernel.convertPhysicalPositionToGraphicalPosition(pacman);
-        pacman.setGraphicalPosition(new Point2D(graphic.getX()+8,graphic.getY()+8));
         pacman.setRadius(8);
     }
 
@@ -346,5 +344,9 @@ public class GraphicsEngine {
         pacman.setRadius(4);
     }
 
+    public void center(MovingEntity entity){
+        Point2D graphic = coreKernel.convertPhysicalPositionToGraphicalPosition(entity);
+        entity.setGraphicalPosition(new Point2D(graphic.getX()+8,graphic.getY()+8));
+    }
 
 }

@@ -51,7 +51,6 @@ public class Gameplay extends Application {
     public boolean canExitHouse = false;
 
 
-
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
@@ -180,10 +179,12 @@ public class Gameplay extends Application {
 
     public void power(){
         if(powerSize && cpt >= 300){
+            coreKernel.center(pacman);
             coreKernel.biggerPacman(pacman);
             powerSize=false;
         }
         if(powerPassThrough && cpt >= 300){
+            coreKernel.center(pacman);
             powerPassThrough=false;
             checkCollision(pacman);
         }

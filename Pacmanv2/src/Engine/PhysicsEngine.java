@@ -88,8 +88,8 @@ public class PhysicsEngine {
         }
         return bestTile;
     }
-    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
-        return pacman.convertPhysicalPositionToGraphicalPosition();
+    public Point2D convertPhysicalPositionToGraphicalPosition(MovingEntity entity){
+        return entity.convertPhysicalPositionToGraphicalPosition();
     }
 }
 

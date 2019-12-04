@@ -121,6 +121,11 @@ public class Ghost extends Circle implements MovingEntity {
         return new Point2D(Math.floor(position.getX()/size), Math.floor(position.getY()/size));
     }
 
+    @Override
+    public Point2D convertPhysicalPositionToGraphicalPosition() {
+        return new Point2D(Math.floor(physicalPosition.getX()*16), Math.floor(physicalPosition.getY()*16));
+    }
+
 
     public Point2D calculateTarget(Pacman pacman, ArrayList<Ghost> ghosts){
         Point2D calculatedTarget = new Point2D(0,0);

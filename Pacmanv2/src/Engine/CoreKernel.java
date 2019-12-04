@@ -103,6 +103,10 @@ public class CoreKernel{
         graphicsEngine.smallerPacman(pacman);
     }
 
+    public void center(MovingEntity entity){
+        graphicsEngine.center(entity);
+    }
+
     public Point2D calculateMove(Point2D targetCoordinate, Ghost ghost){
         return physicsEngine.calculateMove(targetCoordinate, ghost);
     }
@@ -119,8 +123,8 @@ public class CoreKernel{
         return graphicsEngine.rules();
     }
 
-    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
-        return physicsEngine.convertPhysicalPositionToGraphicalPosition(pacman);
+    public Point2D convertPhysicalPositionToGraphicalPosition(MovingEntity entity){
+        return physicsEngine.convertPhysicalPositionToGraphicalPosition(entity);
     }
 
     public void playBeginningSound(){
