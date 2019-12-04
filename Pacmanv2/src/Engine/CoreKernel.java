@@ -148,11 +148,10 @@ public class CoreKernel{
     }
 
     public Point2D getGhostCornerPosition(Ghost ghost){
-        System.out.println("getGhostCornerPosition " + map.getGhostCornerPosition(ghost.getGhostId()));
         return map.getGhostCornerPosition(ghost.getGhostId());
     }
 
-    public Point2D getGhostGateExitPosition(Ghost ghost){
+    public Point2D getGhostGateExitPosition(){
         return map.getGhostGateExitPosition();
     }
 }

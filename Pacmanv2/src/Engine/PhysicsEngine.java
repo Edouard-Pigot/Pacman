@@ -25,7 +25,7 @@ public class PhysicsEngine {
     public ArrayList<Entity> checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = new ArrayList<>();
         for(int i = 0; i < map.getEntitiesNumber(); i++){
-            if(map.getEntity(i).getPhysicalPosition().getY() == entity.getPhysicalPosition().getX() && map.getEntity(i).getPhysicalPosition().getX() == entity.getPhysicalPosition().getY()){
+            if(map.getEntity(i).getPhysicalPosition().getX() == entity.getPhysicalPosition().getX() && map.getEntity(i).getPhysicalPosition().getY() == entity.getPhysicalPosition().getY()){
                 collidingEntities.add(map.getEntity(i));
             }
         }
@@ -46,7 +46,7 @@ public class PhysicsEngine {
 
     public Entity checkPhysicalPrediction(Entity entity, Point2D direction){
         for(int i = 0; i < map.getEntitiesNumber(); i++){
-            if(map.getEntity(i).getPhysicalPosition().getY() == entity.getPhysicalPosition().getX()+direction.getX() && map.getEntity(i).getPhysicalPosition().getX() == entity.getPhysicalPosition().getY() + direction.getY()){
+            if(map.getEntity(i).getPhysicalPosition().getX() == entity.getPhysicalPosition().getX()+direction.getX() && map.getEntity(i).getPhysicalPosition().getY() == entity.getPhysicalPosition().getY() + direction.getY()){
                 return map.getEntity(i);
             }
         }

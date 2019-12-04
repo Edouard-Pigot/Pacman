@@ -73,10 +73,6 @@ public class MapCreator extends Application {
         tiles = new Rectangle[map.length][map[0].length];
         x = map[0].length*8;
         y = map.length*8;
-        System.out.println("map.length = " + map.length + "\n" +
-                           "map[0].length = " + map[0].length + "\n" +
-                           "x = " + x + "\n" +
-                           "y = " + y + "\n");
         Group root = new Group();
         Scene scene = new Scene(root, x, y, Color.BLACK);
         stage.setScene(scene);

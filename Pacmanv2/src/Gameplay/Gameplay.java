@@ -38,7 +38,16 @@ public class Gameplay extends Application {
 
     public int cpt;
 
-    private int tick;
+    private int tick = 0;
+    private int chaseCpt = 0;
+    private int scatterCpt = 0;
+    private int frightCpt = 0;
+
+    private boolean frightModeOn = false;
+    private int actualMode = 2;
+
+    private int phase = 0;
+    private int[] phaseTimes = {7,20,7,20,5,20,-1};
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -82,10 +91,10 @@ public class Gameplay extends Application {
     }
 
     public void spawnGhosts(){
-        blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1,0);
-        inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2,0);
-        clyde = new Ghost(new Point2D(15.5*16,17.5*16),8, Color.ORANGE,3,0);
-        pinky = new Ghost(new Point2D(16.5*16,17.5*16),8, Color.PINK,4,0);
+        blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1, 0);
+        inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2, 0);
+        clyde = new Ghost(new Point2D(15.5*16,17.5*16),8, Color.ORANGE,3, 0);
+        pinky = new Ghost(new Point2D(16.5*16,17.5*16),8, Color.PINK,4, 0);
         ghosts.add(blinky);
         ghosts.add(inky);
         ghosts.add(clyde);
@@ -97,14 +106,24 @@ public class Gameplay extends Application {
         for(Ghost ghost : ghosts){
             ghost.setHomePosition(coreKernel.getGhostHomePosition(ghost));
             ghost.setCornerPosition(coreKernel.getGhostCornerPosition(ghost));
-            ghost.setGateExitPosition(coreKernel.getGhostGateExitPosition(ghost));
-            ghost.setStatus(1);
+            ghost.setGateExitPosition(coreKernel.getGhostGateExitPosition());
         }
     }
 
     public void spawnPacman(){
         pacman = new Pacman(new Point2D(14.5*16,26.5*16), 8, Color.YELLOW);
         spawnEntity(pacman);
+    }
+
+    public void checkExitedHouse(){
+        for(Ghost ghost : ghosts){
+            if((int) ghost.getPhysicalPosition().getX() == (int) ghost.getTarget().getX() && (int) ghost.getPhysicalPosition().getY() == (int) ghost.getTarget().getY() && ghost.getStatus() == 0){
+                ghost.exitedHouse = true;
+            }
+            if((int) ghost.getPhysicalPosition().getX() == (int) ghost.getTarget().getX() && (int) ghost.getPhysicalPosition().getY() == (int) ghost.getTarget().getY() && ghost.getStatus() == 0 && ghost.exitedHouse) {
+                ghost.setStatus(actualMode);
+            }
+        }
     }
 
     public void resetPacman(){
@@ -161,14 +180,49 @@ public class Gameplay extends Application {
                 moveEntity(pacman);
                 moveGhosts();
                 power();
+                checkExitedHouse();
                 cpt++;
-                ++tick;
+                tick++;
 
-                if(tick %60==0)
-                    coreKernel.updateTimeText(tick /60);
+                if(tick %60==0) {
+                    coreKernel.updateTimeText(tick / 60);
+                    if(phaseTimes[phase] != -1) {
+                        switch (actualMode) {
+                            case 1:
+                                if (!frightModeOn) {
+                                    chaseCpt++;
+                                    if (chaseCpt % phaseTimes[phase] == 0) {
+                                        actualMode = 2;
+                                        phase++;
+                                        changeGhostsStatus(actualMode);
+                                    }
+                                }
+                                break;
+                            case 2:
+                                if (!frightModeOn) {
+                                    scatterCpt++;
+                                    if (scatterCpt % phaseTimes[phase] == 0) {
+                                        actualMode = 1;
+                                        phase++;
+                                        changeGhostsStatus(actualMode);
+                                    }
+                                }
+                                break;
+                            case 4:
+                                if (frightModeOn) {
+                                    frightCpt++;
+                                    if (frightCpt % 6 == 0) {
+                                        frightModeOn = false;
+
+                                        changeGhostsStatus(actualMode);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                }
 
                 if(!coreKernel.map.containsScoreEntity()){
-                    System.out.println("GOING TO NEXT LEVEL");
                     try {
                         resetMap();
                         resetPacman();
@@ -182,9 +236,23 @@ public class Gameplay extends Application {
         gameTimer.start();
     }
 
+    public void changeGhostsStatus(int status){
+        System.out.println("CHANGE TO " + status);
+        for(Ghost ghost : ghosts){
+            if(ghost.exitedHouse) {
+                ghost.setStatus(status);
+            }
+            if(status == 4){
+                ghost.setColor(Color.BLUE);
+            } else{
+                ghost.setColor(ghost.originalColor);
+            }
+        }
+    }
+
     private void moveGhosts(){
         for (Ghost ghost : ghosts) {
-            Point2D targetCoordinate = ghost.getTarget(pacman, ghosts);
+            Point2D targetCoordinate = ghost.calculateTarget(pacman, ghosts);
             Point2D direction = coreKernel.calculateMove(targetCoordinate, ghost);
             if(direction.getX() == 0 && direction.getY() == 0){
                 direction = ghost.getOldDirection();
@@ -218,6 +286,8 @@ public class Gameplay extends Application {
                     }
                 } else if (collidingEntity instanceof Wall && !powerPassThrough) {
                     respawnPacman();
+                } else if(collidingEntity instanceof Ghost){
+                    System.out.println("MANGE " + collidingEntity.getPhysicalPosition());
                 }
 
                 if (collidingEntity instanceof PacGum)
@@ -242,16 +312,22 @@ public class Gameplay extends Application {
                 entity.changeDirection(new Point2D(0, 0));
                 return;
             }
-            if((collidingEntity instanceof Wall  || collidingEntity instanceof Door) && powerPassThrough == false){
+            boolean canExitHouse = false;
+            if(entity instanceof Ghost){
+                if (((Ghost) entity).getStatus() == 0){
+                    canExitHouse = true;
+                }
+            }
+            if((collidingEntity instanceof Wall  || (collidingEntity instanceof Door && !canExitHouse)) && !powerPassThrough){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
-                if(!(tile instanceof Wall || tile instanceof Door)){
+                if(!(tile instanceof Wall || (tile instanceof Door && !canExitHouse))){
                     checkPixelOffset(entity,  entity.getWantedDirection());
                     entity.changeDirection( entity.getOldDirection());
                     return;
                 }
                 ArrayList<Entity> collidingEntitiesOld = coreKernel.checkGraphicalPrediction(entity,  entity.getOldDirection());
                 for (Entity collidingEntityOld : collidingEntitiesOld) {
-                    if(collidingEntityOld instanceof Wall|| collidingEntityOld instanceof Door) {
+                    if(collidingEntityOld instanceof Wall|| (collidingEntityOld instanceof Door && !canExitHouse)) {
                         entity.changeDirection(new Point2D(0, 0));
                         return;
                     }

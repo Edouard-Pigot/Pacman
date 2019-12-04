@@ -16,7 +16,6 @@ public class Pacman extends Circle implements MovingEntity {
     private Point2D wantedDirection = new Point2D(0,0);
 
     public Pacman(Point2D graphicalPosition, double size, Color color) {
-
         setPhysicalPosition(size);
         setGraphicalPosition(graphicalPosition);
         setCenterX(0);

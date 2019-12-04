@@ -31,51 +31,51 @@ public class Map {
                 switch (elements[0]){
                     case "E":
                         if (elements.length >= 2) {
-                            Empty e = new Empty(new Point2D(entitiesColumnCounter * staticEntitySize, entitiesRowCounter * staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
+                            Empty e = new Empty(new Point2D(entitiesColumnCounter * staticEntitySize, entitiesRowCounter * staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK);
                             e.set_Id(Integer.parseInt(elements[1]));
                             e.set_Use("C");
                             entities.add(e);
                         } else {
-                            entities.add(new Empty(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
+                            entities.add(new Empty(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK));
                         }
                         break;
                     case "W":
-                        entities.add(new Wall(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLUE));
+                        entities.add(new Wall(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLUE));
                         break;
                     case "P":
                         if (elements.length >= 2 && elements[1].equals("P")) {
-                            entities.add(new PacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/3, Color.YELLOW));
+                            entities.add(new PacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize/3, Color.YELLOW));
                             if (elements.length >= 3 && elements[2].equals("N")) {
 
                             }
                         } else if (elements.length >= 2 && elements[1].equals("G")) {
-                            entities.add(new SuperPacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.YELLOW));
+                            entities.add(new SuperPacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize/2, Color.YELLOW));
                         }  else if (elements.length >= 2 && elements[1].equals("1")) {
-                            entities.add(new PowerPassThrough(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize/2, Color.PURPLE));
+                            entities.add(new PowerPassThrough(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize/2, Color.PURPLE));
                         } else if (elements.length >= 2 && elements[1].equals("2")) {
-                            entities.add(new PowerSize(new Point2D(entitiesColumnCounter * staticEntitySize + staticEntitySize / 2, entitiesRowCounter * staticEntitySize + staticEntitySize / 2), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize / 2, Color.PINK));
+                            entities.add(new PowerSize(new Point2D(entitiesColumnCounter * staticEntitySize + staticEntitySize / 2, entitiesRowCounter * staticEntitySize + staticEntitySize / 2), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize / 2, Color.PINK));
                         } else if (elements.length >= 2 && elements[1].equals("E")) {
-                            Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
+                            Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK);
                             p.set_Use("E");
                             entities.add(p);
                         } else {
-                            entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
+                            entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK));
                         }
                         break;
                     case "T":
-                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
+                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK));
                         break;
                     case "G":
-                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.PINK));
+                        entities.add(new Door(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.PINK));
                         break;
                     case "H":
                         if (elements.length >= 2) {
-                            Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK);
+                            Path p = new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK);
                             p.set_Id(Integer.parseInt(elements[1]));
                             p.set_Use("H");
                             entities.add(p);
                         } else {
-                            entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
+                            entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize, Color.BLACK));
                         }
                         break;
                 }
@@ -159,7 +159,7 @@ public class Map {
         for(Entity entity : entities){
             if(entity instanceof Path){
                 if(((StaticEntity) entity).get_Use().equals("E")) {
-                    return entity.getPhysicalPosition();
+                    return new Point2D(entity.getPhysicalPosition().getX(), entity.getPhysicalPosition().getY()+1);
                 }
             }
         }

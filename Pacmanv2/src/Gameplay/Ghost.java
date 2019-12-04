@@ -18,7 +18,11 @@ public class Ghost extends Circle implements MovingEntity {
     Point2D gateExitPosition = new Point2D(0,0);
     Point2D cornerPosition = new Point2D(0,0);
 
-    StaticEntity target;
+    Color originalColor;
+
+    public boolean exitedHouse;
+
+    Point2D target;
     int id;
     int status;
 
@@ -61,8 +65,12 @@ public class Ghost extends Circle implements MovingEntity {
         this.gateExitPosition = gateExitPosition;
     }
 
+    public void setColor(Color color){
+        setFill(color);
+    }
 
     public Ghost(Point2D graphicalPosition, double size, Color color, int id, int status) {
+        originalColor = color;
         this.status = status;
         setGraphicalPosition(graphicalPosition);
         setCenterX(0);
@@ -72,7 +80,6 @@ public class Ghost extends Circle implements MovingEntity {
         setRadius(size);
         setFill(color);
         setPhysicalPosition(size/2);
-        System.out.println(physicalPosition);
         this.id = id;
     }
 
@@ -117,11 +124,15 @@ public class Ghost extends Circle implements MovingEntity {
         return new Point2D(Math.floor(position.getX()/size), Math.floor(position.getY()/size));
     }
 
-    public void setTarget(StaticEntity targetTile){
+    public void setTarget(Point2D targetTile){
         this.target = targetTile;
     }
 
-    public Point2D getTarget(Pacman pacman, ArrayList<Ghost> ghosts){
+    public Point2D getTarget() {
+        return target;
+    }
+
+    public Point2D calculateTarget(Pacman pacman, ArrayList<Ghost> ghosts){
         Point2D calculatedTarget = new Point2D(0,0);
         switch (id){
             case 1:
@@ -282,6 +293,7 @@ public class Ghost extends Circle implements MovingEntity {
                 }
             break;
         }
+        setTarget(calculatedTarget);
         return calculatedTarget;
     }
 
@@ -291,7 +303,6 @@ public class Ghost extends Circle implements MovingEntity {
                 ((wantedDirection.getX() == -1 && direction.getX() == 1) && (wantedDirection.getY() == 0 && direction.getY() == 0)) ||
                 ((wantedDirection.getX() == 0 && direction.getX() == 0) && (wantedDirection.getY() == 1 && direction.getY() == -1)) ||
                 ((wantedDirection.getX() == 0 && direction.getX() == 0) && (wantedDirection.getY() == -1 && direction.getY() == 1))){
-            System.out.println(tileFirstDirection);
             return;
         }
         oldDirection = newDirection;
@@ -333,4 +344,7 @@ public class Ghost extends Circle implements MovingEntity {
         this.wantedDirection = wantedDirection;
     }
 
+    public int getStatus() {
+        return status;
+    }
 }
