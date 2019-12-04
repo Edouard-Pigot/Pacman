@@ -99,6 +99,10 @@ public class CoreKernel{
         graphicsEngine.biggerPacman(pacman);
     }
 
+    public void centerPacman(Pacman pacman){
+        graphicsEngine.centerPacman(pacman);
+    }
+
     public void smallerPacman(Pacman pacman){
         graphicsEngine.smallerPacman(pacman);
     }

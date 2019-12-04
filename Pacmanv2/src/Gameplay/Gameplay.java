@@ -144,17 +144,19 @@ public class Gameplay extends Application {
 
     public void power(){
         if(powerSize && cpt >= 300){
+            coreKernel.centerPacman(pacman);
             coreKernel.biggerPacman(pacman);
             powerSize=false;
         }
         if(powerPassThrough && cpt >= 300){
+            coreKernel.centerPacman(pacman);
             powerPassThrough=false;
             checkCollision(pacman);
         }
     }
 
     private void createGameLoop(){
-        coreKernel.playBeginningSound();
+        //coreKernel.playBeginningSound();
         frameCount = 0;
         gameTimer = new AnimationTimer() {
             @Override
@@ -221,16 +223,16 @@ public class Gameplay extends Application {
                     reSpanwPacman();
                 }
 
-                if (collidingEntity instanceof PacGum)
-                    coreKernel.playChompSound();
-                else if (collidingEntity instanceof SuperPacGum)
-                    coreKernel.playChompSound();
-                else if (collidingEntity instanceof PowerSize)
-                    coreKernel.playChompSound();
-                else if (collidingEntity instanceof PowerPassThrough)
-                    coreKernel.playChompSound();
-                else if (collidingEntity instanceof Bonus)
-                    coreKernel.playChompSound();
+//                if (collidingEntity instanceof PacGum)
+//                    coreKernel.playChompSound();
+//                else if (collidingEntity instanceof SuperPacGum)
+//                    coreKernel.playChompSound();
+//                else if (collidingEntity instanceof PowerSize)
+//                    coreKernel.playChompSound();
+//                else if (collidingEntity instanceof PowerPassThrough)
+//                    coreKernel.playChompSound();
+//                else if (collidingEntity instanceof Bonus)
+//                    coreKernel.playChompSound();
                 //Ajouter les sons des fantômes en conséquence
             }
         }
