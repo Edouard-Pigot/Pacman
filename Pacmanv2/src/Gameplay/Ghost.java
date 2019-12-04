@@ -18,7 +18,7 @@ public class Ghost extends Circle implements MovingEntity {
     Point2D gateExitPosition = new Point2D(0,0);
     Point2D cornerPosition = new Point2D(0,0);
 
-    StaticEntity target;
+    Point2D target;
     int id;
     int status;
 
@@ -44,6 +44,10 @@ public class Ghost extends Circle implements MovingEntity {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    public int getStatus(){return status;}
+
+    public Point2D getTarget(){return target;}
 
     public int getGhostId() {
         return id;
@@ -117,11 +121,8 @@ public class Ghost extends Circle implements MovingEntity {
         return new Point2D(Math.floor(position.getX()/size), Math.floor(position.getY()/size));
     }
 
-    public void setTarget(StaticEntity targetTile){
-        this.target = targetTile;
-    }
 
-    public Point2D getTarget(Pacman pacman, ArrayList<Ghost> ghosts){
+    public Point2D calculateTarget(Pacman pacman, ArrayList<Ghost> ghosts){
         Point2D calculatedTarget = new Point2D(0,0);
         switch (id){
             case 1:
@@ -282,6 +283,7 @@ public class Ghost extends Circle implements MovingEntity {
                 }
             break;
         }
+        target = calculatedTarget;
         return calculatedTarget;
     }
 

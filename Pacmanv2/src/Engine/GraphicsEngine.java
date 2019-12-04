@@ -345,4 +345,6 @@ public class GraphicsEngine {
     public void smallerPacman(Pacman pacman){
         pacman.setRadius(4);
     }
+
+
 }

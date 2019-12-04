@@ -38,7 +38,19 @@ public class Gameplay extends Application {
 
     public int cpt;
 
-    private int tick;
+    private int tick = 0;
+    private int chaseCpt = 0;
+    private int scatterCpt = 0;
+    private int frightCpt = 0;
+
+    private int phase = 0;
+    private int[] phaseTimes = {7,20,7,20,5,20,-1};
+
+    private int nbScoreEntity = 0;
+
+    public boolean canExitHouse = false;
+
+
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -81,6 +93,22 @@ public class Gameplay extends Application {
         pacman.setWantedDirection(direction);
     }
 
+    public void openDoor(){
+        if(nbScoreEntity == 0){
+            exitHouse(blinky);
+        }else if(nbScoreEntity == 7){
+            exitHouse(pinky);
+        }else if(nbScoreEntity == 17){
+            exitHouse(inky);
+        }else if(nbScoreEntity == 32){
+            exitHouse(clyde);
+        }
+    }
+
+    public void exitHouse(Ghost ghost){
+        ghost.setStatus(0);
+    }
+
     public void spawnGhosts(){
         blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1,0);
         inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2,0);
@@ -99,6 +127,15 @@ public class Gameplay extends Application {
             ghost.setCornerPosition(coreKernel.getGhostCornerPosition(ghost));
             ghost.setGateExitPosition(coreKernel.getGhostGateExitPosition(ghost));
             ghost.setStatus(1);
+        }
+    }
+
+    public void checkExitedHouse(){
+        for(Ghost ghost : ghosts){
+            if((int) ghost.getPhysicalPosition().getX() == (int) ghost.getTarget().getX() && (int) ghost.getPhysicalPosition().getY() == (int) ghost.getTarget().getY() && (int) ghost.getStatus() == 0){
+                ghost.setStatus(2);
+                System.out.println("CHANGE STATUS !!!");
+            }
         }
     }
 
@@ -161,6 +198,8 @@ public class Gameplay extends Application {
                 moveEntity(pacman);
                 moveGhosts();
                 power();
+                openDoor();
+                checkExitedHouse();
                 cpt++;
                 ++tick;
 
@@ -184,7 +223,7 @@ public class Gameplay extends Application {
 
     private void moveGhosts(){
         for (Ghost ghost : ghosts) {
-            Point2D targetCoordinate = ghost.getTarget(pacman, ghosts);
+            Point2D targetCoordinate = ghost.calculateTarget(pacman, ghosts);
             Point2D direction = coreKernel.calculateMove(targetCoordinate, ghost);
             if(direction.getX() == 0 && direction.getY() == 0){
                 direction = ghost.getOldDirection();
@@ -206,6 +245,8 @@ public class Gameplay extends Application {
             for (Entity collidingEntity : collidingEntities) {
                 if (collidingEntity instanceof ScoreEntity) {
                     removeEntity(collidingEntity);
+                    nbScoreEntity +=1;
+                    System.out.println(nbScoreEntity);
                     score += ((ScoreEntity) collidingEntity).getValue();
                     coreKernel.updateScoreText(score);
                     if (collidingEntity instanceof PowerSize) {
@@ -242,16 +283,22 @@ public class Gameplay extends Application {
                 entity.changeDirection(new Point2D(0, 0));
                 return;
             }
-            if((collidingEntity instanceof Wall  || collidingEntity instanceof Door) && powerPassThrough == false){
+            boolean canExitHouse = false;
+            if(entity instanceof Ghost){
+                if (((Ghost) entity).getStatus() == 0){
+                    canExitHouse = true;
+                }
+            }
+            if((collidingEntity instanceof Wall  || (collidingEntity instanceof Door && !canExitHouse)) && powerPassThrough == false){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
-                if(!(tile instanceof Wall || tile instanceof Door)){
+                if(!(tile instanceof Wall || (tile instanceof Door && !canExitHouse))){
                     checkPixelOffset(entity,  entity.getWantedDirection());
                     entity.changeDirection( entity.getOldDirection());
                     return;
                 }
                 ArrayList<Entity> collidingEntitiesOld = coreKernel.checkGraphicalPrediction(entity,  entity.getOldDirection());
                 for (Entity collidingEntityOld : collidingEntitiesOld) {
-                    if(collidingEntityOld instanceof Wall|| collidingEntityOld instanceof Door) {
+                    if(collidingEntityOld instanceof Wall|| (collidingEntityOld instanceof Door && !canExitHouse)) {
                         entity.changeDirection(new Point2D(0, 0));
                         return;
                     }

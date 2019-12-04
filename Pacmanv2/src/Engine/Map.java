@@ -66,7 +66,7 @@ public class Map {
                         entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.BLACK));
                         break;
                     case "G":
-                        entities.add(new Path(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.PINK));
+                        entities.add(new Door(new Point2D(entitiesColumnCounter*staticEntitySize, entitiesRowCounter*staticEntitySize), new Point2D(entitiesRowCounter, entitiesColumnCounter), staticEntitySize, Color.PINK));
                         break;
                     case "H":
                         if (elements.length >= 2) {
@@ -159,7 +159,8 @@ public class Map {
         for(Entity entity : entities){
             if(entity instanceof Path){
                 if(((StaticEntity) entity).get_Use().equals("E")) {
-                    return entity.getPhysicalPosition();
+                    return new Point2D(entity.getPhysicalPosition().getX(), entity.getPhysicalPosition().getY()+1);
+//                    return entity.getPhysicalPosition();
                 }
             }
         }
