@@ -43,6 +43,20 @@ public class CoreKernel{
         scene = graphicsEngine.start(map);
     }
 
+    public void reloadMap(){
+        map = new Map();
+        try {
+            map.generate();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        physicsEngine.reloadMap(map);
+        graphicsEngine.reloadMap(map);
+        scene.setOnKeyPressed(inputEngine);
+
+
+    }
+
     public void play(Stage stage) throws FileNotFoundException {
         gameplay.play(stage);
     }

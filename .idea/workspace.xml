@@ -7,23 +7,127 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Entity/MovingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Entity/MovingEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Pacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/BoxCollider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/BoxCollider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/SoundEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/SoundEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/MovingEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/MovingEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/ScoreEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/ScoreEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/StaticEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Entity/StaticEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Bonus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Bonus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Empty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PacGum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PacGum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Path.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerPassThrough.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerPassThrough.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerSize.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/PowerSize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/SuperPacGum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/SuperPacGum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Wall.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2117379948">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+              <folding>
+                <element signature="e#5559#6364#0" expanded="true" />
+                <element signature="e#6363#6364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,7 +142,74 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" />
+        <option value="$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="797" />
+    <option name="height" value="867" />
+  </component>
   <component name="ProjectId" id="1Sb67zSfjcJHW10QzLm0t3DNvuH" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pacman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pacman" type="462c0819:PsiDirectoryNode" />
+              <item name="Pacmanv2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pacman" type="462c0819:PsiDirectoryNode" />
+              <item name="Pacmanv2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pacman" type="462c0819:PsiDirectoryNode" />
+              <item name="Pacmanv2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pacman" type="462c0819:PsiDirectoryNode" />
+              <item name="Pacmanv2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Gameplay" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -52,7 +223,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575234906517" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575494167177" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Pacmanv2/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,6 +249,18 @@
       <recent name="E:\Desktop\Cours\GL\Pacman\src" />
       <recent name="E:\Desktop\Cours\GL\Pacman\src2" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Gameplay">
     <configuration name="CoreKernel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -167,6 +350,7 @@
       <workItem from="1575212853553" duration="69000" />
       <workItem from="1575230386560" duration="4516000" />
       <workItem from="1575477743895" duration="9612000" />
+      <workItem from="1575493857825" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
       <created>1574265990116</created>
@@ -276,6 +460,43 @@
     <option name="localTasksCounter" value="16" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="309000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -285,12 +506,21 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nouvelle structure de type magnifique" />
@@ -350,5 +580,43 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575487173352" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Engine/PhysicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+          <folding>
+            <element signature="e#5559#6364#0" expanded="true" />
+            <element signature="e#6363#6364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

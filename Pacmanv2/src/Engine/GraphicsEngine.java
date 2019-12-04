@@ -45,6 +45,40 @@ public class GraphicsEngine {
         root.getChildren().add(window);
     }
 
+    public void reloadMap(Map map){
+        root = new Group();
+        livesText = new Text();
+        scoreText = new Text();
+        timeText = new Text();
+
+        livesText.setFill(Color.WHITE);
+        scoreText.setFill(Color.WHITE);
+        timeText.setFill(Color.WHITE);
+
+        livesText.setX(15);
+        scoreText.setX(150);
+        timeText.setX(300);
+
+        livesText.setY(30);
+        scoreText.setY(30);
+        timeText.setY(30);
+
+        livesText.setFont(Font.font ("Verdana", 15));
+        scoreText.setFont(Font.font ("Verdana", 15));
+        timeText.setFont(Font.font ("Verdana", 15));
+
+        Scene scene = new Scene(root, map.getEntitiesColumnCounter() * map.getStaticEntitySize(), map.getEntitiesRowCounter() * map.getStaticEntitySize(), Color.BLACK);
+        window = new AnchorPane();
+
+        setMap(map);
+        coreKernel.scene = scene;
+        root.getChildren().add(livesText);
+        root.getChildren().add(scoreText);
+        root.getChildren().add(timeText);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public AnchorPane home() throws MalformedURLException {
         AnchorPane home = new AnchorPane ();
         home.setPrefSize(448,576);

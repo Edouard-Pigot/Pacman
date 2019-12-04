@@ -158,7 +158,7 @@ public class Gameplay extends Application {
     }
 
     public void resetMap() throws FileNotFoundException {
-        coreKernel.graphicsEngine.setMap(coreKernel.generateMap());
+        coreKernel.reloadMap();
     }
 
     public void spawnEntity(Entity entity){
@@ -209,10 +209,17 @@ public class Gameplay extends Application {
 
                 if(!coreKernel.map.containsScoreEntity()){
                     System.out.println("GOING TO NEXT LEVEL");
+                    coreKernel.playBeginningSound();
+
                     try {
                         resetMap();
+
                         resetPacman();
                         resetGhosts();
+                        coreKernel.updateScoreText(score);
+                        coreKernel.updateLivesText(nbOfLives);
+                        coreKernel.updateTimeText(time);
+
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
