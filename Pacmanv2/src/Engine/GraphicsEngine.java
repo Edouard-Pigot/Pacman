@@ -164,11 +164,7 @@ public class GraphicsEngine {
         replay.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent actionEvent) {
-                try {
-                    coreKernel.play(stage);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                reloadMap(map);
             }
         });
 

@@ -236,6 +236,7 @@ public class Gameplay extends Application {
                 if(nbOfLives==0) {
                     try {
                         gameOver(stage);
+                        nbOfLives = 3;
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
