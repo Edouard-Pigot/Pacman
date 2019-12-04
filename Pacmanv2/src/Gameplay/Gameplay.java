@@ -29,6 +29,8 @@ public class Gameplay extends Application {
     Ghost pinky;
     ArrayList<Ghost> ghosts = new ArrayList<Ghost>();
 
+    public Stage stage;
+
     public int nbOfLives = 3;
     public int score = 0;
     public int time = 0;
@@ -57,11 +59,19 @@ public class Gameplay extends Application {
         coreKernel.startEngines(this,stage);
         stage.setTitle("Pacman 10.0");
         home(stage);
+        this.stage = stage;
     }
 
     public void home(Stage stage) throws MalformedURLException {
         AnchorPane home = coreKernel.home();
         Scene scene = new Scene(home,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void gameOver(Stage stage) throws MalformedURLException {
+        AnchorPane gameOver = coreKernel.gameOver();
+        Scene scene = new Scene(gameOver,448,576);
         stage.setScene(scene);
         stage.show();
     }
@@ -207,13 +217,12 @@ public class Gameplay extends Application {
                 if(tick %60==0)
                     coreKernel.updateTimeText(tick /60);
 
-                if(!coreKernel.map.containsScoreEntity()){
+                if(!coreKernel.map.containsScoreEntity()) {
                     System.out.println("GOING TO NEXT LEVEL");
                     coreKernel.playBeginningSound();
 
                     try {
                         resetMap();
-
                         resetPacman();
                         resetGhosts();
                         coreKernel.updateScoreText(score);
@@ -224,6 +233,14 @@ public class Gameplay extends Application {
                         e.printStackTrace();
                     }
                 }
+                if(nbOfLives==0) {
+                    try {
+                        gameOver(stage);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
         };
         gameTimer.start();
@@ -266,6 +283,9 @@ public class Gameplay extends Application {
                         cpt = 0;
                     }
                 } else if (collidingEntity instanceof Wall && !powerPassThrough) {
+                    respawnPacman();
+                }
+                else if (collidingEntity instanceof Ghost){
                     respawnPacman();
                 }
 
