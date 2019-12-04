@@ -104,6 +104,7 @@ public class Pacman extends Circle implements MovingEntity {
         this.wantedDirection = wantedDirection;
     }
 
+    @Override
     public Point2D convertPhysicalPositionToGraphicalPosition(){
         return new Point2D(Math.floor(physicalPosition.getX()*16), Math.floor(physicalPosition.getY()*16));
     }

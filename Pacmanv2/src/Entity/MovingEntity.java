@@ -25,6 +25,8 @@ public interface MovingEntity extends Entity {
 
     public Point2D convertGraphicalPositionToPhysicalPosition(Point2D position, double size);
 
+    public Point2D convertPhysicalPositionToGraphicalPosition();
+
     public void changeDirection(Point2D direction);
 
     public void setDirection(Point2D direction);

@@ -29,6 +29,8 @@ public class Gameplay extends Application {
     Ghost pinky;
     ArrayList<Ghost> ghosts = new ArrayList<Ghost>();
 
+    public Stage stage;
+
     public int nbOfLives = 3;
     public int score = 0;
     public int time = 0;
@@ -49,17 +51,27 @@ public class Gameplay extends Application {
     private int phase = 0;
     private int[] phaseTimes = {7,20,7,20,5,20,-1};
 
+    private int nbScoreEntity = 0;
+
     @Override
     public void start(Stage stage) throws Exception {
         coreKernel = new CoreKernel();
         coreKernel.startEngines(this,stage);
         stage.setTitle("Pacman 10.0");
         home(stage);
+        this.stage = stage;
     }
 
     public void home(Stage stage) throws MalformedURLException {
         AnchorPane home = coreKernel.home();
         Scene scene = new Scene(home,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void gameOver(Stage stage) throws MalformedURLException {
+        AnchorPane gameOver = coreKernel.gameOver();
+        Scene scene = new Scene(gameOver,448,576);
         stage.setScene(scene);
         stage.show();
     }
@@ -90,6 +102,22 @@ public class Gameplay extends Application {
         pacman.setWantedDirection(direction);
     }
 
+    public void openDoor(){
+        if(nbScoreEntity == 0){
+            exitHouse(blinky);
+        }else if(nbScoreEntity == 7){
+            exitHouse(pinky);
+        }else if(nbScoreEntity == 17){
+            exitHouse(inky);
+        }else if(nbScoreEntity == 32){
+            exitHouse(clyde);
+        }
+    }
+
+    public void exitHouse(Ghost ghost){
+        ghost.setStatus(0);
+    }
+
     public void spawnGhosts(){
         blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1, 0);
         inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2, 0);
@@ -107,6 +135,15 @@ public class Gameplay extends Application {
             ghost.setHomePosition(coreKernel.getGhostHomePosition(ghost));
             ghost.setCornerPosition(coreKernel.getGhostCornerPosition(ghost));
             ghost.setGateExitPosition(coreKernel.getGhostGateExitPosition());
+        }
+    }
+
+    public void checkExitedHouse(){
+        for(Ghost ghost : ghosts){
+            if((int) ghost.getPhysicalPosition().getX() == (int) ghost.getTarget().getX() && (int) ghost.getPhysicalPosition().getY() == (int) ghost.getTarget().getY() && (int) ghost.getStatus() == 0){
+                ghost.setStatus(2);
+                System.out.println("CHANGE STATUS !!!");
+            }
         }
     }
 
@@ -141,7 +178,7 @@ public class Gameplay extends Application {
     }
 
     public void resetMap() throws FileNotFoundException {
-        coreKernel.graphicsEngine.setMap(coreKernel.generateMap());
+        coreKernel.reloadMap();
     }
 
     public void spawnEntity(Entity entity){
@@ -162,10 +199,12 @@ public class Gameplay extends Application {
 
     public void power(){
         if(powerSize && cpt >= 300){
+            coreKernel.center(pacman);
             coreKernel.biggerPacman(pacman);
             powerSize=false;
         }
         if(powerPassThrough && cpt >= 300){
+            coreKernel.center(pacman);
             powerPassThrough=false;
             checkCollision(pacman);
         }
@@ -180,6 +219,7 @@ public class Gameplay extends Application {
                 moveEntity(pacman);
                 moveGhosts();
                 power();
+                openDoor();
                 checkExitedHouse();
                 cpt++;
                 tick++;
@@ -222,15 +262,30 @@ public class Gameplay extends Application {
                     }
                 }
 
-                if(!coreKernel.map.containsScoreEntity()){
+                if(!coreKernel.map.containsScoreEntity()) {
+                    System.out.println("GOING TO NEXT LEVEL");
+                    coreKernel.playBeginningSound();
                     try {
                         resetMap();
                         resetPacman();
                         resetGhosts();
+                        coreKernel.updateScoreText(score);
+                        coreKernel.updateLivesText(nbOfLives);
+                        coreKernel.updateTimeText(time);
+
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
                 }
+                if(nbOfLives==0) {
+                    try {
+                        gameOver(stage);
+                        nbOfLives = 3;
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
         };
         gameTimer.start();
@@ -274,6 +329,8 @@ public class Gameplay extends Application {
             for (Entity collidingEntity : collidingEntities) {
                 if (collidingEntity instanceof ScoreEntity) {
                     removeEntity(collidingEntity);
+                    nbScoreEntity +=1;
+                    System.out.println(nbScoreEntity);
                     score += ((ScoreEntity) collidingEntity).getValue();
                     coreKernel.updateScoreText(score);
                     if (collidingEntity instanceof PowerSize) {
@@ -288,6 +345,9 @@ public class Gameplay extends Application {
                     respawnPacman();
                 } else if(collidingEntity instanceof Ghost){
                     System.out.println("MANGE " + collidingEntity.getPhysicalPosition());
+                }
+                else if (collidingEntity instanceof Ghost){
+                    respawnPacman();
                 }
 
                 if (collidingEntity instanceof PacGum)

@@ -43,6 +43,20 @@ public class CoreKernel{
         scene = graphicsEngine.start(map);
     }
 
+    public void reloadMap(){
+        map = new Map();
+        try {
+            map.generate();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        physicsEngine.reloadMap(map);
+        graphicsEngine.reloadMap(map);
+        scene.setOnKeyPressed(inputEngine);
+
+
+    }
+
     public void play(Stage stage) throws FileNotFoundException {
         gameplay.play(stage);
     }
@@ -103,6 +117,10 @@ public class CoreKernel{
         graphicsEngine.smallerPacman(pacman);
     }
 
+    public void center(MovingEntity entity){
+        graphicsEngine.center(entity);
+    }
+
     public Point2D calculateMove(Point2D targetCoordinate, Ghost ghost){
         return physicsEngine.calculateMove(targetCoordinate, ghost);
     }
@@ -119,8 +137,8 @@ public class CoreKernel{
         return graphicsEngine.rules();
     }
 
-    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
-        return physicsEngine.convertPhysicalPositionToGraphicalPosition(pacman);
+    public Point2D convertPhysicalPositionToGraphicalPosition(MovingEntity entity){
+        return physicsEngine.convertPhysicalPositionToGraphicalPosition(entity);
     }
 
     public void playBeginningSound(){

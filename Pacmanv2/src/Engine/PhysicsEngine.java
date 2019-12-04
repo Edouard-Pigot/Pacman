@@ -22,6 +22,10 @@ public class PhysicsEngine {
         this.coreKernel = coreKernel;
     }
 
+    public void reloadMap(Map map){
+        this.map = map;
+    }
+
     public ArrayList<Entity> checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = new ArrayList<>();
         for(int i = 0; i < map.getEntitiesNumber(); i++){
@@ -88,8 +92,8 @@ public class PhysicsEngine {
         }
         return bestTile;
     }
-    public Point2D convertPhysicalPositionToGraphicalPosition(Pacman pacman){
-        return pacman.convertPhysicalPositionToGraphicalPosition();
+    public Point2D convertPhysicalPositionToGraphicalPosition(MovingEntity entity){
+        return entity.convertPhysicalPositionToGraphicalPosition();
     }
 }
 

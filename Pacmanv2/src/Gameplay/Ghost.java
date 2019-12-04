@@ -49,6 +49,10 @@ public class Ghost extends Circle implements MovingEntity {
         this.status = status;
     }
 
+    public int getStatus(){return status;}
+
+    public Point2D getTarget(){return target;}
+
     public int getGhostId() {
         return id;
     }
@@ -130,6 +134,11 @@ public class Ghost extends Circle implements MovingEntity {
 
     public Point2D getTarget() {
         return target;
+    }
+
+    @Override
+    public Point2D convertPhysicalPositionToGraphicalPosition() {
+        return new Point2D(Math.floor(physicalPosition.getX()*16), Math.floor(physicalPosition.getY()*16));
     }
 
     public Point2D calculateTarget(Pacman pacman, ArrayList<Ghost> ghosts){
