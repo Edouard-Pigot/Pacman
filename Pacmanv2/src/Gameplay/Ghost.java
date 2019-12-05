@@ -132,10 +132,6 @@ public class Ghost extends Circle implements MovingEntity {
         this.target = targetTile;
     }
 
-    public Point2D getTarget() {
-        return target;
-    }
-
     @Override
     public Point2D convertPhysicalPositionToGraphicalPosition() {
         return new Point2D(Math.floor(physicalPosition.getX()*16), Math.floor(physicalPosition.getY()*16));
@@ -353,7 +349,8 @@ public class Ghost extends Circle implements MovingEntity {
         this.wantedDirection = wantedDirection;
     }
 
-    public int getStatus() {
-        return status;
+    public void levelRestart(){
+        setGraphicalPosition(new Point2D(((gateExitPosition.getX()-2) * (getRadius()*2))-getRadius(), (gateExitPosition.getY() * (getRadius()*2))-getRadius()));
+        setPhysicalPosition(getRadius());
     }
 }

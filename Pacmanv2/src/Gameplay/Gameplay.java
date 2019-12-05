@@ -27,63 +27,69 @@ public class Gameplay extends Application {
     Ghost inky;
     Ghost clyde;
     Ghost pinky;
-    ArrayList<Ghost> ghosts = new ArrayList<Ghost>();
+    ArrayList<Ghost> ghosts;
 
     public Stage stage;
 
-    public int nbOfLives = 3;
-    public int score = 0;
-    public int time = 0;
+    public int nbOfLives;
+    public int score;
+    public int time;
 
     public boolean powerSize = false;
     public boolean powerPassThrough = false;
 
     public int cpt;
+    public int nbGhostEaten;
 
-    private int tick = 0;
-    private int chaseCpt = 0;
-    private int scatterCpt = 0;
-    private int frightCpt = 0;
+    private int tick;
+    private int chaseCpt;
+    private int scatterCpt;
+    private int frightCpt;
 
-    private boolean frightModeOn = false;
-    private int actualMode = 2;
+    private boolean frightModeOn;
+    private int actualMode;
 
-    private int phase = 0;
-    private int[] phaseTimes = {7,20,7,20,5,20,-1};
+    private int phase;
+    private int[] phaseTimes;
 
-    private int nbScoreEntity = 0;
+    private int nbScoreEntity ;
 
     @Override
     public void start(Stage stage) throws Exception {
-        coreKernel = new CoreKernel();
-        coreKernel.startEngines(this,stage);
-        stage.setTitle("Pacman 10.0");
-        home(stage);
+        init(stage);
         this.stage = stage;
     }
 
-    public void home(Stage stage) throws MalformedURLException {
-        AnchorPane home = coreKernel.home();
-        Scene scene = new Scene(home,448,576);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void gameOver(Stage stage) throws MalformedURLException {
-        AnchorPane gameOver = coreKernel.gameOver();
-        Scene scene = new Scene(gameOver,448,576);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void rules(Stage stage) throws MalformedURLException {
-        AnchorPane rules = coreKernel.rules();
-        Scene scene = new Scene(rules,448,576);
-        stage.setScene(scene);
-        stage.show();
+    public void init(Stage stage)throws Exception{
+        coreKernel = new CoreKernel();
+        coreKernel.startEngines(this,stage);
+        stage.setTitle("Pacman 10.0");
+        coreKernel.home(stage);
     }
 
     public void play(Stage stage) throws FileNotFoundException {
+        nbOfLives = 3;
+        score = 0;
+        time = 0;
+
+        powerSize = false;
+        powerPassThrough = false;
+
+        tick = 0;
+        chaseCpt = 0;
+        scatterCpt = 0;
+        frightCpt = 0;
+
+        frightModeOn = false;
+        actualMode = 2;
+
+        phase = 0;
+        phaseTimes = new int[]{7, 20, 7, 20, 5, 20, -1};
+
+        nbScoreEntity = 0;
+
+        ghosts = new ArrayList<Ghost>();
+
         Scene scene = coreKernel.scene;
         stage.setScene(scene);
         scene.setOnKeyPressed(coreKernel.inputEngine);
@@ -119,10 +125,10 @@ public class Gameplay extends Application {
     }
 
     public void spawnGhosts(){
-        blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1, 0);
-        inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2, 0);
-        clyde = new Ghost(new Point2D(15.5*16,17.5*16),8, Color.ORANGE,3, 0);
-        pinky = new Ghost(new Point2D(16.5*16,17.5*16),8, Color.PINK,4, 0);
+        blinky = new Ghost(new Point2D(12.5*16,17.5*16),8, Color.RED,1, 1);
+        inky = new Ghost(new Point2D(13.5*16,17.5*16),8, Color.CYAN,2, 1);
+        clyde = new Ghost(new Point2D(15.5*16,17.5*16),8, Color.ORANGE,3, 1);
+        pinky = new Ghost(new Point2D(16.5*16,17.5*16),8, Color.PINK,4, 1);
         ghosts.add(blinky);
         ghosts.add(inky);
         ghosts.add(clyde);
@@ -138,14 +144,6 @@ public class Gameplay extends Application {
         }
     }
 
-    public void checkExitedHouse(){
-        for(Ghost ghost : ghosts){
-            if((int) ghost.getPhysicalPosition().getX() == (int) ghost.getTarget().getX() && (int) ghost.getPhysicalPosition().getY() == (int) ghost.getTarget().getY() && (int) ghost.getStatus() == 0){
-                ghost.setStatus(2);
-                System.out.println("CHANGE STATUS !!!");
-            }
-        }
-    }
 
     public void spawnPacman(){
         pacman = new Pacman(new Point2D(14.5*16,26.5*16), 8, Color.YELLOW);
@@ -193,11 +191,17 @@ public class Gameplay extends Application {
         removeEntity(pacman);
         pacman.setWantedDirection( new Point2D(0,0));
         nbOfLives -= 1;
+        for (Ghost ghost: ghosts)
+            ghost.levelRestart();
         coreKernel.updateLivesText(nbOfLives);
         spawnPacman();
     }
 
     public void power(){
+        if(frightModeOn  && cpt>=300){
+            changeGhostsStatus(actualMode);
+            frightModeOn = false;
+        }
         if(powerSize && cpt >= 300){
             coreKernel.center(pacman);
             coreKernel.biggerPacman(pacman);
@@ -253,7 +257,6 @@ public class Gameplay extends Application {
                                     frightCpt++;
                                     if (frightCpt % 6 == 0) {
                                         frightModeOn = false;
-
                                         changeGhostsStatus(actualMode);
                                     }
                                 }
@@ -272,20 +275,23 @@ public class Gameplay extends Application {
                         coreKernel.updateScoreText(score);
                         coreKernel.updateLivesText(nbOfLives);
                         coreKernel.updateTimeText(time);
+                        nbScoreEntity =0;
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
                 }
-                if(nbOfLives==0) {
+                if(nbOfLives <=0) {
                     try {
-                        gameOver(stage);
+                        coreKernel.gameOver(stage);
                         nbOfLives = 3;
+                        gameTimer.stop();
                     } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
-
             }
         };
         gameTimer.start();
@@ -305,6 +311,16 @@ public class Gameplay extends Application {
         }
     }
 
+    public void changeStatus(int status,Ghost ghost){
+        if(ghost.exitedHouse) {
+            ghost.setStatus(status);
+        }
+        if(status == 4){
+            ghost.setColor(Color.BLUE);
+        } else{
+            ghost.setColor(ghost.originalColor);
+        }
+    }
     private void moveGhosts(){
         for (Ghost ghost : ghosts) {
             Point2D targetCoordinate = ghost.calculateTarget(pacman, ghosts);
@@ -323,6 +339,7 @@ public class Gameplay extends Application {
         coreKernel.moveEntity(entity.getNewDirection(), entity);
     }
 
+
     private void checkCollision(MovingEntity entity){
         ArrayList<Entity> collidingEntities = coreKernel.checkCollision(entity);
         if(entity instanceof Pacman) {
@@ -330,9 +347,14 @@ public class Gameplay extends Application {
                 if (collidingEntity instanceof ScoreEntity) {
                     removeEntity(collidingEntity);
                     nbScoreEntity +=1;
-                    System.out.println(nbScoreEntity);
                     score += ((ScoreEntity) collidingEntity).getValue();
                     coreKernel.updateScoreText(score);
+                    if(collidingEntity instanceof SuperPacGum){
+                        frightModeOn = true;
+                        changeGhostsStatus(4);
+                        cpt = 0;
+                        nbGhostEaten = 1;
+                    }
                     if (collidingEntity instanceof PowerSize) {
                         powerSize = true;
                         coreKernel.smallerPacman(pacman);
@@ -343,13 +365,16 @@ public class Gameplay extends Application {
                     }
                 } else if (collidingEntity instanceof Wall && !powerPassThrough) {
                     respawnPacman();
-                } else if(collidingEntity instanceof Ghost){
-                    System.out.println("MANGE " + collidingEntity.getPhysicalPosition());
-                }
-                else if (collidingEntity instanceof Ghost){
+                } else if(collidingEntity instanceof Ghost && !frightModeOn ){
                     respawnPacman();
+                } else if(collidingEntity instanceof Ghost && frightModeOn ){
+                    changeStatus(0,(Ghost) collidingEntity);
+                    nbGhostEaten*=2;
+                    score+=(100*nbGhostEaten);
+                    System.out.println(score);
+                    coreKernel.updateScoreText(score);
+                    ((Ghost) collidingEntity).levelRestart();
                 }
-
                 if (collidingEntity instanceof PacGum)
                     coreKernel.playChompSound();
                 else if (collidingEntity instanceof SuperPacGum)

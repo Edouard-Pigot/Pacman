@@ -84,8 +84,8 @@ public class GraphicsEngine {
         home.setPrefSize(448,576);
         home.setStyle("-fx-background-color: BLack; -fx-border-color: Orange;");
 
-        Button play = new Button("Jouer");
-        Button rulesOfTheGame = new Button("Règles du jeu");
+        Button play = new Button("Play");
+        Button rulesOfTheGame = new Button("Game Rules");
 
         play.setLayoutX(125);
         play.setLayoutY(313);
@@ -114,9 +114,7 @@ public class GraphicsEngine {
             @Override
             public void handle(ActionEvent actionEvent) {
                 try {
-                    coreKernel.rules(stage);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                    rules(stage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -147,13 +145,34 @@ public class GraphicsEngine {
         return home;
     }
 
+    public void rules(Stage stage) throws MalformedURLException {
+        AnchorPane rules = coreKernel.rules();
+        Scene scene = new Scene(rules,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void home(Stage stage) throws MalformedURLException {
+        AnchorPane home = coreKernel.home();
+        Scene scene = new Scene(home,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void gameOver(Stage stage) throws MalformedURLException {
+        AnchorPane gameOver = coreKernel.gameOver();
+        Scene scene = new Scene(gameOver,448,576);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public AnchorPane gameOver() throws MalformedURLException {
         AnchorPane gameOver = new AnchorPane ();
         gameOver.setPrefSize(448,576);
         gameOver.setStyle("-fx-background-color: BLack; -fx-border-color: Orange;");
 
-        Button replay = new Button("Rejouer");
-        Button leave = new Button("Quitter");
+        Button replay = new Button("Replay");
+        Button leave = new Button("Quit");
 
         replay.setLayoutX(130.0);
         replay.setLayoutY(356.0);
@@ -164,7 +183,15 @@ public class GraphicsEngine {
         replay.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent actionEvent) {
-                reloadMap(map);
+                try {
+                    coreKernel.init(stage);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 

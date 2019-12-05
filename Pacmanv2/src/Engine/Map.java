@@ -159,7 +159,7 @@ public class Map {
         for(Entity entity : entities){
             if(entity instanceof Path){
                 if(((StaticEntity) entity).get_Use().equals("E")) {
-                    return new Point2D(entity.getPhysicalPosition().getX(), entity.getPhysicalPosition().getY()+1);
+                    return new Point2D(entity.getPhysicalPosition().getX()+2, entity.getPhysicalPosition().getY());
                 }
             }
         }

@@ -35,7 +35,7 @@ public class CoreKernel{
 
         physicsEngine = new PhysicsEngine(map, this);
         graphicsEngine = new GraphicsEngine(stage,map,this);
-        inputEngine = new InputEngine(gameplay);
+        inputEngine = new InputEngine(this);
 
         soundEngine = new SoundEngine();
         soundEngine.start();
@@ -63,11 +63,11 @@ public class CoreKernel{
 
 
     public void home (Stage stage) throws Exception {
-        gameplay.home(stage);
+        graphicsEngine.home(stage);
     }
 
-    public void rules (Stage stage) throws Exception {
-        gameplay.rules(stage);
+    public void gameOver (Stage stage) throws Exception {
+        graphicsEngine.gameOver(stage);
     }
 
     public void moveEntity(Point2D direction, MovingEntity entity){
@@ -171,5 +171,13 @@ public class CoreKernel{
 
     public Point2D getGhostGateExitPosition(){
         return map.getGhostGateExitPosition();
+    }
+
+    public void init(Stage stage) throws Exception {
+        gameplay.init(stage);
+    }
+
+    public void setPacmanDirection (Point2D direction){
+        gameplay.setPacmanDirection(direction);
     }
 }
