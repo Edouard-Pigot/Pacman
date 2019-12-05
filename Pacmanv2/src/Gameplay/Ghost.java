@@ -349,8 +349,12 @@ public class Ghost extends Circle implements MovingEntity {
         this.wantedDirection = wantedDirection;
     }
 
-    public void levelRestart(){
-        setGraphicalPosition(new Point2D(((gateExitPosition.getX()-2) * (getRadius()*2))-getRadius(), (gateExitPosition.getY() * (getRadius()*2))-getRadius()));
+    public void levelRestart(int cpt){
+        setGraphicalPosition(new Point2D(((gateExitPosition.getX()-2 +cpt) * (getRadius()*2))-getRadius(), ((gateExitPosition.getY()+7) * (getRadius()*2))-getRadius()));
         setPhysicalPosition(getRadius());
+        setWantedDirection(new Point2D(0,0));
+        setOldDirection(new Point2D(0,0));
+        setNewDirection(new Point2D(0,0));
+        setTileFirstDirection(new Point2D(0,0));
     }
 }

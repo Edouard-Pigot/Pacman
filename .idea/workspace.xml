@@ -8,16 +8,21 @@
   <component name="ChangeListManager">
     <list default="true" id="448a8a3d-dfa9-49e9-b7d2-08d985dd09b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/CoreKernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/GraphicsEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/InputEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Engine/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Gameplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pacmanv2/src/Gameplay/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/CoreKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/GraphicsEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/InputEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Engine/PhysicsEngine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Gameplay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Ghost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacmanv2/Gameplay/Pacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pacmanv2/META-INF/Pacmanv2.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +178,7 @@
       <workItem from="1575230386560" duration="4516000" />
       <workItem from="1575477743895" duration="9612000" />
       <workItem from="1575493857825" duration="1983000" />
-      <workItem from="1575499168090" duration="7187000" />
+      <workItem from="1575499168090" duration="8559000" />
     </task>
     <task id="LOCAL-00001" summary="Nouvelle structure de type magnifique">
       <created>1574265990116</created>
@@ -294,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575495140841</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Correction des differents bugs">
+      <created>1575506528836</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1575506528836</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +342,8 @@
     <MESSAGE value="Sortie des fantomes" />
     <MESSAGE value="Fin de niveau" />
     <MESSAGE value="Fin de partie, reste à gérer la fenêtre de game over" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fin de partie, reste à gérer la fenêtre de game over" />
+    <MESSAGE value="Correction des differents bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction des differents bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1575487379191">
@@ -345,34 +358,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1575481784916" />
-    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1575487643462">
+    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1575506527353">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575487643462" />
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1575506448119">
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575506527353" />
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1575507814653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575506448119" />
-    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1575506448119">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575507814653" />
+    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1575507814653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575506448119" />
-    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1575506448119">
+    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575507814653" />
+    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1575507814653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575506448119" />
-    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1575506448119">
+    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575507814653" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1575507814653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575506448119" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575507814653" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1575502575137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1575502575137" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1575486713520">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1575506530800">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1575486713520" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1575506530800" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575505006668">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

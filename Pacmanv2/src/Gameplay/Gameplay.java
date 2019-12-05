@@ -54,6 +54,8 @@ public class Gameplay extends Application {
 
     private int nbScoreEntity ;
 
+    private int spwan;
+
     @Override
     public void start(Stage stage) throws Exception {
         init(stage);
@@ -87,6 +89,8 @@ public class Gameplay extends Application {
         phaseTimes = new int[]{7, 20, 7, 20, 5, 20, -1};
 
         nbScoreEntity = 0;
+
+        spwan =0;
 
         ghosts = new ArrayList<Ghost>();
 
@@ -130,8 +134,9 @@ public class Gameplay extends Application {
         clyde = new Ghost(new Point2D(15.5*16,17.5*16),8, Color.ORANGE,3, 1);
         pinky = new Ghost(new Point2D(16.5*16,17.5*16),8, Color.PINK,4, 1);
         ghosts.add(blinky);
-        ghosts.add(inky);
         ghosts.add(clyde);
+        ghosts.add(inky);
+
         ghosts.add(pinky);
         spawnEntity(blinky);
         spawnEntity(inky);
@@ -191,8 +196,11 @@ public class Gameplay extends Application {
         removeEntity(pacman);
         pacman.setWantedDirection( new Point2D(0,0));
         nbOfLives -= 1;
-        for (Ghost ghost: ghosts)
-            ghost.levelRestart();
+        for (Ghost ghost: ghosts){
+            ghost.levelRestart(spwan);
+            spwan++;
+        }
+        spwan = 0;
         coreKernel.updateLivesText(nbOfLives);
         spawnPacman();
     }
@@ -373,7 +381,7 @@ public class Gameplay extends Application {
                     score+=(100*nbGhostEaten);
                     System.out.println(score);
                     coreKernel.updateScoreText(score);
-                    ((Ghost) collidingEntity).levelRestart();
+                    ((Ghost) collidingEntity).levelRestart(spwan);
                 }
                 if (collidingEntity instanceof PacGum)
                     coreKernel.playChompSound();
