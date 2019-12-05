@@ -193,7 +193,9 @@ public class Gameplay extends Application {
     }
 
     public void respawnPacman(){
+        coreKernel.playDeathSound();
         removeEntity(pacman);
+        powerPassThrough=false;
         pacman.setWantedDirection( new Point2D(0,0));
         nbOfLives -= 1;
         for (Ghost ghost: ghosts){
@@ -406,12 +408,20 @@ public class Gameplay extends Application {
                 return;
             }
             boolean canExitHouse = false;
-            if(entity instanceof Ghost){
-                if (((Ghost) entity).getStatus() == 0){
+            if(entity instanceof Ghost) {
+                if (((Ghost) entity).getStatus() == 0) {
                     canExitHouse = true;
                 }
             }
-            if((collidingEntity instanceof Wall  || (collidingEntity instanceof Door && !canExitHouse)) && !powerPassThrough){
+
+            boolean powerPass = false;
+            if(entity instanceof Pacman) {
+                if(powerPassThrough){
+                    powerPass = true;
+                }
+            }
+
+            if((collidingEntity instanceof Wall  || (collidingEntity instanceof Door && !canExitHouse)) && !powerPass){
                 Entity tile = coreKernel.checkPhysicalPrediction(entity,  entity.getWantedDirection());
                 if(!(tile instanceof Wall || (tile instanceof Door && !canExitHouse))){
                     checkPixelOffset(entity,  entity.getWantedDirection());
