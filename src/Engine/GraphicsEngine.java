@@ -126,12 +126,12 @@ public class GraphicsEngine {
             }
         });
 
-        File titlefile = new File("src/Titre.png");
+        File titlefile = new File("Images/Titre.png");
         String titlelocalUrl = titlefile.toURI().toURL().toString();
 
         ImageView title = new ImageView(titlelocalUrl);
 
-        File giffile = new File("src/Pacman.gif");
+        File giffile = new File("Images/Pacman.gif");
         String giflocalUrl = giffile.toURI().toURL().toString();
         ImageView gif = new ImageView(giflocalUrl);
 
@@ -213,7 +213,7 @@ public class GraphicsEngine {
             }
         });
 
-        File gameOverFile = new File("src/gameover.png");
+        File gameOverFile = new File("Images/gameover.png");
         String gameOverlocalUrl = gameOverFile.toURI().toURL().toString();
         ImageView gameOverImage = new ImageView(gameOverlocalUrl);
 
@@ -252,7 +252,7 @@ public class GraphicsEngine {
             }
         });
 
-        File commandsFile = new File("src/zqsd.png");
+        File commandsFile = new File("Images/zqsd.png");
         String commandsOverlocalUrl = commandsFile.toURI().toURL().toString();
         ImageView commands = new ImageView(commandsOverlocalUrl);
 
@@ -261,7 +261,7 @@ public class GraphicsEngine {
         commands.setLayoutX(60);
         commands.setLayoutY(147);
 
-        File giffile = new File("src/pacmanGif.gif");
+        File giffile = new File("Images/pacmanGif.gif");
         String giflocalUrl = giffile.toURI().toURL().toString();
         ImageView gif = new ImageView(giflocalUrl);
 

@@ -382,6 +382,7 @@ public class Gameplay extends Application {
                 } else if(collidingEntity instanceof Ghost && !frightModeOn ){
                     respawnPacman();
                 } else if(collidingEntity instanceof Ghost && frightModeOn ){
+                    coreKernel.playEatGhostSound();
                     changeStatus(0,(Ghost) collidingEntity);
                     nbGhostEaten*=2;
                     score+=(100*nbGhostEaten);
