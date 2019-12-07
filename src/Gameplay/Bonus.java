@@ -5,17 +5,16 @@ import Entity.*;
 import Entity.StaticEntity;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Circle;
 
-public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
+public class Bonus extends Circle implements StaticEntity, ScoreEntity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
 
-    private final int value = 100;
-    //A modifier en fonction du niveau...
-
     int identifiant = 0;
     String use = "";
+
+    private String fruit = "cherry";
 
     public void set_Id(int id){
         this.identifiant = id;
@@ -33,15 +32,17 @@ public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
         return use;
     }
 
-    public Bonus(Point2D graphicalPosition, Point2D physicalPosition, double size, Color color) {
-        super.setFill(color);
+    public Bonus(Point2D graphicalPosition, Point2D physicalPosition, double size, int level) {
         setPhysicalPosition(physicalPosition);
         setGraphicalPosition(graphicalPosition);
+        setCenterX(0);
         setLayoutX(graphicalPosition.getX());
+        setCenterY(0);
         setLayoutY(graphicalPosition.getY());
-        setWidth(size);
-        setHeight(size);
-        setFill(color);
+        setRadius(size);
+
+        setFruit(level);
+        toFront();
     }
 
     @Override
@@ -52,8 +53,6 @@ public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
     @Override
     public void setGraphicalPosition(Point2D position) {
         this.graphicalPosition = position;
-        setLayoutX(position.getX());
-        setLayoutY(position.getY());
     }
 
     @Override
@@ -68,7 +67,7 @@ public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
 
     @Override
     public BoxCollider boxCollider() {
-        return new BoxCollider((int) graphicalPosition.getX(), (int) graphicalPosition.getX() + (int) getWidth(), (int) graphicalPosition.getY(), (int) graphicalPosition.getY() + (int) getHeight());
+        return new BoxCollider((int) graphicalPosition.getX(), (int) graphicalPosition.getX() + (int) getRadius(), (int) graphicalPosition.getY(), (int) graphicalPosition.getY() + (int) getRadius());
     }
 
     @Override
@@ -82,6 +81,42 @@ public class Bonus extends Rectangle implements StaticEntity, ScoreEntity {
 
     @Override
     public int getValue() {
-        return value;
+        if(fruit.equals("cherry"))
+            return 100;
+        else if(fruit.equals("strawberry"))
+            return 300;
+        else if(fruit.equals("peach"))
+            return 500;
+        else if(fruit.equals("apple"))
+            return 700;
+        else if(fruit.equals("grapes"))
+            return 1000;
+        else if(fruit.equals("galaxian"))
+            return 2000;
+        else if(fruit.equals("bell"))
+            return 3000;
+        else if(fruit.equals("key"))
+            return 5000;
+        else
+            return -10000;
+    }
+
+    public void setFruit(int level){
+        if(level<=1)
+            fruit = "cherry";
+        else if(level <= 2)
+            fruit = "strawberry";
+        else if(level <=4)
+            fruit = "peach";
+        else if(level <=6)
+            fruit = "apple";
+        else if(level <=8)
+            fruit = "grapes";
+        else if(level <=10)
+            fruit = "galaxian";
+        else if(level <=12)
+            fruit = "bell";
+        else
+            fruit = "key";
     }
 }

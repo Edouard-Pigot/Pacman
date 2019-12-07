@@ -29,6 +29,9 @@ public class Gameplay extends Application {
     Ghost pinky;
     ArrayList<Ghost> ghosts;
 
+    Bonus bonus;
+
+
     public Stage stage;
 
     public int nbOfLives;
@@ -48,7 +51,6 @@ public class Gameplay extends Application {
 
     private boolean frightModeOn;
     private int actualMode;
-
     private int phase;
     private int[] phaseTimes;
 
@@ -57,6 +59,10 @@ public class Gameplay extends Application {
     private int spawn;
 
     private int frame;
+
+
+
+    private int level = 1;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -99,6 +105,7 @@ public class Gameplay extends Application {
         Scene scene = coreKernel.scene;
         stage.setScene(scene);
         scene.setOnKeyPressed(coreKernel.inputEngine);
+        spawnBonus();
         spawnPacman();
         spawnGhosts();
         createGameLoop();
@@ -158,6 +165,11 @@ public class Gameplay extends Application {
         spawnEntity(pacman);
     }
 
+    public void spawnBonus(){
+        bonus = new Bonus(new Point2D(2088,3208), new Point2D(13,20), 5, level);
+        spawnEntity(bonus);
+    }
+
     public void checkExitedHouse(){
         for(Ghost ghost : ghosts){
             if((int) ghost.getPhysicalPosition().getX() == (int) ghost.getTarget().getX() && (int) ghost.getPhysicalPosition().getY() == (int) ghost.getTarget().getY() && ghost.getStatus() == 0){
@@ -185,6 +197,7 @@ public class Gameplay extends Application {
 
     public void resetMap() throws FileNotFoundException {
         coreKernel.reloadMap();
+        spawnBonus();
     }
 
     public void spawnEntity(Entity entity){
@@ -241,6 +254,7 @@ public class Gameplay extends Application {
                 cpt++;
                 tick++;
 
+
                 if(tick %5==0) {
                     if (frame == 1) {
                         frame = 0;
@@ -287,7 +301,7 @@ public class Gameplay extends Application {
                 }
 
                 if(!coreKernel.map.containsScoreEntity()) {
-                    System.out.println("GOING TO NEXT LEVEL");
+                    ++level;
                     coreKernel.playBeginningSound();
                     try {
                         resetMap();
@@ -307,8 +321,6 @@ public class Gameplay extends Application {
                         coreKernel.gameOver(stage);
                         nbOfLives = 3;
                         gameTimer.stop();
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -361,6 +373,9 @@ public class Gameplay extends Application {
                 if (collidingEntity instanceof ScoreEntity) {
                     removeEntity(collidingEntity);
                     nbScoreEntity +=1;
+                    if(collidingEntity instanceof Bonus){
+
+                    }
                     score += ((ScoreEntity) collidingEntity).getValue();
                     coreKernel.updateScoreText(score);
                     if(collidingEntity instanceof SuperPacGum){
@@ -382,7 +397,6 @@ public class Gameplay extends Application {
                 } else if(collidingEntity instanceof Ghost && !frightModeOn ){
                     respawnPacman();
                 } else if(collidingEntity instanceof Ghost && frightModeOn ){
-                    coreKernel.playEatGhostSound();
                     changeStatus(0,(Ghost) collidingEntity);
                     nbGhostEaten*=2;
                     score+=(100*nbGhostEaten);
@@ -395,12 +409,13 @@ public class Gameplay extends Application {
                 else if (collidingEntity instanceof SuperPacGum)
                     coreKernel.playChompSound();
                 else if (collidingEntity instanceof PowerSize)
-                    coreKernel.playChompSound();
+                    coreKernel.playEatFruitSound();
                 else if (collidingEntity instanceof PowerPassThrough)
-                    coreKernel.playChompSound();
+                    coreKernel.playEatFruitSound();
                 else if (collidingEntity instanceof Bonus)
-                    coreKernel.playChompSound();
-                //Ajouter les sons des fantômes en conséquence
+                    coreKernel.playEatFruitSound();
+                else if(collidingEntity instanceof Ghost && frightModeOn)
+                    coreKernel.playEatGhostSound();
             }
         }
     }

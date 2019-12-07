@@ -46,7 +46,6 @@ public class Map {
                         if (elements.length >= 2 && elements[1].equals("P")) {
                             entities.add(new PacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize/3, Color.YELLOW));
                             if (elements.length >= 3 && elements[2].equals("N")) {
-
                             }
                         } else if (elements.length >= 2 && elements[1].equals("G")) {
                             entities.add(new SuperPacGum(new Point2D(entitiesColumnCounter*staticEntitySize + staticEntitySize/2, entitiesRowCounter*staticEntitySize + staticEntitySize/2), new Point2D(entitiesColumnCounter, entitiesRowCounter), staticEntitySize/2, Color.YELLOW));
@@ -163,6 +162,13 @@ public class Map {
                 }
             }
         }
+        return null;
+    }
+
+    public Bonus findBonus(){
+        for(Entity entity : entities)
+            if(entity instanceof Bonus)
+                return (Bonus)entity;
         return null;
     }
 }
