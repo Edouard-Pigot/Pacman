@@ -19,8 +19,8 @@ public class Pacman extends ImageView implements MovingEntity {
     private Point2D oldDirection = new Point2D(0,0);
     private Point2D wantedDirection = new Point2D(0,0);
 
-    private Image normal1 = new Image("file:///E:/Desktop/Pacman/src/PAC1.png");
-    private Image normal2 = new Image("file:///E:/Desktop/Pacman/src/PAC2.png");
+    private Image normal1 = new Image("file:src/PAC1.png");
+    private Image normal2 = new Image("file:src/PAC2.png");
 
     public Pacman(Point2D graphicalPosition, double size) {
         setImage(normal1);
