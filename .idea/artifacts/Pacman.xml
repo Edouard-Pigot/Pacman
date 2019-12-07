@@ -3,9 +3,10 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Pacman</output-path>
     <properties id="javafx-properties">
       <options>
-        <option name="appClass" value="Drawer" />
+        <option name="appClass" value="Gameplay.Gameplay.start" />
         <option name="description" value="" />
         <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
         <option name="title" value="" />
         <option name="vendor" value="" />
         <option name="version" value="" />

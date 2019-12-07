@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Pacman.iml" filepath="$PROJECT_DIR$/Pacman.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Pacmanv2/Pacmanv2.iml" filepath="$PROJECT_DIR$/Pacmanv2/Pacmanv2.iml" />
     </modules>
   </component>
 </project>
