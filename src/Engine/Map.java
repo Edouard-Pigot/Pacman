@@ -4,6 +4,7 @@ import Entity.*;
 import Gameplay.*;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -167,7 +168,7 @@ public class Map {
 
     public Bonus findBonus(){
         for(Entity entity : entities)
-            if(entity instanceof Bonus)
+            if(entity instanceof ImageView)
                 return (Bonus)entity;
         return null;
     }

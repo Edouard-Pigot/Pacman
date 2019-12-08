@@ -108,6 +108,7 @@ public class Gameplay extends Application {
         spawnBonus();
         spawnPacman();
         spawnGhosts();
+        System.out.println(coreKernel.map.findBonus());
         createGameLoop();
         stage.show();
         coreKernel.updateScoreText(score);
@@ -166,7 +167,7 @@ public class Gameplay extends Application {
     }
 
     public void spawnBonus(){
-        bonus = new Bonus(new Point2D(2088,3208), new Point2D(13,20), 5, level);
+        bonus = new Bonus(new Point2D(2088,3208), new Point2D(13,20), 50000, level);
         spawnEntity(bonus);
     }
 

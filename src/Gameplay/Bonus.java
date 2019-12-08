@@ -4,15 +4,19 @@ import Engine.BoxCollider;
 import Entity.*;
 import Entity.StaticEntity;
 import javafx.geometry.Point2D;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class Bonus extends Circle implements StaticEntity, ScoreEntity {
+public class Bonus extends ImageView implements StaticEntity, ScoreEntity {
     Point2D physicalPosition = new Point2D(0,0);
     Point2D graphicalPosition = new Point2D(0,0);
 
     int identifiant = 0;
     String use = "";
+
+    private Image image = new Image("file:Images/APPLE.png");
 
     private String fruit = "cherry";
 
@@ -33,16 +37,19 @@ public class Bonus extends Circle implements StaticEntity, ScoreEntity {
     }
 
     public Bonus(Point2D graphicalPosition, Point2D physicalPosition, double size, int level) {
+
+        setImage(image);
+
         setPhysicalPosition(physicalPosition);
         setGraphicalPosition(graphicalPosition);
-        setCenterX(0);
         setLayoutX(graphicalPosition.getX());
-        setCenterY(0);
         setLayoutY(graphicalPosition.getY());
-        setRadius(size);
 
-        setFruit(level);
+        setFitWidth(size);
+        setFitHeight(size);
         toFront();
+        setFruit(level);
+
     }
 
     @Override
@@ -67,7 +74,7 @@ public class Bonus extends Circle implements StaticEntity, ScoreEntity {
 
     @Override
     public BoxCollider boxCollider() {
-        return new BoxCollider((int) graphicalPosition.getX(), (int) graphicalPosition.getX() + (int) getRadius(), (int) graphicalPosition.getY(), (int) graphicalPosition.getY() + (int) getRadius());
+        return new BoxCollider((int) graphicalPosition.getX(), (int) graphicalPosition.getX() + (int) getFitWidth(), (int) graphicalPosition.getY(), (int) graphicalPosition.getY() + (int) getFitWidth());
     }
 
     @Override
@@ -76,7 +83,7 @@ public class Bonus extends Circle implements StaticEntity, ScoreEntity {
     }
 
     public void setColor(Color color) {
-        setFill(color);
+        setColor(color);
     }
 
     @Override
