@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Pacman" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf48181-9169-456f-9594-bc518f4629c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman/Gameplay/Bonus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman/Gameplay/Bonus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman/Gameplay/Gameplay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman/Gameplay/Gameplay$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pacman/Gameplay/Gameplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pacman/Gameplay/Gameplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gameplay/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gameplay/Bonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gameplay/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gameplay/Gameplay.java" afterDir="false" />
-    </list>
+    <list default="true" id="c00d05ac-9324-4f5d-b9d5-b117aa4662e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="ProjectId" id="1UiYTAnY8JFpk4lRovEYyRFkXiV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="ProjectId" id="1UimLQ6Pfr7EGi08xyjXSJ3Ml7w" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Map" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jean-Noel\IdeaProjects\JPacman\ressources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -34,28 +47,69 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Gameplay.Main" />
+      <module name="JPacman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4bf48181-9169-456f-9594-bc518f4629c9" name="Default Changelist" comment="" />
-      <created>1575847734419</created>
+      <changelist id="c00d05ac-9324-4f5d-b9d5-b117aa4662e0" name="Default Changelist" comment="" />
+      <created>1575840887422</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575847734419</updated>
+      <updated>1575840887422</updated>
+      <workItem from="1575840888763" duration="5583000" />
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575840951796">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1575840951796" />
+    <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1575841376119">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1575841376119" />
+    <state x="577" y="167" key="FileChooserDialogImpl" timestamp="1575842254329">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="577" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575842254329" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1575846173867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575846173867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1575846173867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575846173867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1575846173867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575846173867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1575846173867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575846173867" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1575845700070">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575845700070" />
   </component>
 </project>

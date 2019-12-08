@@ -92,7 +92,7 @@ public class Gameplay extends Application {
         actualMode = 2;
 
         phase = 0;
-        phaseTimes = new int[]{7, 20, 7, 20, 5, 20, -1};
+        phaseTimes = new int[]{7, 20, 7, 20, 5, 20, 1, -1};
 
         nbScoreEntity = 0;
 
