@@ -21,7 +21,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 
 public class GraphicsEngine {
     private static Map map;
@@ -126,14 +128,19 @@ public class GraphicsEngine {
             }
         });
 
-        File titlefile = new File("Images/Titre.png");
-        String titlelocalUrl = titlefile.toURI().toURL().toString();
+        File titlefile = null;
 
-        ImageView title = new ImageView(titlelocalUrl);
+        InputStream in = GraphicsEngine.class.getClassLoader().getResourceAsStream("Images/Titre.png");
 
-        File giffile = new File("Images/Pacman.gif");
-        String giflocalUrl = giffile.toURI().toURL().toString();
-        ImageView gif = new ImageView(giflocalUrl);
+
+
+        ImageView title = new ImageView(new Image(in));
+
+        File giffile = null;
+
+        InputStream in2 = GraphicsEngine.class.getClassLoader().getResourceAsStream("Images/Pacman.gif");
+
+        ImageView gif = new ImageView(new Image(in2));
 
 
         title.setFitHeight(122);
@@ -213,7 +220,12 @@ public class GraphicsEngine {
             }
         });
 
-        File gameOverFile = new File("Images/gameover.png");
+        File gameOverFile = null;
+        try {
+            gameOverFile = new File(GraphicsEngine.class.getClassLoader().getResource("Images/gameover.png").toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
         String gameOverlocalUrl = gameOverFile.toURI().toURL().toString();
         ImageView gameOverImage = new ImageView(gameOverlocalUrl);
 
@@ -252,7 +264,12 @@ public class GraphicsEngine {
             }
         });
 
-        File commandsFile = new File("Images/zqsd.png");
+        File commandsFile = null;
+        try {
+            commandsFile = new File(GraphicsEngine.class.getClassLoader().getResource("Images/zqsd.png").toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
         String commandsOverlocalUrl = commandsFile.toURI().toURL().toString();
         ImageView commands = new ImageView(commandsOverlocalUrl);
 
@@ -261,7 +278,12 @@ public class GraphicsEngine {
         commands.setLayoutX(60);
         commands.setLayoutY(147);
 
-        File giffile = new File("Images/pacmanGif.gif");
+        File giffile = null;
+        try {
+            giffile = new File(GraphicsEngine.class.getClassLoader().getResource("Images/pacmanGif.gif").toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
         String giflocalUrl = giffile.toURI().toURL().toString();
         ImageView gif = new ImageView(giflocalUrl);
 

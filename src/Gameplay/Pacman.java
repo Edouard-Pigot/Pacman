@@ -1,6 +1,7 @@
 package Gameplay;
 
 import Engine.BoxCollider;
+import Engine.GraphicsEngine;
 import Entity.Entity;
 import Entity.MovingEntity;
 import javafx.geometry.Point2D;
@@ -19,8 +20,8 @@ public class Pacman extends ImageView implements MovingEntity {
     private Point2D oldDirection = new Point2D(0,0);
     private Point2D wantedDirection = new Point2D(0,0);
 
-    private Image normal1 = new Image("file:Images/PAC1.png");
-    private Image normal2 = new Image("file:Images/PAC2.png");
+    private Image normal1 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/PAC1.png")));
+    private Image normal2 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/PAC2.png")));
 
     public Pacman(Point2D graphicalPosition, double size) {
         setImage(normal1);

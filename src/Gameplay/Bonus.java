@@ -1,6 +1,7 @@
 package Gameplay;
 
 import Engine.BoxCollider;
+import Engine.GraphicsEngine;
 import Entity.*;
 import Entity.StaticEntity;
 import javafx.geometry.Point2D;
@@ -16,7 +17,7 @@ public class Bonus extends ImageView implements StaticEntity, ScoreEntity {
     int identifiant = 0;
     String use = "";
 
-    private Image image = new Image("file:Images/APPLE.png");
+    private Image image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/APPLE.png")));
 
     private String fruit = "cherry";
 

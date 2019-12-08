@@ -1,6 +1,7 @@
 package Gameplay;
 
 import Engine.BoxCollider;
+import Engine.GraphicsEngine;
 import Entity.Entity;
 import Entity.MovingEntity;
 import Entity.StaticEntity;
@@ -10,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
+import javax.imageio.ImageIO;
 import java.util.ArrayList;
 
 public class Ghost extends ImageView implements MovingEntity {
@@ -41,19 +43,19 @@ public class Ghost extends ImageView implements MovingEntity {
 
     private ImageView eyes = new ImageView();
 
-    private Image eyesUp = new Image("file:Images/EYE_UP.png");
-    private Image eyesLeft = new Image("file:Images/EYE_LEFT.png");
-    private Image eyesDown = new Image("file:Images/EYE_DOWN.png");
-    private Image eyesRight = new Image("file:Images/EYE_RIGHT.png");
-    private Image eyesFright1 = new Image("file:Images/EYE_WHITE.png");
-    private Image eyesFright2 = new Image("file:Images/EYE_RED.png");
+    private Image eyesUp = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/EYE_UP.png")));
+    private Image eyesLeft = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/EYE_LEFT.png")));
+    private Image eyesDown = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/EYE_DOWN.png")));
+    private Image eyesRight = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/EYE_RIGHT.png")));
+    private Image eyesFright1 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/EYE_WHITE.png")));
+    private Image eyesFright2 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/EYE_RED.png")));
 
     private Image normal1;
     private Image normal2;
-    private Image fright11 = new Image("file:Images/BLUE1.png");
-    private Image fright12 = new Image("file:Images/BLUE2.png");
-    private Image fright21 = new Image("file:Images/WHITE1.png");
-    private Image fright22 = new Image("file:Images/WHITE2.png");
+    private Image fright11 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/BLUE1.png")));
+    private Image fright12 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/BLUE2.png")));
+    private Image fright21 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/WHITE1.png")));
+    private Image fright22 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/WHITE2.png")));
 
     public void refreshImage(int frame){
         switch (status){
@@ -155,8 +157,8 @@ public class Ghost extends ImageView implements MovingEntity {
 
     public Ghost(Point2D graphicalPosition, double size, String color, int id, int status) {
         originalColor = color;
-        normal1 = new Image("file:Images/" + color + "1.png");
-        normal2 = new Image("file:Images/" + color + "2.png");
+        normal1 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/" + color + "1.png")));
+        normal2 = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/" + color + "2.png")));
         setImage(normal1);
         changeEyesPosition();
         eyes.setFitHeight(size*2);

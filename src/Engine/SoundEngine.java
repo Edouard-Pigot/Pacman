@@ -11,11 +11,11 @@ public class SoundEngine {
 
     public void start() {
 
-        beginningSound = new AudioClip("file:PacmanSound/pacman_beginning.wav");
-        chompSound = new AudioClip("file:PacmanSound/pacman_chomp.wav");
-        deathSound = new AudioClip("file:PacmanSound/pacman_death.wav");
-        eatFruitSound = new AudioClip("file:PacmanSound/pacman_eatfruit.wav");
-        eatGhostSound = new AudioClip("file:PacmanSound/pacman_eatghost.wav");
+        beginningSound = new AudioClip(SoundEngine.class.getClassLoader().getResource("PacmanSound/pacman_beginning.wav").toString());
+        chompSound = new AudioClip(SoundEngine.class.getClassLoader().getResource("PacmanSound/pacman_chomp.wav").toString());
+        deathSound = new AudioClip(SoundEngine.class.getClassLoader().getResource("PacmanSound/pacman_death.wav").toString());
+        eatFruitSound = new AudioClip(SoundEngine.class.getClassLoader().getResource("PacmanSound/pacman_eatfruit.wav").toString());
+        eatGhostSound = new AudioClip(SoundEngine.class.getClassLoader().getResource("PacmanSound/pacman_eatghost.wav").toString());
 
     }
 

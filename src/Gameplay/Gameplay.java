@@ -60,8 +60,6 @@ public class Gameplay extends Application {
 
     private int frame;
 
-
-
     private int level = 1;
 
     @Override
@@ -167,7 +165,7 @@ public class Gameplay extends Application {
     }
 
     public void spawnBonus(){
-        bonus = new Bonus(new Point2D(2088,3208), new Point2D(13,20), 50000, level);
+        bonus = new Bonus(new Point2D(14.5*16,24.5*16), new Point2D(13,20), 8, level);
         spawnEntity(bonus);
     }
 
