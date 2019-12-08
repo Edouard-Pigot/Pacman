@@ -17,9 +17,9 @@ public class Bonus extends ImageView implements StaticEntity, ScoreEntity {
     int identifiant = 0;
     String use = "";
 
-    private Image image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/APPLE.png")));
+    private Image image;
 
-    private String fruit = "cherry";
+    private int value = -10000;
 
     public void set_Id(int id){
         this.identifiant = id;
@@ -38,7 +38,7 @@ public class Bonus extends ImageView implements StaticEntity, ScoreEntity {
     }
 
     public Bonus(Point2D graphicalPosition, Point2D physicalPosition, double size, int level) {
-
+        setFruit(level);
         setImage(image);
 
         setPhysicalPosition(physicalPosition);
@@ -46,10 +46,8 @@ public class Bonus extends ImageView implements StaticEntity, ScoreEntity {
         setLayoutX(graphicalPosition.getX());
         setLayoutY(graphicalPosition.getY());
 
-        setFitWidth(size);
-        setFitHeight(size);
-        toFront();
-        setFruit(level);
+        setFitWidth(size*3);
+        setFitHeight(size*3);
 
     }
 
@@ -89,42 +87,41 @@ public class Bonus extends ImageView implements StaticEntity, ScoreEntity {
 
     @Override
     public int getValue() {
-        if(fruit.equals("cherry"))
-            return 100;
-        else if(fruit.equals("strawberry"))
-            return 300;
-        else if(fruit.equals("peach"))
-            return 500;
-        else if(fruit.equals("apple"))
-            return 700;
-        else if(fruit.equals("grapes"))
-            return 1000;
-        else if(fruit.equals("galaxian"))
-            return 2000;
-        else if(fruit.equals("bell"))
-            return 3000;
-        else if(fruit.equals("key"))
-            return 5000;
-        else
-            return -10000;
+        return value;
     }
 
-    public void setFruit(int level){
-        if(level<=1)
-            fruit = "cherry";
-        else if(level <= 2)
-            fruit = "strawberry";
-        else if(level <=4)
-            fruit = "peach";
-        else if(level <=6)
-            fruit = "apple";
-        else if(level <=8)
-            fruit = "grapes";
-        else if(level <=10)
-            fruit = "galaxian";
-        else if(level <=12)
-            fruit = "bell";
-        else
-            fruit = "key";
+    private void setFruit(int level){
+        if(level<=1) {
+            value = 100;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/CHERRY.png")));
+        }
+        else if(level <= 2) {
+            value = 300;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/STRAWBERRY.png")));
+        }
+        else if(level <=4) {
+            value = 500;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/PEACH.png")));
+        }
+        else if(level <=6) {
+            value = 700;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/APPLE.png")));
+        }
+        else if(level <=8) {
+            value = 1000;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/MELON.png")));
+        }
+        else if(level <=10) {
+            value = 2000;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/GALAXIAN.png")));
+        }
+        else if(level <=12) {
+            value = 3000;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/BELL.png")));
+        }
+        else {
+            value = 5000;
+            image = new Image(String.valueOf(GraphicsEngine.class.getClassLoader().getResource("Images/KEY.png")));
+        }
     }
 }
